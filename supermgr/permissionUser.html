@@ -1,0 +1,294 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>SuperMgr前端框架</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+    <!--全局通用框架样式 begin-->
+    <!-- 全局基本样式 -->
+    <link href="../content/superui/min/css/superui.common.min.css" rel="stylesheet" />
+    <!-- 全局主题样式 -->
+    <link href="../content/superui/global/css/components.min.css" id="style_components" rel="stylesheet" />
+    <link href="../content/superui/pages/layouts/css/themes/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
+
+    <script src="../content/superui/min/js/superui.common.min.js"></script>
+
+    <link href="../content/supermgr/css/common.css" rel="stylesheet" />
+    <link href="../content/plugins/wizard/wizard.css" rel="stylesheet" />
+    <script src="../content/supermgr/js/common.js"></script>
+    <link href="../content/plugins/wdtree/tree.css" rel="stylesheet" />
+    <script src="../content/plugins/wdtree/tree.js"></script>
+    <!--全局通用框架样式 end-->
+</head>
+<body>
+    <div class="page-container">
+        <div class="page-content">
+            <form id="form1">
+
+                <script type="text/javascript">
+    var userId = request('userId');
+    $(function () {
+        initialPage();
+        GetModuleTree();
+        GetModuleButtonTree();
+        GetModuleColumnTree();
+        GetOrganizeTree();
+    })
+    //初始化页面
+    function initialPage() {
+        //加载导向
+        $('#wizard').wizard().on('change', function (e, data) {
+            var $finish = $("#btn_finish");
+            var $next = $("#btn_next");
+            if (data.direction == "next") {
+                if (data.step == 1) {
+                    var ModuleId = $("#ModuleTree").getCheckedAllNodes();
+                    for (var i = 0; i < ModuleId.length; i++) {
+                        var $thisid = $("#ModuleButtonTree").find('ul').find('[data-value=' + ModuleId[i] + ']').parent().parent();
+                        $thisid.show();
+                        $thisid.parents('ul').find('.' + ModuleId[i]).parent().show();
+                    }
+                }
+                if (data.step == 2) {
+                    var ModuleId = $("#ModuleTree").getCheckedAllNodes();
+                    for (var i = 0; i < ModuleId.length; i++) {
+                        var $thisid = $("#ModuleColumnTree").find('ul').find('[data-value=' + ModuleId[i] + ']').parent().parent();
+                        $thisid.show();
+                        $thisid.parents('ul').find('.' + ModuleId[i]).parent().show();
+                    }
+                }
+                if (data.step == 3) {
+                    $finish.removeAttr('disabled');
+                    $next.attr('disabled', 'disabled');
+                }
+            } else {
+                $finish.attr('disabled', 'disabled');
+                $next.removeAttr('disabled');
+            }
+        });
+        //数据权限 、点击类型触发事件
+        $("input[name='authorizeType']").click(function () {
+            var value = $(this).val();
+            if (value == -5) {
+                $("#OrganizeTreebackground").hide();
+            } else {
+                $("#OrganizeTreebackground").show();
+            }
+        })
+        buttonOperation();
+    }
+    //获取系统功能
+    function GetModuleTree() {
+        var item = {
+            height: 540,
+            showcheck: true,
+            url: "../content/supermgr/json/moduletreedata.json"
+        };
+        $("#ModuleTree").treeview(item);
+    }
+    //获取系统按钮
+    function GetModuleButtonTree() {
+        var item = {
+            height: 540,
+            showcheck: true,
+            url: "../content/supermgr/json/modulebuttontreedata.json" 
+        };
+        $("#ModuleButtonTree").treeview(item);
+        $("#ModuleButtonTree").find('.bbit-tree-node-el').hide();
+    }
+    //获取系统视图
+    function GetModuleColumnTree() {
+        var item = {
+            height: 540,
+            showcheck: true,
+            url: "../content/supermgr/json/modulecolumntreedata.json" 
+        };
+        $("#ModuleColumnTree").treeview(item);
+        $("#ModuleColumnTree").find('.bbit-tree-node-el').hide();
+    }
+    //获取组织架构
+    function GetOrganizeTree() {
+        $.ajax({
+            url: "../content/supermgr/json/organizetreedata.json" ,
+            type: "GET",
+            dataType: "json",
+            async: false,
+            success: function (data) {
+                var $treeJson = data.treeJson;
+                var $authorizeType = data.authorizeType;
+                var $authorizeData = data.authorizeData;
+                var item = {
+                    height: 330,
+                    showcheck: true,
+                    data: JSON.parse($treeJson),
+                };
+                $("#OrganizeTree").treeview(item);
+                $("input[name='authorizeType'][value=" + $authorizeType + "]").trigger("click");
+                $("#OrganizeTree").find('li.bbit-tree-node').each(function () {
+                    var $li = $(this);
+                    $li.css({ position: 'relative' });
+                    var _data_value = $li.find('a').find('span').attr('data-value');
+                    var _html = '<div style="position: absolute;right: 0px;top:4px;z-index: 1;"><div class="checkbox">';
+                    _html += '<label><input name="' + _data_value + '" type="checkbox" value="1" />只读</label>';
+                    _html += '</div></div>';
+                    $li.append(_html);
+                });
+                $.each($authorizeData, function (i) {
+                    var row = $authorizeData[i]
+                    var resourceId = row.F_ResourceId;
+                    var IsRead = row.F_IsRead;
+                    if (IsRead == 1) {
+                        $("input[name='" + resourceId + "']").attr("checked", true);
+                    }
+                });
+            }
+        });
+    }
+    //按钮操作（上一步、下一步、完成、关闭）
+    function buttonOperation() {
+        var $last = $("#btn_last");
+        var $next = $("#btn_next");
+        var $finish = $("#btn_finish");
+        //完成提交保存
+        $finish.click(function () {
+            var postData = $("#form1").GetWebControls();
+            postData["userId"] = userId;
+            postData["moduleIds"] = String($("#ModuleTree").getCheckedAllNodes());
+            postData["moduleButtonIds"] = String($("#ModuleButtonTree").getCheckedAllNodes());
+            postData["moduleColumnIds"] = String($("#ModuleColumnTree").getCheckedAllNodes());
+            postData["authorizeDataJson"] = JSON.stringify(GetDataAuthorize());
+            $.SaveForm({
+                url: "../../AuthorizeManage/PermissionUser/SaveAuthorize",
+                param: postData,
+                loading: "正在保存用户授权...",
+                success: function () {
+                    $.currentIframe().$("#gridTable").trigger("reloadGrid");
+                }
+            })
+        })
+    }
+    //获取数据范围权限选中值、返回Json
+    function GetDataAuthorize() {
+        var dataAuthorize = [];
+        var authorizeType = $("input[name='authorizeType']:checked").val();
+        if (authorizeType == -5) {
+            var selectedData = $("#OrganizeTree").getCheckedAllNodes();
+            for (var i = 0; i < selectedData.length; i++) {
+                var ResourceId = selectedData[i];
+                var IsRead = $("input[name='" + ResourceId + "']:checked").val() == 1 ? 1 : 0;
+                var rowdata = {
+                    F_ResourceId: ResourceId,
+                    F_IsRead: IsRead,
+                    F_AuthorizeType: -5
+                }
+                dataAuthorize.push(rowdata);
+            }
+        } else {
+            var rowdata = {
+                F_IsRead: 0,
+                F_AuthorizeType: authorizeType
+            }
+            dataAuthorize.push(rowdata);
+        }
+        return dataAuthorize;
+    }
+                </script>
+                <div class="widget-body">
+                    <div id="wizard" class="wizard" data-target="#wizard-steps" style="border-left: none; border-top: none; border-right: none;">
+                        <ul class="steps">
+                            <li data-target="#step-1" class="active"><span class="step">1</span>系统功能<span class="chevron"></span></li>
+                            <li data-target="#step-2"><span class="step">2</span>系统按钮<span class="chevron"></span></li>
+                            <li data-target="#step-3"><span class="step">3</span>系统视图<span class="chevron"></span></li>
+                            <li data-target="#step-4"><span class="step">4</span>数据权限<span class="chevron"></span></li>
+                        </ul>
+                    </div>
+                    <div class="step-content" id="wizard-steps" style="border-left: none; border-bottom: none; border-right: none;">
+                        <div class="step-pane active" id="step-1">
+                            <div id="ModuleTree" style="margin: 10px;"></div>
+                        </div>
+                        <div class="step-pane" id="step-2">
+                            <div id="ModuleButtonTree" style="margin: 10px;"></div>
+                        </div>
+                        <div class="step-pane" id="step-3">
+                            <div id="ModuleColumnTree" style="margin: 10px;"></div>
+                        </div>
+                        <div class="step-pane" id="step-4" style="margin: 15px; margin-bottom: 0px;">
+                            <div>
+                                数据权限
+                                <!--<ul class="list-group">
+                                    <li class="list-group-item">
+                                        <div class="radio">
+                                            <label>
+                                                <input name="authorizeType" type="radio" checked="checked" value="-1"/>&nbsp;
+                                                仅限本人
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="radio">
+                                            <label>
+                                                <input name="authorizeType" type="radio" value="-2"/>&nbsp;
+                                                仅限本人及下属
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="radio">
+                                            <label>
+                                                <input name="authorizeType" type="radio" value="-3"/>&nbsp;
+                                                所在部门
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="radio">
+                                            <label>
+                                                <input name="authorizeType" type="radio" value="-4"/>&nbsp;
+                                                所在公司
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="radio">
+                                            <label>
+                                                <input name="authorizeType" type="radio" value="-5"/>&nbsp;
+                                                自定义设置
+                                            </label>
+                                        </div>
+                                        <div id="OrganizeTree" style="margin: 10px; margin-bottom: 0px;"></div>
+                                        <div id="OrganizeTreebackground" style="position: fixed; top: 251px; left: 15px; z-index: 2; width: 670px; height: 343px; background: #000; filter: alpha(opacity=10); opacity: 0.1;"></div>
+                                    </li>
+                                </ul>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-button" id="wizard-actions">
+                    <a id="btn_last" disabled class="btn btn-default btn-prev">上一步</a>
+                    <a id="btn_next" class="btn btn-default btn-next">下一步</a>
+                    <a id="btn_finish" disabled class="btn btn-success">完成</a>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</body>
+<!--[if lt IE 9]>
+    <script src="../content/superui/base/base-core/excanvas.min.js"></script>
+    <script src="../content/superui/base/base-core/respond.min.js"></script>
+<![endif]-->
+<!-- 全局公共类库Begin -->
+
+</html>
+
+<script src="../content/plugins/wizard/wizard.js"></script>

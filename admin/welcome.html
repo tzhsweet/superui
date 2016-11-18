@@ -1,0 +1,1007 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>SuperMgr前端框架</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!--全局通用框架样式 begin-->
+    <!-- 全局基本样式 -->
+    <link href="../content/superui/min/css/superui.common.min.css" rel="stylesheet" />
+    <!-- 全局主题样式 -->
+    <link href="../content/superui/global/css/components.min.css" id="style_components" rel="stylesheet" />
+    <!--主题layout样式 -->
+    <link href="../content/superui/pages/layouts/css/themes/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
+
+    <link rel="shortcut icon" href="../content/superui/global/img/favicon.ico" type=""/>
+    <link rel="icon" href="../content/superui/global/img/favicon.ico" type="" />
+    <!--全局通用框架样式 end-->
+
+
+    <style>
+       
+    </style>
+   
+</head>
+<!-- END HEAD -->
+<body class="page-content-white" style="background-color: #ffffff">
+<div class="page-container">
+<div class="page-content">
+<div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="dashboard-stat blue">
+            <div class="visual">
+                <i class="fa fa-comments"></i>
+            </div>
+            <div class="details">
+                <div class="number">
+                    <span data-counter="counterup" data-value="1349">0</span>
+                </div>
+                <div class="desc"> 新增用户数 </div>
+            </div>
+            <a class="more" href="javascript:;">
+                查看更多
+                <i class="m-icon-swapright m-icon-white"></i>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="dashboard-stat red">
+            <div class="visual">
+                <i class="fa fa-bar-chart-o"></i>
+            </div>
+            <div class="details">
+                <div class="number">
+                    <span data-counter="counterup" data-value="12,5">0</span>￥
+                </div>
+                <div class="desc"> 总利润 </div>
+            </div>
+            <a class="more" href="javascript:;">
+                查看更多
+                <i class="m-icon-swapright m-icon-white"></i>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="dashboard-stat green">
+            <div class="visual">
+                <i class="fa fa-shopping-cart"></i>
+            </div>
+            <div class="details">
+                <div class="number">
+                    <span data-counter="counterup" data-value="549">0</span>
+                </div>
+                <div class="desc">新订单数 </div>
+            </div>
+            <a class="more" href="javascript:;">
+                查看更多
+                <i class="m-icon-swapright m-icon-white"></i>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="dashboard-stat purple">
+            <div class="visual">
+                <i class="fa fa-globe"></i>
+            </div>
+            <div class="details">
+                <div class="number">
+                    +
+                    <span data-counter="counterup" data-value="890"></span>
+                </div>
+                <div class="desc"> 新品牌入驻数 </div>
+            </div>
+            <a class="more" href="javascript:;">
+                查看更多
+                <i class="m-icon-swapright m-icon-white"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+<!-- END DASHBOARD STATS 1-->
+
+<div class="row">
+<div class="col-md-6">
+<!-- Begin: life time stats -->
+<div class="portlet light bordered">
+<div class="portlet-title">
+    <div class="caption">
+        <i class="icon-share font-blue"></i>
+        <span class="caption-subject font-blue bold uppercase">订单报表</span>
+        <span class="caption-helper">订单日报...</span>
+    </div>
+    <div class="actions">
+        <div class="btn-group">
+            <a class="btn green btn-circle btn-sm" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                动作
+                <i class="fa fa-angle-down"></i>
+            </a>
+            <ul class="dropdown-menu pull-right">
+                <li>
+                    <a href="javascript:;"> 所有产品 </a>
+                </li>
+                <li class="divider"> </li>
+                <li>
+                    <a href="javascript:;"> SuperMgr </a>
+                </li>
+                <li>
+                    <a href="javascript:;"> SuperUI </a>
+                </li>
+                <li>
+                    <a href="javascript:;"> SuperShop </a>
+                </li>
+                <li class="divider"> </li>
+                <li>
+                    <a href="javascript:;">
+                        已售出
+                        <span class="badge badge-danger"> 4 </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        已支付
+                        <span class="badge badge-success"> 12 </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        待发货
+                        <span class="badge badge-warning"> 9 </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="portlet-body">
+<div class="tabbable-line">
+<ul class="nav nav-tabs">
+    <li class="active">
+        <a href="#overview_1" data-toggle="tab"> 销量排行 </a>
+    </li>
+    <li>
+        <a href="#overview_2" data-toggle="tab"> 最多点击 </a>
+    </li>
+    <li>
+        <a href="#overview_3" data-toggle="tab"> 新用户 </a>
+    </li>
+    <li class="dropdown">
+        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+            订单
+            <i class="fa fa-angle-down"></i>
+        </a>
+        <ul class="dropdown-menu pull-right">
+            <li>
+                <a href="#overview_4" data-toggle="tab">
+                    <i class="icon-bell"></i> 最近十单
+                </a>
+            </li>
+            <li>
+                <a href="#overview_4" data-toggle="tab">
+                    <i class="icon-info"></i> 待发货订单
+                </a>
+            </li>
+            <li>
+                <a href="#overview_4" data-toggle="tab">
+                    <i class="icon-speech"></i> 待支付订单
+                </a>
+            </li>
+            <li class="divider"></li>
+            <li>
+                <a href="#overview_4" data-toggle="tab">
+                    <i class="icon-settings"></i> 待退款订单
+                </a>
+            </li>
+        </ul>
+    </li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane active" id="overview_1">
+    <div class="table-responsive">
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+            <tr>
+                <th> 项目名称 </th>
+                <th> 单价 </th>
+                <th> 销量 </th>
+                <th> </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <a href="javascript:;"> SuperUI企业版 </a>
+                </td>
+                <td> $625.50 </td>
+                <td> 809 </td>
+                <td>
+                    <a href="javascript:;" class="btn btn-sm btn-default">
+                        <i class="fa fa-search"></i> 查看
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:;"> SuperUI个人版 </a>
+                </td>
+                <td> $915.50 </td>
+                <td> 6709 </td>
+                <td>
+                    <a href="javascript:;" class="btn btn-sm btn-default">
+                        <i class="fa fa-search"></i> 查看
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:;"> SuperUI商业版 </a>
+                </td>
+                <td> $878.50 </td>
+                <td> 784 </td>
+                <td>
+                    <a href="javascript:;" class="btn btn-sm btn-default">
+                        <i class="fa fa-search"></i> 查看
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:;"> SuperUI 个人定制版 </a>
+                </td>
+                <td> $925.50 </td>
+                <td> 21245 </td>
+                <td>
+                    <a href="javascript:;" class="btn btn-sm btn-default">
+                        <i class="fa fa-search"></i> 查看
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:;"> SuperUI 企业VIP版本 </a>
+                </td>
+                <td> $25.50 </td>
+                <td> 1245 </td>
+                <td>
+                    <a href="javascript:;" class="btn btn-sm btn-default">
+                        <i class="fa fa-search"></i> 查看
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:;"> SuperUI企业定制服务版</a>
+                </td>
+                <td> $925.50 </td>
+                <td> 21245 </td>
+                <td>
+                    <a href="javascript:;" class="btn btn-sm btn-default">
+                        <i class="fa fa-search"></i> 查看
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="tab-pane" id="overview_2">
+    <div class="table-responsive">
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+            <tr>
+                <th> 项目名称 </th>
+                <th> 单价 </th>
+                <th> 销量 </th>
+                <th> </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <a href="javascript:;"> SuperUI企业版 </a>
+                </td>
+                <td> $625.50 </td>
+                <td> 809 </td>
+                <td>
+                    <a href="javascript:;" class="btn btn-sm btn-default">
+                        <i class="fa fa-search"></i> 查看
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:;"> SuperUI个人版 </a>
+                </td>
+                <td> $915.50 </td>
+                <td> 6709 </td>
+                <td>
+                    <a href="javascript:;" class="btn btn-sm btn-default">
+                        <i class="fa fa-search"></i> 查看
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:;"> SuperUI商业版 </a>
+                </td>
+                <td> $878.50 </td>
+                <td> 784 </td>
+                <td>
+                    <a href="javascript:;" class="btn btn-sm btn-default">
+                        <i class="fa fa-search"></i> 查看
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:;"> SuperUI 个人定制版 </a>
+                </td>
+                <td> $925.50 </td>
+                <td> 21245 </td>
+                <td>
+                    <a href="javascript:;" class="btn btn-sm btn-default">
+                        <i class="fa fa-search"></i> 查看
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:;"> SuperUI 企业VIP版本 </a>
+                </td>
+                <td> $25.50 </td>
+                <td> 1245 </td>
+                <td>
+                    <a href="javascript:;" class="btn btn-sm btn-default">
+                        <i class="fa fa-search"></i> 查看
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:;"> SuperUI企业定制服务版</a>
+                </td>
+                <td> $925.50 </td>
+                <td> 21245 </td>
+                <td>
+                    <a href="javascript:;" class="btn btn-sm btn-default">
+                        <i class="fa fa-search"></i> 查看
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="tab-pane" id="overview_3">
+    <div class="table-responsive">
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+            <tr>
+                <th> 用户名称 </th>
+                <th> 订单数 </th>
+                <th> 总金额 </th>
+                <th> </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <a href="javascript:;"> tianzh </a>
+                </td>
+                <td> 3 </td>
+                <td> $625.50 </td>
+                <td>
+                    <a href="javascript:;" class="btn btn-sm btn-default">
+                        <i class="fa fa-search"></i> 查看
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:;"> pengpeng </a>
+                </td>
+                <td> 4 </td>
+                <td> $12625.50 </td>
+                <td>
+                    <a href="javascript:;" class="btn btn-sm btn-default">
+                        <i class="fa fa-search"></i> 查看
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:;"> 豹哥 </a>
+                </td>
+                <td> 1 </td>
+                <td> $890.85 </td>
+                <td>
+                    <a href="javascript:;" class="btn btn-sm btn-default">
+                        <i class="fa fa-search"></i> 查看
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:;"> 龙哥 </a>
+                </td>
+                <td> 2 </td>
+                <td> $125.00 </td>
+                <td>
+                    <a href="javascript:;" class="btn btn-sm btn-default">
+                        <i class="fa fa-search"></i> 查看
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:;"> 王瑶 </a>
+                </td>
+                <td> 45 </td>
+                <td> $12,125.70 </td>
+                <td>
+                    <a href="javascript:;" class="btn btn-sm btn-default">
+                        <i class="fa fa-search"></i> 查看
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:;">溏心</a>
+                </td>
+                <td> 1 </td>
+                <td> $890.85 </td>
+                <td>
+                    <a href="javascript:;" class="btn btn-sm btn-default">
+                        <i class="fa fa-search"></i> 查看
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="tab-pane" id="overview_4">
+    <div class="table-responsive">
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+            <tr>
+                <th> 用户名 </th>
+                <th> 日期 </th>
+                <th> 金额 </th>
+                <th> 状态 </th>
+                <th> </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <a href="javascript:;"> 陈田 </a>
+                </td>
+                <td> 2016-11-17 16：00 </td>
+                <td> $625.50 </td>
+                <td>
+                    <span class="label label-sm label-warning"> 待发货 </span>
+                </td>
+                <td>
+                    <a href="javascript:;" class="btn btn-sm btn-default">
+                        <i class="fa fa-search"></i> 查看
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:;"> 虎哥 </a>
+                </td>
+                <td> 2016-11-17 16：00 </td>
+                <td> $12625.50 </td>
+                <td>
+                    <span class="label label-sm label-warning"> 待发货 </span>
+                </td>
+                <td>
+                    <a href="javascript:;" class="btn btn-sm btn-default">
+                        <i class="fa fa-search"></i> 查看
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:;"> 龙哥 </a>
+                </td>
+                <td> 2016-11-17 16：00 </td>
+                <td> $890.85 </td>
+                <td>
+                    <span class="label label-sm label-success"> 已支付 </span>
+                </td>
+                <td>
+                    <a href="javascript:;" class="btn btn-sm btn-default">
+                        <i class="fa fa-search"></i> 查看
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:;">豹哥 </a>
+                </td>
+                <td> 2016-11-17 16：00 </td>
+                <td> $125.00 </td>
+                <td>
+                    <span class="label label-sm label-success"> 已支付 </span>
+                </td>
+                <td>
+                    <a href="javascript:;" class="btn btn-sm btn-default">
+                        <i class="fa fa-search"></i> 查看
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:;"> 彭彭 </a>
+                </td>
+                <td> 2016-11-17 16：00 </td>
+                <td> $12,125.70 </td>
+                <td>
+                    <span class="label label-sm label-info"> 已退货 </span>
+                </td>
+                <td>
+                    <a href="javascript:;" class="btn btn-sm btn-default">
+                        <i class="fa fa-search"></i> 查看
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:;"> 田哥 </a>
+                </td>
+                <td>2016-11-17 16：00 </td>
+                <td> $890.85 </td>
+                <td>
+                    <span class="label label-sm label-success">已支付 </span>
+                </td>
+                <td>
+                    <a href="javascript:;" class="btn btn-sm btn-default">
+                        <i class="fa fa-search"></i> 查看
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- End: life time stats -->
+</div>
+<div class="col-md-6">
+    <!-- Begin: life time stats -->
+    <!-- BEGIN PORTLET-->
+    <div class="portlet light bordered">
+        <div class="portlet-title tabbable-line">
+            <div class="caption">
+                <i class="icon-globe font-red"></i>
+                <span class="caption-subject font-red bold uppercase">营收数据监控</span>
+            </div>
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#portlet_ecommerce_tab_1" data-toggle="tab"> 订单 </a>
+                </li>
+                <li>
+                    <a href="#portlet_ecommerce_tab_2" id="statistics_orders_tab" data-toggle="tab"> 利润 </a>
+                </li>
+            </ul>
+        </div>
+        <div class="portlet-body">
+            <div class="tab-content">
+                <div class="tab-pane active" id="portlet_ecommerce_tab_1">
+                    <div id="statistics_1" class="chart" style="width: 767px;"> </div>
+                </div>
+                <div class="tab-pane" id="portlet_ecommerce_tab_2">
+                    <div id="statistics_2" class="chart" style="width: 767px;"> </div>
+                </div>
+            </div>
+            <div class="well margin-top-20">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-6 text-stat">
+                        <span class="label label-success"> 总营收: </span>
+                        <h3>$1,234,112.20</h3>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6 text-stat">
+                        <span class="label label-info"> 利润: </span>
+                        <h3>$134,90.10</h3>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6 text-stat">
+                        <span class="label label-danger"> 支出: </span>
+                        <h3>$1,134,90.10</h3>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6 text-stat">
+                        <span class="label label-warning"> 订单数: </span>
+                        <h3>235090</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End: life time stats -->
+</div>
+</div>
+<div class="row">
+<div class="col-md-6 col-sm-6">
+    <!-- BEGIN PORTLET-->
+    <div class="portlet light bordered">
+        <div class="portlet-title tabbable-line">
+            <div class="caption">
+                <i class="icon-globe font-green-sharp"></i>
+                <span class="caption-subject font-green-sharp bold uppercase">通知公告</span>
+            </div>
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#tab_1_1" class="active" data-toggle="tab"> 系统 </a>
+                </li>
+                <li>
+                    <a href="#tab_1_2" data-toggle="tab"> 日常管理 </a>
+                </li>
+            </ul>
+        </div>
+        <div class="portlet-body">
+            <!--BEGIN TABS-->
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab_1_1">
+                    <div class="scroller" style="height: 339px;" data-always-visible="1" data-rail-visible="0">
+                        <ul class="feeds">
+                            <li>
+                                <div class="col1">
+                                    <div class="cont">
+                                        <div class="cont-col1">
+                                            <div class="label label-sm label-success">
+                                                <i class="fa fa-bell-o"></i>
+                                            </div>
+                                        </div>
+                                        <div class="cont-col2">
+                                            <div class="desc">
+                                                SuperUI新版本发布啦！
+                                                <span class="label label-sm label-info">
+                                                                    查看详情
+                                                                    <i class="fa fa-share"></i>
+                                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col2">
+                                    <div class="date"> 10分钟之前 </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <div class="col1">
+                                        <div class="cont">
+                                            <div class="cont-col1">
+                                                <div class="label label-sm label-success">
+                                                    <i class="fa fa-bell-o"></i>
+                                                </div>
+                                            </div>
+                                            <div class="cont-col2">
+                                                <div class="desc">SuperMgr 1.3.2版本近期即将发布，尽请期待！ </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col2">
+                                        <div class="date"> 20 分钟前 </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="col1">
+                                    <div class="cont">
+                                        <div class="cont-col1">
+                                            <div class="label label-sm label-danger">
+                                                <i class="fa fa-bolt"></i>
+                                            </div>
+                                        </div>
+                                        <div class="cont-col2">
+                                            <div class="desc">SuperShop头脑风暴会议，SuperShop产品近期内即将启动！ </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col2">
+                                    <div class="date"> 1天前 </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab_1_2">
+                    <div class="scroller" style="height: 290px;" data-always-visible="1" data-rail-visible1="1">
+                        <ul class="feeds">
+                            <li>
+                                <a href="javascript:;">
+                                    <div class="col1">
+                                        <div class="cont">
+                                            <div class="cont-col1">
+                                                <div class="label label-sm label-success">
+                                                    <i class="fa fa-bell-o"></i>
+                                                </div>
+                                            </div>
+                                            <div class="cont-col2">
+                                                <div class="desc"> 恭喜SuperUI 活跃用户超过100！ </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col2">
+                                        <div class="date"> 刚才 </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <div class="col1">
+                                        <div class="cont">
+                                            <div class="cont-col1">
+                                                <div class="label label-sm label-success">
+                                                    <i class="fa fa-bell-o"></i>
+                                                </div>
+                                            </div>
+                                            <div class="cont-col2">
+                                                <div class="desc"> SuperShop项目组正式成立！开发计划即将启动！ </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col2">
+                                        <div class="date"> 10 分钟前 </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="col1">
+                                    <div class="cont">
+                                        <div class="cont-col1">
+                                            <div class="label label-sm label-danger">
+                                                <i class="fa fa-bolt"></i>
+                                            </div>
+                                        </div>
+                                        <div class="cont-col2">
+                                            <div class="desc">
+                                                信堂草本科技有限公司正式成立了！
+                                                <span class="label label-sm label-danger ">
+                                                                    查看
+                                                                    <i class="fa fa-share"></i>
+                                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col2">
+                                    <div class="date"> 24 分钟前 </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="task-footer">
+                <div class="btn-arrow-link pull-right">
+                    <a href="javascript:;">查看所有记录</a>
+                    <i class="icon-arrow-right"></i>
+                </div>
+            </div>
+            <!--END TABS-->
+        </div>
+    </div>
+    <!-- END PORTLET-->
+</div>
+<div class="col-md-6 col-sm-6">
+    <div class="portlet light tasks-widget bordered">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="icon-share font-green-haze hide"></i>
+                <span class="caption-subject font-green bold uppercase">任务调度中心</span>
+                <span class="caption-helper">任务统计...</span>
+            </div>
+            <div class="actions">
+                <div class="btn-group">
+                    <a class="btn green btn-circle btn-sm hover-initialized" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                        更多
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu pull-right">
+                        <li>
+                            <a href="javascript:;"> 所有任务 </a>
+                        </li>
+                        <li class="divider"> </li>
+                        <li>
+                            <a href="javascript:;"> 爬虫任务 </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;"> 物流轨迹任务 </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;"> 订单状态任务 </a>
+                        </li>
+                        <li class="divider"> </li>
+                        <li>
+                            <a href="javascript:;">
+                                错误
+                                <span class="badge badge-danger"> 4 </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                成功
+                                <span class="badge badge-success"> 12 </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                已中断
+                                <span class="badge badge-warning"> 9 </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;" data-original-title="" title=""> </a>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="task-content">
+                <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 312px;">
+                    <div class="scroller" style="height: 312px; overflow: hidden; width: auto;" data-always-visible="1" data-rail-visible1="1" data-initialized="1">
+                        <!-- START TASK LIST -->
+                        <ul class="task-list">
+                            <li>
+                                <div class="task-checkbox">
+                                    <div class="checker"><span><input type="checkbox" class="liChild" value=""></span></div>
+                                </div>
+                                <div class="task-title">
+                                    <span class="task-title-sp"> 抓取淘宝500万商品数据成功！ </span>
+                                    <span class="label label-sm label-success">商品爬虫</span>
+                                    <span class="task-bell">
+                                                        <i class="fa fa-bell-o"></i>
+                                                    </span>
+                                </div>
+                                <div class="task-config">
+                                    <div class="task-config-btn btn-group">
+                                        <a class="btn btn-sm default hover-initialized" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                            <i class="fa fa-cog"></i>
+                                            <i class="fa fa-angle-down"></i>
+                                        </a>
+                                        <ul class="dropdown-menu pull-right">
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <i class="fa fa-check"></i> 完成
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <i class="fa fa-pencil"></i> 编辑
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <i class="fa fa-trash-o"></i> 取消
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="task-checkbox">
+                                    <div class="checker"><span><input type="checkbox" class="liChild" value=""></span></div>
+                                </div>
+                                <div class="task-title">
+                                    <span class="task-title-sp">淘宝2万商家数据抓取失败！ </span>
+                                    <span class="label label-sm label-danger">商家爬虫</span>
+                                </div>
+                                <div class="task-config">
+                                    <div class="task-config-btn btn-group">
+                                        <a class="btn btn-sm default hover-initialized" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                            <i class="fa fa-cog"></i>
+                                            <i class="fa fa-angle-down"></i>
+                                        </a>
+                                        <ul class="dropdown-menu pull-right">
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <i class="fa fa-check"></i> 完成
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <i class="fa fa-pencil"></i> 编辑
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <i class="fa fa-trash-o"></i> 取消
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="last-line">
+                                <div class="task-checkbox">
+                                    <div class="checker"><span><input type="checkbox" class="liChild" value=""></span></div>
+                                </div>
+                                <div class="task-title">
+                                    <span class="task-title-sp"> 2000商品分类爬虫抓取中断！ </span>
+                                    <span class="label label-sm label-warning">分类爬虫 </span>
+                                </div>
+                                <div class="task-config">
+                                    <div class="task-config-btn btn-group dropup">
+                                        <a class="btn btn-sm default hover-initialized" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                            <i class="fa fa-cog"></i>
+                                            <i class="fa fa-angle-down"></i>
+                                        </a>
+                                        <ul class="dropdown-menu pull-right">
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <i class="fa fa-check"></i> 完成
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <i class="fa fa-pencil"></i> 编辑
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <i class="fa fa-trash-o"></i> 取消
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- END START TASK LIST -->
+                    </div>
+                    <div class="slimScrollBar" style="width: 7px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 312px; background: rgb(187, 187, 187);"></div>
+                    <div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(234, 234, 234);"></div>
+                </div>
+            </div>
+            <div class="task-footer">
+                <div class="btn-arrow-link pull-right">
+                    <a href="javascript:;">查看所有记录</a>
+                    <i class="icon-arrow-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<!-- END CONTENT -->
+<!-- BEGIN QUICK SIDEBAR -->
+<a href="javascript:;" class="page-quick-sidebar-toggler">
+    <i class="icon-login"></i>
+</a>
+</div>
+</body>
+
+    <!-- END FOOTER -->
+<!--[if lt IE 9]>
+<script src="../content/superui/base/base-core/excanvas.min.js"></script>
+<script src="../content/superui/base/base-core/respond.min.js"></script>
+<![endif]-->
+<!-- 全局公共类库Begin -->
+<script src="../content/superui/min/js/superui.common.min.js"></script>
+<!--全局公共类库 End-->
+<script src="../content/plugins/highCharts/highcharts.js"></script>
+<script src="../content/plugins/highCharts/themes/grid.js"></script>
+<script src="../content/superui/pages/main/dashboard.js"></script>
+<script>
+
+</script>
+</html>

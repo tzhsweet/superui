@@ -1,0 +1,370 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+    <!--<![endif]-->
+    <!-- BEGIN HEAD -->
+
+    <head>
+        <meta charset="utf-8" />
+        <title>SuperMgr前端框架</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <!--全局通用框架样式 begin-->
+        <!-- 全局基本样式 -->
+        <link href="../content/superui/min/css/superui.common.min.css" rel="stylesheet" />
+        <!-- 全局主题样式 -->
+        <link href="../content/superui/global/css/components.min.css" id="style_components" rel="stylesheet" />
+        <link href="../content/superui/pages/layouts/css/themes/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
+        <link href="../content/superui/base/bootstrap-modal/css/bootstrap-modal.css" rel="stylesheet" />
+        <link href="../content/superui/base/bootstrap-modal/css/bootstrap-modal-bs3patch.css" rel="stylesheet" />
+        <!--全局通用框架样式 end-->
+
+        <body>
+            <!-- BEGIN HEADER -->
+            <div class="page-container">
+                <div class="page-content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="note note-success">
+                                <h4 class="block">Extended Modals模态窗体</h4>
+                                <p>
+                                    Extends Bootstrap's 是基于bootstrap进行扩展的各种模态窗体，详情查看官网。
+                                    <a href="https://github.com/jschr/bootstrap-modal" class="btn btn-outline red" target="_blank"> 官方主页 </a>
+                                </p>
+                            </div>
+                            <!-- BEGIN PORTLET-->
+                            <div class="portlet light bordered">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="icon-bubble font-green-sharp"></i>
+                                        <span class="caption-subject font-green-sharp sbold">例子</span>
+                                    </div>
+                                    <div class="actions">
+                                        <div class="btn-group">
+                                            <a class="btn green-haze btn-outline btn-circle btn-sm" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                                动作
+                                                <i class="fa fa-angle-down"></i>
+                                            </a>
+                                            <ul class="dropdown-menu pull-right">
+                                                <li>
+                                                    <a href="javascript:;"> 动作 1</a>
+                                                </li>
+                                                <li class="divider"> </li>
+                                                <li>
+                                                    <a href="javascript:;">动作 2</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;">动作 3</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;">动作 4</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+                                    <table class="table table-hover table-striped table-bordered">
+                                        <tr>
+                                            <td> 响应式 </td>
+                                            <td>
+                                                <a class="btn btn-outline dark" data-toggle="modal" href="#responsive"> 查看Demo </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td> 可叠加（多个） </td>
+                                            <td>
+                                                <a class="btn btn-outline dark" data-target="#stack1" data-toggle="modal"> 查看Demo </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td> Ajax </td>
+                                            <td>
+                                                <a class="btn btn-outline dark" id="ajax-demo" data-url="ui_extended_modals_ajax_sample.html" data-toggle="modal"> 查看Demo </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>静态背景 </td>
+                                            <td>
+                                                <a class="btn btn-outline dark" data-target="#static2" data-toggle="modal"> 查看Demo </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td> 带动画静态背景 </td>
+                                            <td>
+                                                <a class="btn btn-outline dark" data-target="#static" data-toggle="modal"> 查看Demo </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>最大宽度</td>
+                                            <td>
+                                                <a class="btn btn-outline dark" data-target="#full-width" data-toggle="modal"> 查看Demo </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>最大长度 </td>
+                                            <td>
+                                                <a class="btn btn-outline dark" data-target="#long" data-toggle="modal"> 查看Demo </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- responsive -->
+                                    <div id="responsive" class="modal fade" tabindex="-1" data-width="760">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                            <h4 class="modal-title">响应式</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <h4>SuperUI V1.1</h4>
+                                                    <p>
+                                                        <input class="form-control" type="text">
+                                                    </p>
+                                                    <p>
+                                                        <input class="form-control" type="text">
+                                                    </p>
+                                                    <p>
+                                                        <input class="form-control" type="text">
+                                                    </p>
+                                                    <p>
+                                                        <input class="form-control" type="text">
+                                                    </p>
+                                                    <p>
+                                                        <input class="form-control" type="text">
+                                                    </p>
+                                                    <p>
+                                                        <input class="form-control" type="text">
+                                                    </p>
+                                                    <p>
+                                                        <input class="form-control" type="text">
+                                                    </p>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <h4>SuperUI V1.1!SuperUI V1.1!SuperUI V1.1!SuperUI V1.1!SuperUI V1.1!</h4>
+                                                    <p>
+                                                        <input class="form-control" type="text">
+                                                    </p>
+                                                    <p>
+                                                        <input class="form-control" type="text">
+                                                    </p>
+                                                    <p>
+                                                        <input class="form-control" type="text">
+                                                    </p>
+                                                    <p>
+                                                        <input class="form-control" type="text">
+                                                    </p>
+                                                    <p>
+                                                        <input class="form-control" type="text">
+                                                    </p>
+                                                    <p>
+                                                        <input class="form-control" type="text">
+                                                    </p>
+                                                    <p>
+                                                        <input class="form-control" type="text">
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" data-dismiss="modal" class="btn btn-outline dark">关闭</button>
+                                            <button type="button" class="btn green">保存</button>
+                                        </div>
+                                    </div>
+                                    <!-- stackable -->
+                                    <div id="stack1" class="modal fade" tabindex="-1" data-focus-on="input:first">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                            <h4 class="modal-title">第一个窗体</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p> SuperUI V1.1!SuperUI V1.1! </p>
+                                            <p>SuperUI V1.1!SuperUI V1.1! </p>
+                                            <p> SuperUI V1.1!SuperUI V1.1! </p>
+                                            <div class="form-group">
+                                                <input class="form-control" type="text" data-tabindex="1">
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="form-control" type="text" data-tabindex="2">
+                                            </div>
+                                            <button class="btn blue" data-toggle="modal" href="#stack2">加载模态窗体</button>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" data-dismiss="modal" class="btn btn-outline dark">关闭</button>
+                                            <button type="button" class="btn green">确定</button>
+                                        </div>
+                                    </div>
+                                    <div id="stack2" class="modal fade" tabindex="-1" data-focus-on="input:first">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                            <h4 class="modal-title">第二个窗体</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p> SuperUI V1.2!SuperUI V1.2!… </p>
+                                            <p> SuperUI V1.2!SuperUI V1.2!… </p>
+                                            <div class="form-group">
+                                                <input class="form-control" type="text" data-tabindex="1">
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="form-control" type="text" data-tabindex="2">
+                                            </div>
+                                            <button class="btn blue" data-toggle="modal" href="#stack3">加载模态窗体</button>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" data-dismiss="modal" class="btn btn-outline dark">关闭</button>
+                                            <button type="button" class="btn red">确定</button>
+                                        </div>
+                                    </div>
+                                    <div id="stack3" class="modal fade" tabindex="-1" data-focus-on="input:first">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                            <h4 class="modal-title">第三个窗体</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>SuperUI V1.3!SuperUI V1.3!SuperUI V1.3!</p>
+                                            <input class="form-control" type="text" data-tabindex="1">
+                                            <input class="form-control" type="text" data-tabindex="2">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" data-dismiss="modal" class="btn btn-outline dark">关闭</button>
+                                            <button type="button" class="btn green">确定</button>
+                                        </div>
+                                    </div>
+                                    <!-- ajax -->
+                                    <div id="ajax-modal" class="modal fade" tabindex="-1"> </div>
+                                    <!-- static -->
+                                    <div id="static" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false">
+                                        <div class="modal-body">
+                                            <p> 你想继续么？ </p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" data-dismiss="modal" class="btn btn-outline dark">取消</button>
+                                            <button type="button" data-dismiss="modal" class="btn green">继续</button>
+                                        </div>
+                                    </div>
+                                    <div id="static2" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false" data-attention-animation="false">
+                                        <div class="modal-body">
+                                            <p>你真的想继续点么？ </p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" data-dismiss="modal" class="btn btn-outline dark">取消</button>
+                                            <button type="button" data-dismiss="modal" class="btn green">继续</button>
+                                        </div>
+                                    </div>
+                                    <!-- full width -->
+                                    <div id="full-width" class="modal container fade" tabindex="-1">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                            <h4 class="modal-title">最大宽度窗体</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p> 这个模态窗体自动调整宽度到最大！ </p>
+                                            <p>
+                                                SuperUI V1.2!SuperUI V1.2!SuperUI V1.2!SuperUI V1.2!SuperUI V1.2!SuperUI V1.2!SuperUI V1.2!SuperUI V1.2!SuperUI V1.2!SuperUI V1.2!SuperUI V1.2!SuperUI V1.2!SuperUI V1.2!SuperUI V1.2!SuperUI V1.2!SuperUI V1.2!SuperUI
+                                                V1.2!SuperUI V1.2!
+                                            </p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" data-dismiss="modal" class="btn btn-outline dark">关闭</button>
+                                            <button type="button" class="btn green">保存</button>
+                                        </div>
+                                    </div>
+                                    <!-- long modals -->
+                                    <div id="long" class="modal fade modal-scroll" tabindex="-1" data-replace="true">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                            <h4 class="modal-title">最大长度窗体</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <img style="height: 800px" src="http://i.imgur.com/KwPYo.jpg">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" data-dismiss="modal" class="btn btn-outline dark">关闭</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END PORTLET-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- END FOOTER -->
+            <!--[if lt IE 9]>
+        <script src="../content/superui/base/base-core/excanvas.min.js"></script>
+        <script src="../content/superui/base/base-core/respond.min.js"></script>
+        <![endif]-->
+            <!-- 全局公共类库Begin -->
+            <script src="../content/superui/min/js/superui.common.min.js"></script>
+            <script src="../content/superui/base/bootstrap-modal/js/bootstrap-modal.js"></script>
+            <script src="../content/superui/base/bootstrap-modal/js/bootstrap-modalmanager.js"></script>
+        </body>
+
+<script>
+    $(function() {
+        // general settings
+        $.fn.modal.defaults.spinner = $.fn.modalmanager.defaults.spinner =
+            '<div class="loading-spinner" style="width: 200px; margin-left: -100px;">' +
+            '<div class="progress progress-striped active">' +
+            '<div class="progress-bar" style="width: 100%;"></div>' +
+            '</div>' +
+            '</div>';
+
+        $.fn.modalmanager.defaults.resize = true;
+
+        //dynamic demo:
+        $('.dynamic .demo').click(function() {
+            var tmpl = [
+                // tabindex is required for focus
+                '<div class="modal hide fade" tabindex="-1">',
+                '<div class="modal-header">',
+                '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>',
+                '<h4 class="modal-title">Modal header</h4>',
+                '</div>',
+                '<div class="modal-body">',
+                '<p>Test</p>',
+                '</div>',
+                '<div class="modal-footer">',
+                '<a href="#" data-dismiss="modal" class="btn btn-default">Close</a>',
+                '<a href="#" class="btn btn-primary">Save changes</a>',
+                '</div>',
+                '</div>'
+            ].join('');
+
+            $(tmpl).modal();
+        });
+
+        //ajax demo:
+        var $modal = $('#ajax-modal');
+
+        $('#ajax-demo').on('click', function() {
+            // create the backdrop and wait for next modal to be triggered
+            $('body').modalmanager('loading');
+            var el = $(this);
+
+            setTimeout(function() {
+                $modal.load(el.attr('data-url'), '', function() {
+                    $modal.modal();
+                });
+            }, 1000);
+        });
+
+        $modal.on('click', '.update', function() {
+            $modal.modal('loading');
+            setTimeout(function() {
+                $modal
+                    .modal('loading')
+                    .find('.modal-body')
+                    .prepend('<div class="alert alert-info fade in">' +
+                        'Updated!<button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                        '</div>');
+            }, 1000);
+        });
+    });
+</script>
+</html>

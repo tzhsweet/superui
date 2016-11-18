@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>SuperMgr前端框架</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!--全局通用框架样式 begin-->
+    <!-- 全局基本样式 -->
+    <link href="../content/superui/min/css/superui.common.min.css" rel="stylesheet" />
+    <!-- 全局主题样式 -->
+    <link href="../content/superui/global/css/components.min.css" id="style_components" rel="stylesheet" />
+    <link href="../content/superui/pages/layouts/css/themes/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color"/>
+    <link href="../content/plugins/jqgrid/jqgrid.css" rel="stylesheet" />
+    <style type="text/css">
+    </style>
+    <!--全局通用框架样式 end-->
+</head>
+<body style="background-color:white">
+    <div class="page-container">
+        <div class="page-content">
+            <h3 class="page-title">
+                jqgrid表格
+                <small>基本表格例子</small>
+            </h3>
+            <!-- END PAGE TITLE-->
+            <!-- END PAGE HEADER-->
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- BEGIN SAMPLE TABLE PORTLET-->
+                    <div class="portlet light bordered">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="icon-social-dribbble font-green"></i>
+                                <span class="caption-subject font-green bold uppercase">简单表格</span>
+                            </div>
+                            <div class="actions">
+                                <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                    <i class="icon-cloud-upload"></i>
+                                </a>
+                                <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                    <i class="icon-wrench"></i>
+                                </a>
+                                <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                    <i class="icon-trash"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+
+                            <div class="gridPanel">
+                                <table id="gridTable"></table>
+                                <div id="gridPager"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- END SAMPLE TABLE PORTLET-->
+               
+
+            </div>
+
+        </div>
+    </div>
+    <!-- END CONTENT BODY -->
+    <!--[if lt IE 9]>
+    <script src="../content/superui/base/base-core/excanvas.min.js"></script>
+    <script src="../content/superui/base/base-core/respond.min.js"></script>
+    <![endif]-->
+    <!-- 全局公共类库Begin -->
+<script src="../content/superui/min/js/superui.common.min.js"></script>
+
+    <script src="../content/plugins/jqgrid/grid.locale-cn.js"></script>
+    <script src="../content/plugins/jqgrid/jqgrid.min.js"></script>
+</body>
+<script>
+    $(function () {
+        InitialPage();
+        GetGrid();
+    });
+    //初始化页面
+    function InitialPage() {
+        //resize重设(表格、树形)宽高
+        $(window).resize(function (e) {
+            window.setTimeout(function () {
+                $('#gridTable').setGridWidth(($('.gridPanel').width()));
+                var height = App.getViewPort().height - $('.page-footer').outerHeight() - $('.page-header').outerHeight();
+                $("#gridTable").setGridHeight($(window).height() - height);
+
+            }, 200);
+            e.stopPropagation();
+        });
+    }
+
+    //加载表格
+    function GetGrid() {
+        var selectedRowIndex = 0;
+        var $gridTable = $('#gridTable');
+        $gridTable.jqGrid({
+            url: "json/jqgriddata.json",
+            datatype: "json",
+            height: App.getViewPort().height - $('.page-footer').outerHeight() - $('.page-header').outerHeight(),
+            colModel: [
+                { label: '主键', name: 'F_UserId', hidden: true },
+                { label: '账户', name: 'F_Account', index: 'F_Account', width: 100, align: 'left' },
+                { label: '姓名', name: 'F_RealName', index: 'F_RealName', width: 100, align: 'left' },
+                {
+                    label: '性别',
+                    name: 'F_Gender',
+                    index: 'F_Gender',
+                    width: 45,
+                    align: 'center',
+                    formatter: function (cellvalue, options, rowObject) {
+                        return cellvalue == 1 ? "男" : "女";
+                    }
+                },
+                { label: '手机', name: 'F_Mobile', index: 'F_Mobile', width: 100, align: 'center' },
+                {
+                    label: '公司',
+                    name: 'F_OrganizeId',
+                    index: 'F_OrganizeId',
+                    width: 200,
+                    align: 'left',
+                    formatter: function (cellvalue, options, rowObject) {
+                        return "母公司";
+                    }
+                },
+                {
+                    label: '部门',
+                    name: 'F_DepartmentId',
+                    index: 'F_DepartmentId',
+                    width: 100,
+                    align: 'left',
+                    formatter: function (cellvalue, options, rowObject) {
+                        return "开发部";
+                    }
+                },
+                { label: '岗位', name: 'F_DutyName', index: 'F_DutyName', width: 100, align: 'left' },
+                { label: '职位', name: 'F_PostName', index: 'F_PostName', width: 100, align: 'left' },
+                {
+                    label: '角色',
+                    name: 'F_RoleId',
+                    index: 'F_RoleId',
+                    width: 100,
+                    align: 'left',
+                    formatter: function (cellvalue, options, rowObject) {
+                        return "管理员";
+                    }
+                },
+                { label: '主管', name: 'F_Manager', index: 'F_Manager', width: 100, align: 'left' },
+                {
+                    label: "状态",
+                    name: "F_EnabledMark",
+                    index: "F_EnabledMark",
+                    width: 50,
+                    align: "center",
+                    formatter: function (cellvalue, options, rowObject) {
+                        if (cellvalue == 1) {
+                            return '<span onclick=\"btn_disabled(\'' + rowObject.UserId + '\')\" class=\"label label-success\" style=\"cursor: pointer;\">正常</span>';
+                        } else if (cellvalue == 0) {
+                            return '<span onclick=\"btn_enabled(\'' + rowObject.UserId + '\')\" class=\"label label-warning\" style=\"cursor: pointer;\">禁用</span>';
+                        }
+                    }
+                },
+                { label: "备注", name: "F_Description", index: "F_Description", width: 200, align: "left" }
+            ],
+            viewrecords: true,
+            rowNum: 20,
+            rowList: [30, 50, 100],
+            pager: "#gridPager",
+            sortname: 'F_OrganizeId asc,F_CreateDate desc',
+            rownumbers: true,
+            autowidth: true,
+            shrinkToFit: false,
+            gridview: true,
+            onSelectRow: function () {
+                selectedRowIndex = $("#" + this.id).getGridParam('selrow');
+            },
+            gridComplete: function () {
+                $("#" + this.id).setSelection(selectedRowIndex, false);
+            }
+        });
+
+      
+    }
+
+</script>
+</html>

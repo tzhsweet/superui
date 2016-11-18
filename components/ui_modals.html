@@ -1,0 +1,404 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+    <!--<![endif]-->
+    <!-- BEGIN HEAD -->
+
+    <head>
+        <meta charset="utf-8" />
+        <title>SuperMgr前端框架</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <!--全局通用框架样式 begin-->
+        <!-- 全局基本样式 -->
+        <link href="../content/superui/min/css/superui.common.min.css" rel="stylesheet" />
+        <!-- 全局主题样式 -->
+        <link href="../content/superui/global/css/components.min.css" id="style_components" rel="stylesheet" />
+        <link href="../content/superui/pages/layouts/css/themes/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
+        <!--全局通用框架样式 end-->
+    </head>
+
+    <body>
+        <div class="page-container">
+            <div class="page-content">
+                <h3 class="page-title"> 模态窗体
+                    <small> bootstrap modals模态窗体</small>
+                </h3>
+                <!-- END PAGE TITLE-->
+                <!-- END PAGE HEADER-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="note note-success">
+                            <h4 class="block">Bootstrap默认模态窗体效果</h4>
+                            <p> bootstrap默认模态窗体请点击这里查看！
+                                <a class="btn btn-outline red" href="ui_extended_modals.html"> 额外的模态窗体插件</a>
+                            </p>
+                        </div>
+                        <!-- BEGIN PORTLET-->
+                        <div class="portlet light bordered">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="icon-bubble font-green-sharp"></i>
+                                    <span class="caption-subject font-green-sharp sbold">Bootstrap Modal Demos</span>
+                                </div>
+                                <div class="actions">
+                                    <div class="btn-group">
+                                        <a class="btn green-haze btn-outline btn-circle btn-sm" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true"> 动作
+                                            <i class="fa fa-angle-down"></i>
+                                        </a>
+                                        <ul class="dropdown-menu pull-right">
+                                            <li>
+                                                <a href="javascript:;"> 动作 1</a>
+                                            </li>
+                                            <li class="divider"> </li>
+                                            <li>
+                                                <a href="javascript:;">动作 2</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">动作 3</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">动作 4</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <table class="table table-hover table-striped table-bordered">
+                                    <tr>
+                                        <td> 基本示例 </td>
+                                        <td>
+                                            <a class="btn red btn-outline sbold" data-toggle="modal" href="#basic"> 查看demo </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>可拖拽模态窗体 </td>
+                                        <td>
+                                            <a class="btn green btn-outline sbold" data-toggle="modal" href="#draggable"> 查看demo </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 大型模态窗体 </td>
+                                        <td>
+                                            <a class="btn purple btn-outline sbold" data-toggle="modal" href="#large"> 查看demo </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>小型模态窗体 </td>
+                                        <td>
+                                            <a class="btn blue btn-outline sbold" data-toggle="modal" href="#small"> 查看demo </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 最大尺寸模态窗体 </td>
+                                        <td>
+                                            <a class="btn dark btn-outline sbold" data-toggle="modal" href="#full"> 查看demo </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 响应式模态窗体 </td>
+                                        <td>
+                                            <a class="btn red btn-outline sbold" data-toggle="modal" href="#responsive"> 查看demo </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td> Ajax加载的模态窗体 </td>
+                                        <td>
+                                            <a class=" btn yellow btn-outline sbold" href="ui_modals_ajax_sample.html" data-target="#ajax" data-toggle="modal"> 查看demo </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 多个模态窗体（堆叠） </td>
+                                        <td>
+                                            <a class=" btn green btn-outline sbold" data-target="#stack1" data-toggle="modal"> 查看demo </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 静态背景 </td>
+                                        <td>
+                                            <a class=" btn purple btn-outline sbold" data-toggle="modal" href="#static"> 查看demo </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 很长的模态窗体 </td>
+                                        <td>
+                                            <a class=" btn dark btn-outline sbold" data-toggle="modal" href="#long"> 查看demo </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <div class="modal fade" id="basic" tabindex="-1" role="basic" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                                <h4 class="modal-title">模态窗体标题</h4>
+                                            </div>
+                                            <div class="modal-body"> 模态窗体内容 </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn dark btn-outline" data-dismiss="modal">关闭</button>
+                                                <button type="button" class="btn green">保存</button>
+                                            </div>
+                                        </div>
+                                        <!-- /.modal-content -->
+                                    </div>
+                                    <!-- /.modal-dialog -->
+                                </div>
+                                <!-- /.modal -->
+                                <div class="modal fade" id="full" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-full">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                                <h4 class="modal-title">模态窗体标题</h4>
+                                            </div>
+                                            <div class="modal-body"> 模态窗体内容 </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn dark btn-outline" data-dismiss="modal">关闭</button>
+                                                <button type="button" class="btn green">保存</button>
+                                            </div>
+                                        </div>
+                                        <!-- /.modal-content -->
+                                    </div>
+                                    <!-- /.modal-dialog -->
+                                </div>
+                                <!-- /.modal -->
+                                <div class="modal fade bs-modal-lg" id="large" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                                <h4 class="modal-title">模态窗体标题</h4>
+                                            </div>
+                                            <div class="modal-body"> 模态窗体内容 </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn dark btn-outline" data-dismiss="modal">关闭</button>
+                                                <button type="button" class="btn green">保存</button>
+                                            </div>
+                                        </div>
+                                        <!-- /.modal-content -->
+                                    </div>
+                                    <!-- /.modal-dialog -->
+                                </div>
+                                <!-- /.modal -->
+                                <div class="modal fade bs-modal-sm" id="small" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                                <h4 class="modal-title">模态窗体标题</h4>
+                                            </div>
+                                            <div class="modal-body"> 模态窗体内容 </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn dark btn-outline" data-dismiss="modal">关闭</button>
+                                                <button type="button" class="btn green">保存</button>
+                                            </div>
+                                        </div>
+                                        <!-- /.modal-content -->
+                                    </div>
+                                    <!-- /.modal-dialog -->
+                                </div>
+                                <!-- /.modal -->
+                                <div id="responsive" class="modal fade" tabindex="-1" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                                <h4 class="modal-title">响应式&可滚动模态窗体</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="scroller" style="height:300px" data-always-visible="1" data-rail-visible1="1">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <h4>SuperUI框架</h4>
+                                                            <p>
+                                                                <input type="text" class="col-md-12 form-control"> </p>
+                                                            <p>
+                                                                <input type="text" class="col-md-12 form-control"> </p>
+                                                            <p>
+                                                                <input type="text" class="col-md-12 form-control"> </p>
+                                                            <p>
+                                                                <input type="text" class="col-md-12 form-control"> </p>
+                                                            <p>
+                                                                <input type="text" class="col-md-12 form-control"> </p>
+                                                            <p>
+                                                                <input type="text" class="col-md-12 form-control"> </p>
+                                                            <p>
+                                                                <input type="text" class="col-md-12 form-control"> </p>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <h4>SuperUI框架SuperUI框架</h4>
+                                                            <p>
+                                                                <input type="text" class="col-md-12 form-control"> </p>
+                                                            <p>
+                                                                <input type="text" class="col-md-12 form-control"> </p>
+                                                            <p>
+                                                                <input type="text" class="col-md-12 form-control"> </p>
+                                                            <p>
+                                                                <input type="text" class="col-md-12 form-control"> </p>
+                                                            <p>
+                                                                <input type="text" class="col-md-12 form-control"> </p>
+                                                            <p>
+                                                                <input type="text" class="col-md-12 form-control"> </p>
+                                                            <p>
+                                                                <input type="text" class="col-md-12 form-control"> </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" data-dismiss="modal" class="btn dark btn-outline">关闭</button>
+                                                <button type="button" class="btn green">保存</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--DOC: Aplly "modal-cached" class after "modal" class to enable ajax content caching-->
+                                <div class="modal fade" id="ajax" role="basic" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <img src="../assets/global/img/loading-spinner-grey.gif" alt="" class="loading">
+                                                <span> &nbsp;&nbsp;加载中... </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.modal -->
+                                <div id="stack1" class="modal fade" tabindex="-1" data-width="400">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                                <h4 class="modal-title">第一个模态窗体</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <h4>SuperUI框架11</h4>
+                                                        <p>
+                                                            <input type="text" class="col-md-12 form-control"> </p>
+                                                        <p>
+                                                            <input type="text" class="col-md-12 form-control"> </p>
+                                                        <p>
+                                                            <input type="text" class="col-md-12 form-control"> </p>
+                                                        <p>
+                                                            <input type="text" class="col-md-12 form-control"> </p>
+                                                    </div>
+                                                </div>
+                                                <a class="btn green" data-toggle="modal" href="#stack2"> 加载模态窗体</a>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" data-dismiss="modal" class="btn dark btn-outline">关闭</button>
+                                                <button type="button" class="btn red">Ok</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="stack2" class="modal fade" tabindex="-1">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                                <h4 class="modal-title">第二个模态窗体</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <h4>SuperUI框架22</h4>
+                                                        <p>
+                                                            <input type="text" class="col-md-12 form-control"> </p>
+                                                        <p>
+                                                            <input type="text" class="col-md-12 form-control"> </p>
+                                                        <p>
+                                                            <input type="text" class="col-md-12 form-control"> </p>
+                                                        <p>
+                                                            <input type="text" class="col-md-12 form-control"> </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" data-dismiss="modal" class="btn dark btn-outline">关闭</button>
+                                                <button type="button" class="btn yellow">确定</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="static" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                                <h4 class="modal-title">确认</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p> 服务器已超负荷，你确认要继续么？ </p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" data-dismiss="modal" class="btn dark btn-outline">取消</button>
+                                                <button type="button" data-dismiss="modal" class="btn green">继续</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="long" class="modal fade modal-scroll" tabindex="-1" data-replace="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                                <h4 class="modal-title">一个很长的模态窗体</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <img style="height: 800px" alt="" src="http://i.imgur.com/KwPYo.jpg"> </div>
+                                            <div class="modal-footer">
+                                                <button type="button" data-dismiss="modal" class="btn dark btn-outline">关闭</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal fade draggable-modal" id="draggable" tabindex="-1" role="basic" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                                <h4 class="modal-title">拖拽的模态窗体</h4>
+                                            </div>
+                                            <div class="modal-body"> 模态窗体内容 </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn dark btn-outline" data-dismiss="modal">关闭</button>
+                                                <button type="button" class="btn green">保存</button>
+                                            </div>
+                                        </div>
+                                        <!-- /.modal-content -->
+                                    </div>
+                                    <!-- /.modal-dialog -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END PORTLET-->
+                    </div>
+                </div>
+            </div>
+            <!-- END CONTENT BODY -->
+        </div>
+        <!--[if lt IE 9]>
+    <script src="../content/superui/base/base-core/excanvas.min.js"></script>
+    <script src="../content/superui/base/base-core/respond.min.js"></script>
+    <![endif]-->
+        <!-- 全局公共类库Begin -->
+    <script src="../content/superui/min/js/superui.common.min.js"></script>
+        <script src="../content/plugins/bootstrap-confirmation/bootstrap-confirmation.js"></script>
+      
+    </body>
+<script>
+    $(function() {
+        $("#draggable").draggable({
+            handle: ".modal-header"
+        });
+    });
+</script>
+</html>

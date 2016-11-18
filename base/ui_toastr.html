@@ -1,0 +1,282 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+    <!--<![endif]-->
+    <!-- BEGIN HEAD -->
+
+    <head>
+        <meta charset="utf-8" />
+        <title>SuperMgr前端框架</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+ 
+        <!--全局通用框架样式 begin-->
+        <!-- 全局基本样式 -->
+        <link href="../content/superui/min/css/superui.common.min.css" rel="stylesheet" />
+        <!-- 全局主题样式 -->
+        <link href="../content/superui/global/css/components.min.css" id="style_components" rel="stylesheet" />
+        <link href="../content/superui/pages/layouts/css/themes/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
+    <!--全局通用框架样式 end-->
+        </head>
+    <body>
+        <div class="page-container">
+            <div class="page-content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="portlet light bordered">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="icon-bubble font-green-sharp"></i>
+                                    <span class="caption-subject font-green-sharp sbold">Toastr提醒效果Demo</span>
+                                </div>
+                                <div class="actions">
+                                    <div class="btn-group">
+                                        <a class="btn green-haze btn-outline btn-circle btn-sm" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true"> 动作
+                                            <i class="fa fa-angle-down"></i>
+                                        </a>
+                                        <ul class="dropdown-menu pull-right">
+                                            <li>
+                                                <a href="javascript:;"> 动作 1</a>
+                                            </li>
+                                            <li class="divider"> </li>
+                                            <li>
+                                                <a href="javascript:;">动作 2</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">动作 3</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">动作 4</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="control-label" for="title">标题</label>
+                                            <input id="title" type="text" class="form-control" value="Toastr提醒" placeholder="请输入标题 ..." /> </div>
+                                        <div class="form-group">
+                                            <label class="control-label" for="message">消息</label>
+                                            <textarea class="form-control" id="message" rows="3" placeholder="请输入标题 ...">非阻塞式消息提醒</textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="checkbox-list">
+                                                <label for="closeButton">
+                                                    <input id="closeButton" type="checkbox" value="checked" checked class="input-small" />关闭按钮</label>
+                                                <label for="addBehaviorOnToastClick">
+                                                    <input id="addBehaviorOnToastClick" type="checkbox" value="checked" class="input-small" />添加一个按钮事件</label>
+                                                <label for="debugInfo">
+                                                    <input id="debugInfo" type="checkbox" value="checked" class="input-small" />调试 </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group" id="toastTypeGroup">
+                                            <label>Toast呈现类型</label>
+                                            <div class="radio-list">
+                                                <label>
+                                                    <input type="radio" name="toasts" value="success" checked/>Success </label>
+                                                <label>
+                                                    <input type="radio" name="toasts" value="info" />Info </label>
+                                                <label>
+                                                    <input type="radio" name="toasts" value="warning" />Warning </label>
+                                                <label>
+                                                    <input type="radio" name="toasts" value="error" />Error </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" id="positionGroup">
+                                            <label>位置</label>
+                                            <div class="radio-list">
+                                                <label>
+                                                    <input type="radio" name="positions" value="toast-top-right" checked/>Top Right </label>
+                                                <label>
+                                                    <input type="radio" name="positions" value="toast-bottom-right" />Bottom Right </label>
+                                                <label>
+                                                    <input type="radio" name="positions" value="toast-bottom-left" />Bottom Left </label>
+                                                <label>
+                                                    <input type="radio" name="positions" value="toast-top-left" />Top Left </label>
+                                                <label>
+                                                    <input type="radio" name="positions" value="toast-top-center" />Top Center </label>
+                                                <label>
+                                                    <input type="radio" name="positions" value="toast-bottom-center" />Bottom Center </label>
+                                                <label>
+                                                    <input type="radio" name="positions" value="toast-top-full-width" />Top Full Width </label>
+                                                <label>
+                                                    <input type="radio" name="positions" value="toast-bottom-full-width" />Bottom Full Width </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="controls">
+                                                <label class="control-label" for="showEasing">Show Easing</label>
+                                                <input id="showEasing" type="text" placeholder="swing, linear" class="form-control input-small" value="swing" />
+                                                <label class="control-label" for="hideEasing">Hide Easing</label>
+                                                <input id="hideEasing" type="text" placeholder="swing, linear" class="form-control input-small" value="linear" />
+                                                <label class="control-label" for="showMethod">Show Method</label>
+                                                <input id="showMethod" type="text" placeholder="show, fadeIn, slideDown" class="form-control input-small" value="fadeIn" />
+                                                <label class="control-label" for="hideMethod">Hide Method</label>
+                                                <input id="hideMethod" type="text" placeholder="hide, fadeOut, slideUp" class="form-control input-small" value="fadeOut" /> </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="controls">
+                                                <label class="control-label" for="showDuration">显示持续时间</label>
+                                                <input id="showDuration" type="text" placeholder="ms" class="form-control input-small" value="1000" />
+                                                <label class="control-label" for="hideDuration">隐藏持续时间</label>
+                                                <input id="hideDuration" type="text" placeholder="ms" class="form-control input-small" value="1000" />
+                                                <label class="control-label" for="timeOut">超时</label>
+                                                <input id="timeOut" type="text" placeholder="ms" class="form-control input-small" value="5000" />
+                                                <label class="control-label" for="timeOut">延长时间</label>
+                                                <input id="extendedTimeOut" type="text" placeholder="ms" class="form-control input-small" value="1000" /> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <button type="button" class="btn green" id="showtoast">显示Toast提醒</button>
+                                        <button type="button" class="btn btn-outline dark" id="cleartoasts">清除Toasts提醒</button>
+                                        <button type="button" class="btn btn-outline dark" id="clearlasttoast">清除上次提醒效果</button>
+                                    </div>
+                                </div>
+                                <div class="row margin-top-30">
+                                    <div class="col-md-12"> <pre id='toastrOptions' class="well">设置...
+						</pre> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END CONTENT BODY -->
+        </div>
+        <!--[if lt IE 9]>
+    <script src="../content/superui/base/base-core/excanvas.min.js"></script>
+    <script src="../content/superui/base/base-core/respond.min.js"></script>
+    <![endif]-->
+        <!-- 全局公共类库Begin -->
+        <script src="../content/superui/min/js/superui.common.min.js"></script>
+
+
+    </body>
+<script>
+    $(function() {
+
+        var i = -1,
+            toastCount = 0,
+            $toastlast,
+            getMessage = function() {
+                var msgs = [
+                    '美女，看这里',
+                    '<div><input class="form-control input-small" value="textbox"/>&nbsp;<a href="http://www.supermgr.cn" target="_blank">打开我</a></div><div><button type="button" id="okBtn" class="btn blue">关闭</button><button type="button" id="surpriseBtn" class="btn default" style="margin: 0 8px 0 8px">惦记我</button></div>',
+                    '哈哈哈，你被骗了！ :)',
+                    'tzhsweet',
+                    'SuperUI发布啦！',
+                    'OK！!'
+                ];
+                i++;
+                if (i === msgs.length) {
+                    i = 0;
+                }
+
+                return msgs[i];
+            };
+
+        $('#showtoast').click(function() {
+            var shortCutFunction = $("#toastTypeGroup input:checked").val();
+            var msg = $('#message').val();
+            var title = $('#title').val() || '';
+            var $showDuration = $('#showDuration');
+            var $hideDuration = $('#hideDuration');
+            var $timeOut = $('#timeOut');
+            var $extendedTimeOut = $('#extendedTimeOut');
+            var $showEasing = $('#showEasing');
+            var $hideEasing = $('#hideEasing');
+            var $showMethod = $('#showMethod');
+            var $hideMethod = $('#hideMethod');
+            var toastIndex = toastCount++;
+
+            toastr.options = {
+                closeButton: $('#closeButton').prop('checked'),
+                debug: $('#debugInfo').prop('checked'),
+                positionClass: $('#positionGroup input:checked').val() || 'toast-top-right',
+                onclick: null
+            };
+
+            if ($('#addBehaviorOnToastClick').prop('checked')) {
+                toastr.options.onclick = function() {
+                    alert('点我有惊喜！');
+                };
+            }
+
+            if ($showDuration.val().length) {
+                toastr.options.showDuration = $showDuration.val();
+            }
+
+            if ($hideDuration.val().length) {
+                toastr.options.hideDuration = $hideDuration.val();
+            }
+
+            if ($timeOut.val().length) {
+                toastr.options.timeOut = $timeOut.val();
+            }
+
+            if ($extendedTimeOut.val().length) {
+                toastr.options.extendedTimeOut = $extendedTimeOut.val();
+            }
+
+            if ($showEasing.val().length) {
+                toastr.options.showEasing = $showEasing.val();
+            }
+
+            if ($hideEasing.val().length) {
+                toastr.options.hideEasing = $hideEasing.val();
+            }
+
+            if ($showMethod.val().length) {
+                toastr.options.showMethod = $showMethod.val();
+            }
+
+            if ($hideMethod.val().length) {
+                toastr.options.hideMethod = $hideMethod.val();
+            }
+
+            if (!msg) {
+                msg = getMessage();
+            }
+
+            $("#toastrOptions").text("Command: toastr[" + shortCutFunction + "](\"" + msg + (title ? "\", \"" + title : '') + "\")\n\ntoastr.options = " + JSON.stringify(toastr.options, null, 2));
+
+            var $toast = toastr[shortCutFunction](msg, title); // Wire up an event handler to a button in the toast, if it exists
+            $toastlast = $toast;
+            if ($toast.find('#okBtn').length) {
+                $toast.delegate('#okBtn', 'click', function() {
+                    alert('点我啦 #' + toastIndex + '.');
+                    $toast.remove();
+                });
+            }
+            if ($toast.find('#surpriseBtn').length) {
+                $toast.delegate('#surpriseBtn', 'click', function() {
+                    alert('点我 #' + toastIndex + '');
+                });
+            }
+
+            $('#clearlasttoast').click(function() {
+                toastr.clear($toastlast);
+            });
+        });
+        $('#cleartoasts').click(function() {
+            toastr.clear();
+        });
+
+    });
+</script>
+</html>

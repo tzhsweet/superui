@@ -1,0 +1,321 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>SuperMgr前端框架</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+    <!--全局通用框架样式 begin-->
+    <!-- 全局基本样式 -->
+    <link href="../content/superui/min/css/superui.common.min.css" rel="stylesheet" />
+    <!-- 全局主题样式 -->
+    <link href="../content/superui/global/css/components.min.css" id="style_components" rel="stylesheet" />
+    <link href="../content/superui/pages/layouts/css/themes/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
+
+    <script src="../content/superui/min/js/superui.common.min.js"></script>
+    <link href="../content/plugins/jqgrid/jqgrid.css" rel="stylesheet"/>
+
+    <link href="../content/plugins/wdtree/tree.css" rel="stylesheet" />
+    <script src="../content/plugins/wdtree/tree.js"></script>
+    <link href="../content/supermgr/css/common.css" rel="stylesheet" />
+    <script src="../content/supermgr/js/common.js"></script>
+
+    <link href="../content/plugins/dialog/dialog.css" rel="stylesheet" />
+    <script src="../content/plugins/jqgrid/grid.locale-cn.js"></script>
+    <script src="../content/plugins/jqgrid/jqgrid.min.js"></script>
+    <script src="../content/plugins/dialog/dialog.js"></script>
+    <!--全局通用框架样式 end-->
+</head>
+<body>
+    <div class="page-container">
+        <div class="page-content">
+
+
+     
+
+
+            <div class="ui-layout row" id="layout" style="height: 100%; width: 100%;">
+                <div class="ui-layout-west col-xs-2">
+                    <div class="west-Panel">
+                        <div class="panel-Title">字典分类</div>
+                        <div id="itemTree"></div>
+                    </div>
+                </div>
+                <div class="ui-layout-center col-xs-9">
+                    <div class="center-Panel">
+                        <div class="panel-Title">
+                            字典数据 - <span id="titleinfo">未选择分类</span>
+                        </div>
+                        <div class="titlePanel">
+                            <div class="title-search">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div id="queryCondition" class="btn-group">
+                                                <a class="btn btn-default dropdown-text" data-toggle="dropdown">选择条件</a>
+                                                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a data-value="ItemName">项目名</a></li>
+                                                    <li><a data-value="ItemValue">项目值</a></li>
+                                                    <li><a data-value="SimpleSpelling">拼音</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        <td style="padding-left: 2px;">
+                                            <input id="txt_Keyword" type="text" class="form-control" placeholder="请输入要查询关键字" style="width: 200px;" />
+                                        </td>
+                                        <td style="padding-left: 5px;">
+                                            <a id="btn_Search" class="btn btn-primary"><i class="fa fa-search"></i>&nbsp;查询</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="toolbar">
+                                <div class="btn-group">
+                                    <a id="lr-replace" class="btn btn-default" onclick="reload();"><i class="fa fa-refresh"></i>&nbsp;刷新</a>
+                                    <a id="lr-add" class="btn btn-default" onclick="btn_add()"><i class="fa fa-plus"></i>&nbsp;新增</a>
+                                    <a id="lr-edit" class="btn btn-default" onclick="btn_edit()"><i class="fa fa-pencil-square-o"></i>&nbsp;编辑</a>
+                                    <a id="lr-delete" class="btn btn-default" onclick="btn_delete()"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+                                    <a id="lr-detail" class="btn btn-default" onclick="btn_detail()"><i class="fa fa-list-alt"></i>&nbsp;详细</a>
+                                </div>
+                                <div class="btn-group">
+                                    <a id="lr-datacategory" class="btn btn-default" onclick="btn_datacategory()"><i class="fa fa-tags"></i>&nbsp;字典分类</a>
+                                </div>
+                                <script>$('.toolbar').authorizeButton()</script>
+                            </div>
+                        </div>
+                        <div class="gridPanel">
+                            <table id="gridTable"></table>
+                        </div>
+                    </div>
+
+                </div>
+       
+           </div>
+        </div>
+
+    </div>
+</body>
+<!--[if lt IE 9]>
+    <script src="../content/superui/base/base-core/excanvas.min.js"></script>
+    <script src="../content/superui/base/base-core/respond.min.js"></script>
+<![endif]-->
+<!-- 全局公共类库Begin -->
+
+</html>
+
+<script>
+            $(function() {
+                InitialPage();
+                GetTree();
+                GetGrid();
+            });
+
+//初始化页面
+            function InitialPage() {
+                //layout布局
+                //$('#layout').layout({
+                //    applyDemoStyles: true,
+                //    onresize: function () {
+                //        $(window).resize();
+                //    }
+                //});
+
+                //resize重设(表格、树形)宽高
+                $(window).resize(function(e) {
+                    window.setTimeout(function() {
+                        $('#gridTable').setGridWidth(($('.gridPanel').width()));
+                        $("#gridTable").setGridHeight($(window).height() - 141);
+                        $("#itemTree").setTreeHeight($(window).height() - 52);
+                    }, 100);
+                    e.stopPropagation();
+                });
+            }
+
+//加载树
+            var _itemId = "";
+            var _itemName = "";
+            var _isTree = "";
+
+            function GetTree() {
+                var item = {
+                    height: $(window).height() - 52,
+                    url: "../content/supermgr/json/dictdata.json",
+                    onnodeclick: function(item) {
+                        _itemId = item.id;
+                        _itemName = item.text;
+                        _isTree = item.isTree;
+                        $("#titleinfo").html(_itemName + "(" + item.value + ")");
+                        $("#txt_Keyword").val("");
+                        $('#btn_Search').trigger("click");
+                    }
+                };
+                //初始化
+                $("#itemTree").treeview(item);
+            }
+
+//加载表格
+            function GetGrid() {
+                var selectedRowIndex = 0;
+                var $gridTable = $("#gridTable");
+                $gridTable.jqGrid({
+                    datatype: "json",
+                    height: $(window).height() - 141,
+                    autowidth: true,
+                    colModel: [
+                        { label: '主键', name: 'F_ItemDetailId', hidden: true },
+                        { label: '&nbsp;&nbsp;&nbsp;&nbsp;项目名', name: 'F_ItemName', index: 'F_ItemName', width: 200, align: 'left', sortable: false },
+                        { label: '项目值', name: 'F_ItemValue', index: 'F_ItemValue', width: 200, align: 'left', sortable: false },
+                        { label: '简拼', name: 'F_SimpleSpelling', index: 'F_SimpleSpelling', width: 150, align: 'left', sortable: false },
+                        { label: '排序', name: 'F_SortCode', index: 'F_SortCode', width: 80, align: 'center', sortable: false },
+                        {
+                            label: "默认",
+                            name: "F_IsDefault",
+                            index: "F_IsDefault",
+                            width: 50,
+                            align: "center",
+                            sortable: false,
+                            formatter: function(cellvalue) {
+                                return cellvalue == 1 ? "<i class=\"fa fa-toggle-on\"></i>" : "<i class=\"fa fa-toggle-off\"></i>";
+                            }
+                        },
+                        {
+                            label: "有效",
+                            name: "F_EnabledMark",
+                            index: "F_EnabledMark",
+                            width: 50,
+                            align: "center",
+                            sortable: false,
+                            formatter: function(cellvalue) {
+                                return cellvalue == 1 ? "<i class=\"fa fa-toggle-on\"></i>" : "<i class=\"fa fa-toggle-off\"></i>";
+                            }
+                        },
+                        { label: "备注", name: "F_Description", index: "F_Description", width: 200, align: "left", sortable: false }
+                    ],
+                    treeGrid: true,
+                    treeGridModel: "nested",
+                    ExpandColumn: "F_ItemValue",
+                    rowNum: "10000",
+                    rownumbers: true,
+                    onSelectRow: function() {
+                        selectedRowIndex = $("#" + this.id).getGridParam('selrow');
+                    },
+                    gridComplete: function() {
+                        $("#" + this.id).setSelection(selectedRowIndex, false);
+                    }
+                });
+                //查询条件
+                $("#queryCondition .dropdown-menu li").click(function() {
+                    var text = $(this).find('a').html();
+                    var value = $(this).find('a').attr('data-value');
+                    $("#queryCondition .dropdown-text").html(text).attr('data-value', value)
+                });
+                //查询事件
+                $("#btn_Search").click(function() {
+                    $gridTable.jqGrid('setGridParam', {
+                        url: "../content/supermgr/json/dicttreedata.json",
+                        postData: {
+                            itemId: _itemId,
+                            condition: $("#queryCondition").find('.dropdown-text').attr('data-value'),
+                            keyword: $("#txt_Keyword").val()
+                        },
+                    }).trigger('reloadGrid');
+                });
+                //查询回车
+                $('#txt_Keyword').bind('keypress', function(event) {
+                    if (event.keyCode == "13") {
+                        $('#btn_Search').trigger("click");
+                    }
+                });
+            }
+
+//新增
+            function btn_add() {
+                if (!_itemId) {
+                    return false;
+                }
+                var parentId = $("#gridTable").jqGridRowValue("F_ItemDetailId");
+                if (_isTree != 1) {
+                    parentId = 0;
+                }
+                $.fn.modalOpen({
+                    id: "Form",
+                    title: '添加字典',
+                    url: '/SystemManage/DataItemDetail/Form?parentId=' + parentId + "&itemId=" + _itemId,
+                    width: "500px",
+                    height: "370px",
+                    callBack: function(iframeId) {
+                        top.frames[iframeId].AcceptClick();
+                    }
+                });
+            };
+
+//编辑
+            function btn_edit() {
+                var keyValue = $("#gridTable").jqGridRowValue("F_ItemDetailId");
+                if (checkedRow(keyValue)) {
+                    $.fn.modalOpen({
+                        id: "Form",
+                        title: '编辑字典',
+                        url: '/SystemManage/DataItemDetail/Form?keyValue=' + keyValue,
+                        width: "500px",
+                        height: "370px",
+                        callBack: function(iframeId) {
+                            top.frames[iframeId].AcceptClick();
+                        }
+                    });
+                }
+            }
+
+//删除
+            function btn_delete() {
+                var keyValue = $("#gridTable").jqGridRowValue("F_ItemDetailId");
+                if (keyValue) {
+                    $.RemoveForm({
+                        url: "../../SystemManage/DataItemDetail/RemoveForm",
+                        param: { keyValue: keyValue },
+                        success: function(data) {
+                            $("#gridTable").resetSelection();
+                            $("#gridTable").trigger("reloadGrid");
+                        }
+                    })
+                } else {
+                    dialogMsg('请选择需要删除的字典！', 0);
+                }
+            }
+
+//详细
+            function btn_detail() {
+                var keyValue = $("#gridTable").jqGridRowValue("F_ItemDetailId");
+                if (checkedRow(keyValue)) {
+                    $.fn.modalOpen({
+                        id: "Detail",
+                        title: '字典信息',
+                        url: '/SystemManage/DataItemDetail/Detail?keyValue=' + keyValue,
+                        width: "500px",
+                        height: "480px",
+                        btn: null
+                    });
+                }
+            }
+
+//字典分类
+            function btn_datacategory() {
+                $.fn.modalOpen({
+                    id: "DataItemSort",
+                    title: '字典分类',
+                    url: '/SystemManage/DataItem/Index',
+                    width: "800px",
+                    height: "500px",
+                    btn: null
+                });
+            }
+</script>

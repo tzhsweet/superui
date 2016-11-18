@@ -1,0 +1,370 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+    <!--<![endif]-->
+    <!-- BEGIN HEAD -->
+
+    <head>
+        <meta charset="utf-8" />
+        <title>SuperMgr前端框架</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <!--全局通用框架样式 begin-->
+        <!-- 全局基本样式 -->
+
+        <link href="../content/superui/min/css/superui.common.min.css" rel="stylesheet" />
+        <!-- 全局主题样式 -->
+        <link href="../content/superui/global/css/components.min.css" id="style_components" rel="stylesheet" />
+        <link href="../content/superui/pages/layouts/css/themes/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
+        <!--全局通用框架样式 end-->
+    </head>
+
+    <body>
+        <div class="page-container">
+            <div class="page-content">
+                <h3 class="page-title"> Block UI
+                    <small>例子</small>
+                </h3>
+                <!-- END PAGE TITLE-->
+                <!-- END PAGE HEADER-->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="portlet light bordered" id="blockui_sample_1_portlet_body">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="icon-bubble font-green-sharp"></i>
+                                    <span class="caption-subject font-green-sharp sbold">面板加载效果</span>
+                                </div>
+                                <div class="actions">
+                                    <div class="btn-group">
+                                        <a class="btn green-haze btn-outline btn-circle btn-sm" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true"> 动作
+                                            <i class="fa fa-angle-down"></i>
+                                        </a>
+                                        <ul class="dropdown-menu pull-right">
+                                            <li>
+                                                <a href="javascript:;"> 新增</a>
+                                            </li>
+                                            <li class="divider"> </li>
+                                            <li>
+                                                <a href="javascript:;">编辑</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">删除</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">关闭</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <p> SuperUI第一版发布啦！ </p>
+                                <p>SuperUI第一版发布啦！SuperUI第一版发布啦！SuperUI第一版发布啦！SuperUI第一版发布啦！SuperUI第一版发布啦！ </p>
+                                <p>
+                                    <a href="javascript:;" class="btn btn-outline sbold blue-madison" id="blockui_sample_1_1"> 默认加载效果 </a>
+                                </p>
+                                <p>
+                                    <a href="javascript:;" class="btn btn-outline sbold red-intense" id="blockui_sample_1_2"> boxed加载效果 </a>
+                                </p>
+                                <p>
+                                    <a href="javascript:;" class="btn btn-outline sbold green-haze" id="blockui_sample_1_3"> css3动画加载效果</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="portlet light bordered">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="icon-bubble font-red-mint"></i>
+                                    <span class="caption-subject font-red-mint sbold">页面加载效果</span>
+                                </div>
+                                <div class="actions">
+                                    <div class="btn-group">
+                                        <a class="btn dark btn-outline btn-circle btn-sm" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true"> 设置
+                                            <i class="fa fa-angle-down"></i>
+                                        </a>
+                                        <ul class="dropdown-menu pull-right">
+                                            <li>
+                                                <a href="javascript:;"> 新增</a>
+                                            </li>
+                                            <li class="divider"> </li>
+                                            <li>
+                                                <a href="javascript:;">编辑</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">删除</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">关闭</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <p>
+                                    <a href="javascript:;" class="btn btn-outline sbold green" id="blockui_sample_2_1"> 默认加载效果 </a>
+                                </p>
+                                <p>
+                                    <a href="javascript:;" class="btn btn-outline sbold yellow" id="blockui_sample_2_2"> boxed加载效果 </a>
+                                </p>
+                                <p>
+                                    <a href="javascript:;" class="btn btn-outline sbold red" id="blockui_sample_2_3">无背景遮罩层效果 </a>
+                                </p>
+                                <p>
+                                    <a href="javascript:;" class="btn btn-outline sbold purple" id="blockui_sample_2_4"> css3动画加载效果 </a>
+                                </p>
+                                <p>SuperUI发布啦！！！！ SuperUI发布啦！！！！SuperUI发布啦！！！！SuperUI发布啦！！！！SuperUI发布啦！！！！</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="portlet green-sharp box">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-cogs"></i>元素加载效果</div>
+                                <div class="tools">
+                                    <a href="javascript:;" class="collapse"> </a>
+                                    <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+                                    <a href="javascript:;" class="reload"> </a>
+                                    <a href="javascript:;" class="remove"> </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <p>
+                                    <a class="btn red" data-toggle="modal" href="#basic"> 模态窗体加载 </a>
+                                </p>
+                                <div class="modal fade" id="basic" tabindex="-1" role="basic" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                                <h4 class="modal-title">模态窗体标题</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>
+                                                    <a href="javascript:;" class="btn btn-outline sbold blue" id="blockui_sample_3_1_0"> 动态加载模态窗体内容 </a>
+                                                </p>
+                                                <p>
+                                                    <a href="javascript:;" class="btn btn-outline sbold green" id="blockui_sample_3_1"> 加载</a>
+                                                    <a href="javascript:;" class="btn btn-outline sbold default" id="blockui_sample_3_1_1"> 取消加载</a>
+                                                </p>
+                                                <div id="blockui_sample_3_1_element">
+                                                    <p>SuperUI发布啦！！！！SuperUI发布啦！！！！SuperUI发布啦！！！！SuperUI发布啦！！！！ </p>
+                                                    <p> SuperUI发布啦！！！！SuperUI发布啦！！！！SuperUI发布啦！！！！SuperUI发布啦！！！！</p>
+                                                    <p> SuperUI发布啦！！！！SuperUI发布啦！！！！SuperUI发布啦！！！！ </p>
+                                                    <p>SuperUI发布啦！！！！SuperUI发布啦！！！！SuperUI发布啦！！！！SuperUI发布啦！！！！SuperUI发布啦！！！！ </p>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-outline sbold red" data-dismiss="modal">关闭</button>
+                                                <button type="button" class="btn btn-outline sbold blue">保存</button>
+                                            </div>
+                                        </div>
+                                        <!-- /.modal-content -->
+                                    </div>
+                                    <!-- /.modal-dialog -->
+                                </div>
+                                <p>
+                                    <a href="javascript:;" class="btn green" id="blockui_sample_3_2"> 加载 </a>
+                                    <a href="javascript:;" class="btn default" id="blockui_sample_3_2_1">取消加载 </a>
+                                </p>
+                                <div id="blockui_sample_3_2_element">
+                                    <p> SuperUI发布啦！！！！ </p>
+                                    <p> SuperUI发布啦！！！！ </p>
+                                    <p>SuperUI发布啦！！！！ </p>
+                                    <p>SuperUI发布啦！！！！ </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="portlet red-mint box">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-cogs"></i>用户自定义加载效果 </div>
+                                <div class="tools">
+                                    <a href="javascript:;" class="collapse"> </a>
+                                    <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+                                    <a href="javascript:;" class="reload"> </a>
+                                    <a href="javascript:;" class="remove"> </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body" id="blockui_sample_4_portlet_body">
+                                <p>
+                                    <a href="javascript:;" class="btn blue btn-outline sbold " id="blockui_sample_4_1"> 用户自定义加载（文字自定义）</a>
+                                </p>
+                                <p>
+                                    <a href="javascript:;" class="btn yellow btn-outline sbold " id="blockui_sample_4_2"> 加载（图标效果）</a>
+                                </p>
+                                <p>
+                                    <a href="javascript:;" class="btn purple btn-outline sbold " id="blockui_sample_4_3"> 加载（仅文字）</a>
+                                </p>
+                                <div>
+                                    <p>SuperUI发布啦！！！！SuperUI发布啦！！！！ </p>
+                                    <p>SuperUI发布啦！！！！SuperUI发布啦！！！！SuperUI发布啦！！！！SuperUI发布啦！！！！ </p>
+                                    <p>SuperUI发布啦！！！！SuperUI发布啦！！！！SuperUI发布啦！！！！SuperUI发布啦！！！！ </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END CONTENT BODY -->
+        </div>
+        <!--[if lt IE 9]>
+    <script src="../content/superui/base/base-core/excanvas.min.js"></script>
+    <script src="../content/superui/base/base-core/respond.min.js"></script>
+    <![endif]-->
+        <!-- 全局公共类库Begin -->
+        <script src="../content/superui/min/js/superui.common.min.js"></script>
+
+      
+    </body>
+<script>
+    $(function() {
+        $('#blockui_sample_1_1').click(function () {
+            App.blockUI({
+                target: '#blockui_sample_1_portlet_body'
+            });
+
+            window.setTimeout(function () {
+                App.unblockUI('#blockui_sample_1_portlet_body');
+            }, 2000);
+        });
+
+        $('#blockui_sample_1_2').click(function () {
+            App.blockUI({
+                target: '#blockui_sample_1_portlet_body',
+                boxed: true
+            });
+
+            window.setTimeout(function () {
+                App.unblockUI('#blockui_sample_1_portlet_body');
+            }, 2000);
+        });
+
+        $('#blockui_sample_1_3').click(function () {
+            App.blockUI({
+                target: '#blockui_sample_1_portlet_body',
+                animate: true
+            });
+
+            window.setTimeout(function () {
+                App.unblockUI('#blockui_sample_1_portlet_body');
+            }, 2000);
+        });
+        $('#blockui_sample_2_1').click(function () {
+            App.blockUI();
+
+            window.setTimeout(function () {
+                App.unblockUI();
+            }, 2000);
+        });
+
+        $('#blockui_sample_2_2').click(function () {
+            App.blockUI({
+                boxed: true
+            });
+
+            window.setTimeout(function () {
+                App.unblockUI();
+            }, 2000);
+        });
+
+        $('#blockui_sample_2_3').click(function () {
+            App.startPageLoading({ message: 'Please wait...' });
+
+            window.setTimeout(function () {
+                App.stopPageLoading();
+            }, 2000);
+        });
+
+        $('#blockui_sample_2_4').click(function () {
+            App.startPageLoading({ animate: true });
+
+            window.setTimeout(function () {
+                App.stopPageLoading();
+            }, 2000);
+        });
+        $('#blockui_sample_3_1_0').click(function () {
+            App.blockUI({
+                target: '#basic',
+                overlayColor: 'none',
+                cenrerY: true,
+                animate: true
+            });
+
+            window.setTimeout(function () {
+                App.unblockUI('#basic');
+            }, 2000);
+        });
+
+        $('#blockui_sample_3_1').click(function () {
+            App.blockUI({
+                target: '#blockui_sample_3_1_element',
+                overlayColor: 'none',
+                animate: true
+            });
+        });
+
+        $('#blockui_sample_3_1_1').click(function () {
+            App.unblockUI('#blockui_sample_3_1_element');
+        });
+
+        $('#blockui_sample_3_2').click(function () {
+            App.blockUI({
+                target: '#blockui_sample_3_2_element',
+                boxed: true
+            });
+        });
+
+        $('#blockui_sample_3_2_1').click(function () {
+            App.unblockUI('#blockui_sample_3_2_element');
+        });
+
+        $('#blockui_sample_4_1').click(function () {
+            App.blockUI({
+                target: '#blockui_sample_4_portlet_body',
+                boxed: true,
+                message: 'Processing...'
+            });
+
+            window.setTimeout(function () {
+                App.unblockUI('#blockui_sample_4_portlet_body');
+            }, 2000);
+        });
+
+        $('#blockui_sample_4_2').click(function () {
+            App.blockUI({
+                target: '#blockui_sample_4_portlet_body',
+                iconOnly: true
+            });
+
+            window.setTimeout(function () {
+                App.unblockUI('#blockui_sample_4_portlet_body');
+            }, 2000);
+        });
+
+        $('#blockui_sample_4_3').click(function () {
+            App.blockUI({
+                target: '#blockui_sample_4_portlet_body',
+                boxed: true,
+                textOnly: true
+            });
+
+            window.setTimeout(function () {
+                App.unblockUI('#blockui_sample_4_portlet_body');
+            }, 2000);
+        });
+    });
+</script>
+</html>

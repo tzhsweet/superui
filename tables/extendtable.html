@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+    <!--<![endif]-->
+    <!-- BEGIN HEAD -->
+
+    <head>
+        <meta charset="utf-8" />
+        <title>SuperMgr前端框架</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <!--全局通用框架样式 begin-->
+        <!-- 全局基本样式 -->
+        <link href="../content/superui/min/css/superui.common.min.css" rel="stylesheet" />
+        <!-- 全局主题样式 -->
+        <link href="../content/superui/global/css/components.min.css" id="style_components" rel="stylesheet" />
+        <link href="../content/superui/pages/layouts/css/themes/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
+        <link href="../content/plugins/jstree/dist/themes/default/style.min.css" rel="stylesheet" />
+        <link href="../content/plugins/bootstrap-table/bootstrap-table.css" rel="stylesheet" />
+    <!--全局通用框架样式 end-->
+        </head>
+    <body style="background-color:white">
+        <div class="page-container">
+            <div class="page-content">
+                <h3 class="page-title">
+                    扩展bootstrap table表格
+                    <small>扩展表格demo</small>
+                </h3>
+                <!-- END PAGE TITLE-->
+                <!-- END PAGE HEADER-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- BEGIN SAMPLE TABLE PORTLET-->
+                            <div class="portlet box blue">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="fa fa-comments"></i>子表
+                                    </div>
+                                    <div class="tools">
+                                        <a href="javascript:;" class="collapse"> </a>
+                                        <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+                                        <a href="javascript:;" class="reload"> </a>
+                                        <a href="javascript:;" class="remove"> </a>
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+                                    <table class="table-scrollable table table-hover" id="table"
+                                           data-row-style="rowStyle" data-detail-view="true">
+                                        <thead>
+                                            <tr>
+                                                <th data-field="id">ID</th>
+                                                <th data-field="name">Item Name</th>
+                                                <th data-field="price">Item Price</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END SAMPLE TABLE PORTLET-->
+                        </div>
+                        <div class="col-md-6">
+                            <!-- BEGIN SAMPLE TABLE PORTLET-->
+                            <div class="portlet light bordered">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="icon-social-dribbble font-green"></i>
+                                        <span class="caption-subject font-green bold uppercase">ajax加载表格</span>
+                                    </div>
+                                    <div class="actions">
+                                        <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                            <i class="icon-cloud-upload"></i>
+                                        </a>
+                                        <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                            <i class="icon-wrench"></i>
+                                        </a>
+                                        <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                            <i class="icon-trash"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+
+                                    <table id="ajaxtable"
+                                           data-toggle="table"
+                                           data-height="460"
+                                           data-ajax="ajaxRequest"
+                                           data-search="true"
+                                           data-side-pagination="server"
+                                           data-pagination="true">
+                                        <thead>
+                                            <tr>
+                                                <th data-field="id">ID</th>
+                                                <th data-field="name">Item Name</th>
+                                                <th data-field="price">Item Price</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+         
+            
+            </div>
+            </div>
+            <!-- END CONTENT BODY -->
+      
+        <!--[if lt IE 9]>
+    <script src="../content/superui/base/base-core/excanvas.min.js"></script>
+    <script src="../content/superui/base/base-core/respond.min.js"></script>
+    <![endif]-->
+        <!-- 全局公共类库Begin -->
+        <script src="../content/superui/min/js/superui.common.min.js"></script>
+        <script src="../content/plugins/bootstrap-table/bootstrap-table.js"></script>
+        <script src="../content/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
+    </body>
+<script>
+    var $table = $('#table');
+
+    $(function () {
+        buildTable($table, 8, 1);
+    });
+
+    function expandTable($detail, cells) {
+        buildTable($detail.html('<table></table>').find('table'), cells, 1);
+    }
+
+    function buildTable($el, cells, rows) {
+        var i, j, row,
+                columns = [],
+                data = [];
+
+        for (i = 0; i < cells; i++) {
+            columns.push({
+                field: 'field' + i,
+                title: 'Cell' + i,
+                sortable: true
+            });
+        }
+        for (i = 0; i < rows; i++) {
+            row = {};
+            for (j = 0; j < cells; j++) {
+                row['field' + j] = 'Row-' + i + '-' + j;
+            }
+            data.push(row);
+        }
+        $el.bootstrapTable({
+            columns: columns,
+            data: data,
+            detailView: cells > 1,
+            onExpandRow: function (index, row, $detail) {
+                expandTable($detail, cells - 1);
+            }
+        });
+    }
+
+
+    var ajaxTable = $('#ajaxtable');
+
+    // your custom ajax request here
+    function ajaxRequest(params) {
+        // data you need
+        console.log(params.data);
+        // just use setTimeout
+        setTimeout(function () {
+            params.success({
+                total: 100,
+                rows: [{
+                    "id": 0,
+                    "name": "Item 0",
+                    "price": "$0"
+                }]
+            });
+        }, 1000);
+    }
+</script>
+</html>

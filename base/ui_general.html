@@ -1,0 +1,1324 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <title>SuperMgr前端框架</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <!--全局通用框架样式 begin-->
+        <!-- 全局基本样式 -->
+        <link href="../content/superui/min/css/superui.common.min.css" rel="stylesheet" />
+        <!-- 全局主题样式 -->
+        <link href="../content/superui/global/css/components.min.css" id="style_components" rel="stylesheet" />
+        <link href="../content/superui/pages/layouts/css/themes/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
+        <!--全局通用框架样式 end-->
+    </head>
+
+    <body>
+        <div class="page-container">
+            <div class="page-content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- BEGIN PORTLET-->
+                        <div class="portlet light bordered">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="icon-share font-dark"></i>
+                                    <span class="caption-subject font-dark bold uppercase">Alerts弹出框</span>
+                                </div>
+                                <div class="actions">
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-cloud-upload"></i>
+                                    </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-wrench"></i>
+                                    </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-trash"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <h4 class="block">Default弹出框</h4>
+                                <div class="alert alert-success">
+                                    <strong>Success!</strong> 页面已经添加！ </div>
+                                <div class="alert alert-info">
+                                    <strong>Info!</strong> 200条未读消息！ </div>
+                                <div class="alert alert-warning">
+                                    <strong>Warning!</strong> 本月流量超载！ </div>
+                                <div class="alert alert-danger">
+                                    <strong>Error!</strong> 服务器中断！ </div>
+                                <h4 class="block">带关闭按钮的弹出框</h4>
+                                <div class="alert alert-warning alert-dismissable">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+                                    <strong>Warning!</strong>服务器超载！请排查！ </div>
+                                <h4 class="block">Links in alerts</h4>
+                                <div class="alert alert-success alert-dismissable">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+                                    <strong>WOW!</strong> 最近用户访问量大增！
+                                    <a href="" class="alert-link"> 请前往查看！</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END PORTLET-->
+                        <!-- BEGIN PORTLET-->
+                        <div class="portlet light bordered">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="icon-share font-dark"></i>
+                                    <span class="caption-subject font-dark bold uppercase">通知提醒</span>
+                                </div>
+                                <div class="actions">
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-cloud-upload"></i>
+                                    </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-wrench"></i>
+                                    </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-trash"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <div class="alert alert-block alert-danger fade in">
+                                    <button type="button" class="close" data-dismiss="alert"></button>
+                                    <h4 class="alert-heading">错误!</h4>
+                                    <p> 服务器错误！ </p>
+                                    <p>
+                                        <a class="btn red" href="javascript:;"> 确定 </a>
+                                        <a class="btn blue" href="javascript:;"> 取消 </a>
+                                    </p>
+                                </div>
+                                <div class="alert alert-block alert-success fade in">
+                                    <button type="button" class="close" data-dismiss="alert"></button>
+                                    <h4 class="alert-heading">成功!</h4>
+                                    <p> 数据保存成功！ </p>
+                                    <p>
+                                        <a class="btn green" href="javascript:;"> 确定 </a>
+                                        <a class="btn btn-link" href="javascript:;"> 取消 </a>
+                                    </p>
+                                </div>
+                                <div class="alert alert-block alert-info fade in">
+                                    <button type="button" class="close" data-dismiss="alert"></button>
+                                    <h4 class="alert-heading">提醒!</h4>
+                                    <p>您有新的邮件！ </p>
+                                    <p>
+                                        <a class="btn purple" href="javascript:;"> 确定 </a>
+                                        <a class="btn dark" href="javascript:;"> 取消 </a>
+                                    </p>
+                                </div>
+                                <div class="alert alert-block alert-warning fade in">
+                                    <button type="button" class="close" data-dismiss="alert"></button>
+                                    <h4 class="alert-heading">警告!</h4>
+                                    <p> 服务器遇到无法挽回的异常，请重新启动！ </p>
+                                    <p>
+                                        <a class="btn red" href="javascript:;"> 确定 </a>
+                                        <a class="btn blue" href="javascript:;"> 取消 </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END PORTLET-->
+                        <!-- BEGIN PORTLET-->
+                        <div class="portlet light bordered">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="icon-share font-dark"></i>
+                                    <span class="caption-subject font-dark bold uppercase">跳动特效提醒</span>
+                                </div>
+                                <div class="actions">
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-cloud-upload"></i>
+                                    </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-wrench"></i>
+                                    </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-trash"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <h4>页面元素跳动提醒</h4>
+                                <div class="margin-top-10 margin-bottom-10 clearfix">
+                                    <table class="table table-bordered table-striped">
+                                        <tr>
+                                            <td> 重复跳动 </td>
+                                            <td>
+                                                <div id="pulsate-regular" style="padding:5px;">重复跳动 </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <button class="btn green" id="pulsate-once">只跳动一次</button>
+                                            </td>
+                                            <td>
+                                                <div id="pulsate-once-target" style="padding:5px;"> 跳动 </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <button class="btn red" id="pulsate-crazy">持续跳动 :)</button>
+                                            </td>
+                                            <td>
+                                                <div id="pulsate-crazy-target" style="padding:5px;"> 跳动 </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <span class="label label-danger"> 备注! </span>
+                                <span>跳动效果只支持新版本 Firefox, Chrome, Opera, Safari and Internet Explorer 9 以及 Internet Explorer 10. </span>
+                            </div>
+                        </div>
+                        <!-- END PORTLET-->
+                        <!-- BEGIN PORTLET-->
+                        <div class="portlet light bordered">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <span class="caption-subject font-dark bold uppercase">弹出框</span>
+                                </div>
+                                <div class="actions">
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-cloud-upload"></i>
+                                    </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-wrench"></i>
+                                    </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-trash"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <h4>点击弹出模态窗口.</h4>
+                                <!-- Button to trigger modal -->
+                                <a href="#myModal1" role="button" class="btn blue" data-toggle="modal">模态窗口 </a>
+                                <a href="#myModal2" role="button" class="btn red" data-toggle="modal"> 弹出框 </a>
+                                <a href="#myModal3" role="button" class="btn yellow" data-toggle="modal"> 确认框 </a>
+                                <!-- Modal -->
+                                <div id="myModal1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                                <h4 class="modal-title">模态窗口标题</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p> 内容。。。 </p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button class="btn default" data-dismiss="modal" aria-hidden="true">关闭</button>
+                                                <button class="btn yellow">保存</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="myModal2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                                <h4 class="modal-title">弹出框标题</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p> 内容。。。 </p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button data-dismiss="modal" class="btn green">确定</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="myModal3" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                                <h4 class="modal-title">确认框标题</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p> 内容。。。 </p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button class="btn default" data-dismiss="modal" aria-hidden="true">关闭</button>
+                                                <button data-dismiss="modal" class="btn blue">确定</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END MODAL DIALOG PORTLET-->
+                        <!-- BEGIN TOOLTIPS PORTLET-->
+                        <div class="portlet light bordered">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="icon-share font-green-sharp"></i>
+                                    <span class="caption-subject font-green-sharp bold uppercase">提示框</span>
+                                </div>
+                                <div class="actions">
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-cloud-upload"></i>
+                                    </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-wrench"></i>
+                                    </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-trash"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <p> superui是一个很炫酷的框架！
+                                    <a href="javascript:;" class="tooltips" data-original-title="真的很炫酷"> 框架 </a> 基于bootstrap改造而成！
+                                    <a href="javascript:;" class="tooltips" title="12" data-original-title="炫酷到底！">superui </a>后续也会进行后台系统开发！ </p>
+                                <button class="btn btn-default tooltips" data-container="body" data-placement="top" data-original-title="顶部提示">顶部</button>
+                                <button class="btn btn-default tooltips" data-container="body" data-placement="left" data-original-title="左提示">左</button>
+                                <button class="btn btn-default tooltips" data-container="body" data-placement="right" data-original-title="右提示">右</button>
+                                <button class="btn btn-default tooltips" data-container="body" data-placement="bottom" data-original-title="底部提示">底部</button>
+                                <div class="inline-block tooltips" data-container="body" data-original-title="提示">
+                                    <button type="button" class="btn btn-default disabled">禁用</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END TOOLTIPS PORTLET-->
+                        <!-- BEGIN POPOVERS PORTLET-->
+                        <div class="portlet light bordered">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="icon-share font-red-sunglo"></i>
+                                    <span class="caption-subject font-red-sunglo bold uppercase">气泡式弹出层组件</span>
+                                </div>
+                                <div class="actions">
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-cloud-upload"></i>
+                                    </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-wrench"></i>
+                                    </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-trash"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <p> 我要弹出来啦！
+                                    <a href="javascript:;" class="popovers" data-container="body" data-content="弹出信息在这里" data-original-title="Default弹出层"> 点击这里触发！</a> 21421521521521
+                                    <button class="btn btn-default popovers" data-container="body" data-trigger="hover" data-placement="top" data-content="点这里" data-original-title="top"> 顶部 </button>
+                                    <button class="btn btn-default popovers" data-container="body" onclick=" " data-trigger="hover" data-placement="left" data-content="弹出层在这里！" data-original-title="Popover in left">左侧</button>
+                                    <button class="btn btn-default popovers" data-container="body" data-trigger="hover" data-placement="right" data-content="弹出层在这里！" data-original-title="Popover in right">右侧</button>
+                                    <button class="btn btn-default popovers" data-container="body" data-trigger="hover" data-placement="bottom" data-content="弹出层在这里！" data-original-title="Popover in bottom">底部</button>
+                                    <div class="inline-block popovers" data-container="body" data-trigger="hover" data-placement="bottom" data-content="弹出层在这里！" data-original-title="Popover in bottom">
+                                        <button type="button" class="btn btn-default disabled">禁用</button>
+                                    </div>
+                            </div>
+                        </div>
+                        <!-- END POPOVERS PORTLET-->
+                        <!-- BEGIN LIST PORTLET-->
+                        <div class="portlet light bordered">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="icon-share font-green-sharp"></i>
+                                    <span class="caption-subject font-green-sharp bold uppercase">列表组</span>
+                                </div>
+                                <div class="actions">
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-cloud-upload"></i>
+                                    </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-wrench"></i>
+                                    </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-trash"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <h4 class="block">基本</h4>
+                                <ul class="list-group">
+                                    <li class="list-group-item"> 空运 </li>
+                                    <li class="list-group-item">海运</li>
+                                    <li class="list-group-item">EMS </li>
+                                    <li class="list-group-item">顺丰 </li>
+                                    <li class="list-group-item"> 圆通 </li>
+                                </ul>
+                                <h4 class="block">自定义颜色</h4>
+                                <ul class="list-group">
+                                    <li class="list-group-item bg-blue bg-font-blue"> 空运 </li>
+                                    <li class="list-group-item bg-red bg-font-red"> 海运 </li>
+                                    <li class="list-group-item bg-green bg-font-green"> EMS</li>
+                                    <li class="list-group-item bg-purple bg-font-purple"> 顺丰 </li>
+                                    <li class="list-group-item bg-yellow bg-font-yellow"> 圆通 </li>
+                                </ul>
+                                <h4 class="block">标签</h4>
+                                <ul class="list-group">
+                                    <li class="list-group-item"> 空运
+                                        <span class="badge badge-default"> 3 </span>
+                                    </li>
+                                    <li class="list-group-item"> 海运
+                                        <span class="badge badge-success"> 11 </span>
+                                    </li>
+                                    <li class="list-group-item"> EMS
+                                        <span class="badge badge-danger"> new </span>
+                                    </li>
+                                    <li class="list-group-item"> 顺丰
+                                        <span class="badge badge-warning"> 4 </span>
+                                    </li>
+                                    <li class="list-group-item"> 圆通
+                                        <span class="badge badge-info"> 3 </span>
+                                    </li>
+                                </ul>
+                                <h4 class="block">状态</h4>
+                                <ul class="list-group">
+                                    <li class="list-group-item"> Default </li>
+                                    <li class="list-group-item list-group-item-success"> Success </li>
+                                    <li class="list-group-item list-group-item-info"> Info
+                                        <span class="badge badge-warning"> 3 </span>
+                                    </li>
+                                    <li class="list-group-item list-group-item-warning"> Warning
+                                        <span class="badge badge-default"> 3 </span>
+                                    </li>
+                                    <li class="list-group-item list-group-item-danger"> Danger </li>
+                                </ul>
+                                <h4 class="block">禁用状态</h4>
+                                <ul class="list-group">
+                                    <li class="list-group-item disabled"> 空运 1 </li>
+                                    <li class="list-group-item disabled"> 空运 2 </li>
+                                    <li class="list-group-item disabled"> 空运 3
+                                        <span class="badge badge-warning"> 3 </span>
+                                    </li>
+                                    <li class="list-group-item disabled"> 空运 4
+                                        <span class="badge badge-default"> 3 </span>
+                                    </li>
+                                </ul>
+                                <h4 class="block">可点击的菜单项</h4>
+                                <div class="list-group">
+                                    <a href="javascript:;" class="list-group-item"> Default </a>
+                                    <a href="javascript:;" class="list-group-item list-group-item-success"> Success </a>
+                                    <a href="javascript:;" class="list-group-item list-group-item-info"> Info
+                                        <span class="badge badge-warning"> 3 </span>
+                                    </a>
+                                    <a href="javascript:;" class="list-group-item list-group-item-warning"> Warning
+                                        <span class="badge badge-default"> 3 </span>
+                                    </a>
+                                    <a href="javascript:;" class="list-group-item list-group-item-danger"> Danger </a>
+                                </div>
+                                <h4 class="block">自定义内容</h4>
+                                <div class="list-group">
+                                    <a href="javascript:;" class="list-group-item active">
+                                        <h4 class="list-group-item-heading">海运</h4>
+                                        <p class="list-group-item-text"> 海运运输时间最久，也最便宜！</p>
+                                    </a>
+                                    <a href="javascript:;" class="list-group-item">
+                                        <h4 class="list-group-item-heading">空运</h4>
+                                        <p class="list-group-item-text">空运最快，也最贵！ </p>
+                                    </a>
+                                    <a href="javascript:;" class="list-group-item">
+                                        <h4 class="list-group-item-heading">顺丰</h4>
+                                        <p class="list-group-item-text"> 顺丰不解释！</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END LIST PORTLET-->
+                        <!-- BEGIN PANELS PORTLET-->
+                        <div class="portlet light bordered">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="icon-share font-red-sunglo"></i>
+                                    <span class="caption-subject font-red-sunglo bold uppercase">面板</span>
+                                </div>
+                                <div class="actions">
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-cloud-upload"></i>
+                                    </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-wrench"></i>
+                                    </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-trash"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <h4 class="block">基本面板</h4>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">无标题头部</div>
+                                    <div class="panel-body"> 内容 </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">面板标题</h3>
+                                    </div>
+                                    <div class="panel-body"> 内容 </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-body"> 内容</div>
+                                    <div class="panel-footer">面板尾部 </div>
+                                </div>
+                                <div class="clearfix">
+                                    <h4 class="block">面板</h4>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">个人面板</h3>
+                                        </div>
+                                        <div class="panel-body"> 面板内容 </div>
+                                    </div>
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">个人面板</h3>
+                                        </div>
+                                        <div class="panel-body">面板内容</div>
+                                    </div>
+                                    <div class="panel panel-success">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">Success面板</h3>
+                                        </div>
+                                        <div class="panel-body">面板内容</div>
+                                    </div>
+                                    <div class="panel panel-info">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">Info 面板</h3>
+                                        </div>
+                                        <div class="panel-body">面板内容</div>
+                                    </div>
+                                    <div class="panel panel-warning">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">Warning 面板</h3>
+                                        </div>
+                                        <div class="panel-body">面板内容</div>
+                                    </div>
+                                    <div class="panel panel-danger">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">Danger 面板</h3>
+                                        </div>
+                                        <div class="panel-body">面板内容</div>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <h4 class="block">带表格面板</h4>
+                                    <div class="panel panel-success">
+                                        <!-- Default panel contents -->
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">面板标题</h3>
+                                        </div>
+                                        <div class="panel-body">
+                                            <p> 运费 </p>
+                                        </div>
+                                        <!-- Table -->
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th> # </th>
+                                                    <th> 运输方式 </th>
+                                                    <th> 价格 </th>
+                                                    <th>时间 </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td> 1 </td>
+                                                    <td> 空运 </td>
+                                                    <td> 55 </td>
+                                                    <td>3天 </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> 2 </td>
+                                                    <td> 海运 </td>
+                                                    <td> 33 </td>
+                                                    <td>10天 </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> 3 </td>
+                                                    <td> 顺丰 </td>
+                                                    <td> 44 </td>
+                                                    <td>5天 </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <h4 class="block">带List Group面板</h4>
+                                    <div class="panel panel-warning">
+                                        <!-- Default panel contents -->
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">标题</h3>
+                                        </div>
+                                        <div class="panel-body">
+                                            <p>海陆空运输方式 </p>
+                                        </div>
+                                        <!-- List group -->
+                                        <ul class="list-group">
+                                            <li class="list-group-item"> 空运
+                                                <span class="badge badge-default"> 3 </span>
+                                            </li>
+                                            <li class="list-group-item"> 海运
+                                                <span class="badge badge-success"> 11 </span>
+                                            </li>
+                                            <li class="list-group-item"> EMS
+                                                <span class="badge badge-danger"> new </span>
+                                            </li>
+                                            <li class="list-group-item"> 顺丰
+                                                <span class="badge badge-warning"> 4 </span>
+                                            </li>
+                                            <li class="list-group-item"> 圆通
+                                                <span class="badge badge-info"> 3 </span>
+                                            </li>
+                                            <li class="list-group-item"> 圆通 </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END PANELS PORTLET-->
+                    </div>
+                    <div class="col-md-6">
+                        <!-- BEGIN PORTLET-->
+                        <div class="portlet light bordered">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="icon-edit font-dark"></i>
+                                    <span class="caption-subject font-dark bold uppercase">笔记</span>
+                                </div>
+                                <div class="actions">
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-cloud-upload"></i>
+                                    </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-wrench"></i>
+                                    </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-trash"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <div class="note note-success">
+                                    <h4 class="block">恭喜你，服务器创建成功！</h4>
+                                    <p> 请前往虚拟主机备案！ </p>
+                                </div>
+                                <div class="note note-info">
+                                    <h4 class="block">您有新邮件！</h4>
+                                    <p> 请前往邮箱查看！</p>
+                                </div>
+                                <div class="note note-danger">
+                                    <h4 class="block">服务器中断！</h4>
+                                    <p> 请您立即重启服务器！ </p>
+                                </div>
+                                <div class="note note-warning">
+                                    <h4 class="block">警告，服务器超负荷！</h4>
+                                    <p> cpu已经接近70% </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END PORTLET-->
+                        <!-- BEGIN PROGRESS BARS PORTLET-->
+                        <div class="portlet light bordered">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="icon-share font-red-sunglo"></i>
+                                    <span class="caption-subject font-red-sunglo bold uppercase">进度条</span>
+                                </div>
+                                <div class="actions">
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-cloud-upload"></i>
+                                    </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-wrench"></i>
+                                    </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-trash"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <div class="note note-warning">
+                                    <h4 class="block">Cross-browser compatibility</h4>
+                                    <p> 进度条用css3制作，不支持IE9，以及早期版本firefox和opera浏览器。 </p>
+                                </div>
+                                <h3>基本</h3>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                        <span class="sr-only"> 40% Complete (success) </span>
+                                    </div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                        <span class="sr-only"> 20% Complete </span>
+                                    </div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                        <span class="sr-only"> 60% Complete (warning) </span>
+                                    </div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                        <span class="sr-only"> 80% Complete </span>
+                                    </div>
+                                </div>
+                                <h3>带条纹进度条</h3>
+                                <div class="progress progress-striped">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                        <span class="sr-only"> 40% Complete (success) </span>
+                                    </div>
+                                </div>
+                                <div class="progress progress-striped">
+                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                        <span class="sr-only"> 20% Complete </span>
+                                    </div>
+                                </div>
+                                <div class="progress progress-striped">
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                        <span class="sr-only"> 60% Complete (warning) </span>
+                                    </div>
+                                </div>
+                                <div class="progress progress-striped">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                        <span class="sr-only"> 80% Complete (danger) </span>
+                                    </div>
+                                </div>
+                                <h3>动态进度条</h3>
+                                <div class="progress progress-striped active">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                        <span class="sr-only"> 40% Complete (success) </span>
+                                    </div>
+                                </div>
+                                <div class="progress progress-striped active">
+                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                        <span class="sr-only"> 20% Complete </span>
+                                    </div>
+                                </div>
+                                <div class="progress progress-striped active">
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                        <span class="sr-only"> 60% Complete (warning) </span>
+                                    </div>
+                                </div>
+                                <div class="progress progress-striped active">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                        <span class="sr-only"> 80% Complete (danger) </span>
+                                    </div>
+                                </div>
+                                <h3>增长式进度条</h3>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success" style="width: 35%">
+                                        <span class="sr-only"> 35% Complete (success) </span>
+                                    </div>
+                                    <div class="progress-bar progress-bar-warning" style="width: 20%">
+                                        <span class="sr-only"> 20% Complete (warning) </span>
+                                    </div>
+                                    <div class="progress-bar progress-bar-danger" style="width: 10%">
+                                        <span class="sr-only"> 10% Complete (danger) </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END PROGRESS BARS PORTLET-->
+                        <!-- BEGIN LABELS AND BADGES PORTLET-->
+                        <div class="portlet light bordered">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="icon-share font-red-sunglo"></i>
+                                    <span class="caption-subject font-red-sunglo bold uppercase">标题和标记</span>
+                                </div>
+                                <div class="actions">
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-cloud-upload"></i>
+                                    </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-wrench"></i>
+                                    </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-trash"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <h4 class="block">标题和标记样式</h4>
+                                <table class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th> Class </th>
+                                            <th> Labels </th>
+                                            <th> Badges </th>
+                                            <th> Roundless Badges </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td> Default </td>
+                                            <td>
+                                                <span class="label label-default"> Default </span>
+                                            </td>
+                                            <td>
+                                                <span class="badge badge-default"> 5 </span>
+                                            </td>
+                                            <td>
+                                                <span class="badge badge-default badge-roundless"> 3 </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td> Primary </td>
+                                            <td>
+                                                <span class="label label-primary"> Primary </span>
+                                            </td>
+                                            <td>
+                                                <span class="badge badge-primary"> 4 </span>
+                                            </td>
+                                            <td>
+                                                <span class="badge badge-primary badge-roundless"> Hot </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td> Info </td>
+                                            <td>
+                                                <span class="label label-info"> Info </span>
+                                            </td>
+                                            <td>
+                                                <span class="badge badge-info"> 6 </span>
+                                            </td>
+                                            <td>
+                                                <span class="badge badge-info badge-roundless"> New </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td> Success </td>
+                                            <td>
+                                                <span class="label label-success"> Success </span>
+                                            </td>
+                                            <td>
+                                                <span class="badge badge-success"> 1 </span>
+                                            </td>
+                                            <td>
+                                                <span class="badge badge-success badge-roundless"> 2 </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td> Danger </td>
+                                            <td>
+                                                <span class="label label-danger"> Danger </span>
+                                            </td>
+                                            <td>
+                                                <span class="badge badge-danger"> 3 </span>
+                                            </td>
+                                            <td>
+                                                <span class="badge badge-danger badge-roundless"> 5 </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td> Warning </td>
+                                            <td>
+                                                <span class="label label-warning"> Warning </span>
+                                            </td>
+                                            <td>
+                                                <span class="badge badge-warning"> 12 </span>
+                                            </td>
+                                            <td>
+                                                <span class="badge badge-warning badge-roundless"> 3 </span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <h4 class="block">heading标题</h4>
+                                <div class="well">
+                                    <h1> Example heading
+                                        <span class="label label-default"> default </span>
+                                    </h1>
+                                    <h2> Example heading
+                                        <span class="label label-success"> success </span>
+                                    </h2>
+                                    <h3> Example heading
+                                        <span class="label label-danger"> danger </span>
+                                    </h3>
+                                    <h4 class="block"> Example heading
+                                        <span class="label label-info"> info </span>
+                                    </h4>
+                                    <h4> Example heading
+                                        <span class="label label-warning"> warning </span>
+                                    </h4>
+                                    <h6> Example heading
+                                        <span class="label label-primary"> primary </span>
+                                    </h6>
+                                </div>
+                                <div class="clearfix">
+                                    <h4 class="block">Badges导航条</h4>
+                                    <ul class="nav nav-pills">
+                                        <li class="active">
+                                            <a href="javascript:;"> 主页
+                                                <span class="badge1"> 42 </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;"> 信息 </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;"> 消息
+                                                <span class="badge badge-danger"> 3 </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix margin-bottom-10"> </div>
+                                    <ul class="nav nav-pills nav-stacked" style="max-width: 260px;">
+                                        <li class="active">
+                                            <a href="javascript:;">
+                                                <span class="badge badge-warning pull-right"> 42 </span> 主页 </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;"> 信息 </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="badge badge-success pull-right"> 3 </span> 消息 </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="clearfix">
+                                    <h4 class="block">带badge的下拉菜单</h4>
+                                    <div class="dropdown inline clearfix">
+                                        <!-- Link or button to toggle dropdown -->
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li role="presentation">
+                                                <a role="menuitem" tabindex="-1" href="javascript:;"> 菜单1
+                                                    <span class="badge badge-success"> 2 </span>
+                                                </a>
+                                            </li>
+                                            <li role="presentation">
+                                                <a role="menuitem" tabindex="-1" href="javascript:;"> 菜单2
+                                                    <span class="badge badge-warning"> 5 </span>
+                                                </a>
+                                            </li>
+                                            <li role="presentation">
+                                                <a role="menuitem" tabindex="-1" href="javascript:;"> 菜单3
+                                                    <span class="badge badge-danger"> 7 </span>
+                                                </a>
+                                            </li>
+                                            <li role="presentation" class="divider"> </li>
+                                            <li role="presentation">
+                                                <a role="menuitem" tabindex="-1" href="javascript:;"> 菜单4
+                                                    <span class="badge badge-info"> 12 </span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="clearfix"> </div>
+                                    <h4 class="block">带badge的按钮式下拉菜单</h4>
+                                    <div class="btn-group ">
+                                        <button class="btn blue dropdown-toggle" data-toggle="dropdown"> 点我
+                                            <i class="fa fa-angle-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li role="presentation">
+                                                <a role="menuitem" tabindex="-1" href="javascript:;"> 菜单1
+                                                    <span class="badge badge-success"> 2 </span>
+                                                </a>
+                                            </li>
+                                            <li role="presentation">
+                                                <a role="menuitem" tabindex="-1" href="javascript:;"> 菜单2
+                                                    <span class="badge badge-warning"> 5 </span>
+                                                </a>
+                                            </li>
+                                            <li role="presentation">
+                                                <a role="menuitem" tabindex="-1" href="javascript:;"> 菜单3
+                                                    <span class="badge badge-danger"> 7 </span>
+                                                </a>
+                                            </li>
+                                            <li role="presentation" class="divider"> </li>
+                                            <li role="presentation">
+                                                <a role="menuitem" tabindex="-1" href="javascript:;"> 菜单4
+                                                    <span class="badge badge-info"> 12 </span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END LABELS AND BADGES PORTLET-->
+                        <!-- BEGIN PAGINATION PORTLET-->
+                        <div class="portlet light bordered">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="icon-share font-red-sunglo"></i>
+                                    <span class="caption-subject font-red-sunglo bold uppercase">分页</span>
+                                </div>
+                                <div class="actions">
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-cloud-upload"></i>
+                                    </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-wrench"></i>
+                                    </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-trash"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <div>
+                                    <ul class="pagination pagination-lg">
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="fa fa-angle-left"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;"> 1 </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;"> 2 </a>
+                                        </li>
+                                        <li class="active">
+                                            <a href="javascript:;"> 3 </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;"> 4 </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;"> 5 </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;"> 6 </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="fa fa-angle-right"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul class="pagination">
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="fa fa-angle-left"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;"> 1 </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;"> 2 </a>
+                                        </li>
+                                        <li class="active">
+                                            <a href="javascript:;"> 3 </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;"> 4 </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;"> 5 </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;"> 6 </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="fa fa-angle-right"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul class="pagination pagination-sm">
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="fa fa-angle-left"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;"> 1 </a>
+                                        </li>
+                                        <li class="active">
+                                            <a href="javascript:;"> 2 </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;"> 3 </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;"> 4 </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;"> 5 </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;"> 6 </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="fa fa-angle-right"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END PAGINATION PORTLET-->
+                        <!-- BEGIN PAGINATION PORTLET-->
+                        <div class="portlet light bordered">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="icon-share font-green-sharp"></i>
+                                    <span class="caption-subject font-green-sharp bold uppercase">特效分页链接</span>
+                                </div>
+                                <div class="actions">
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-cloud-upload"></i>
+                                    </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-wrench"></i>
+                                    </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-trash"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <h4 class="block">默认</h4>
+                                <div class="well"> superui第一版发布啦！！！！！！！！！！！！！！！！！！！ </div>
+                                <ul class="pager">
+                                    <li class="previous">
+                                        <a href="javascript:;"> &larr; 前一条 </a>
+                                    </li>
+                                    <li class="next">
+                                        <a href="javascript:;"> 后一条 &rarr; </a>
+                                    </li>
+                                </ul>
+                                <h4 class="block">禁用</h4>
+                                <div class="well"> superui第一版发布啦！！！！！！！！！！！！！！！！！！！ </div>
+                                <ul class="pager">
+                                    <li class="previous disabled">
+                                        <a href="javascript:;"> &larr; 前一条 </a>
+                                    </li>
+                                    <li class="next">
+                                        <a href="javascript:;"> 后一条 &rarr; </a>
+                                    </li>
+                                </ul>
+                                <h4 class="block">带按钮和icon</h4>
+                                <div class="well"> superui第一版发布啦！！！！！！！！！！！！！！！！！！！</div>
+                                <ul class="pager">
+                                    <li class="previous">
+                                        <a href="javascript:;" class="btn blue">
+                                            <i class="fa fa-angle-left"></i> 前一条 </a>
+                                    </li>
+                                    <li class="next">
+                                        <a href="javascript:;" class="btn blue"> 后一条
+                                            <i class="fa fa-angle-right"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- END PAGINATION PORTLET-->
+                        <!-- BEGIN PAGINATION PORTLET-->
+                        <div class="portlet light bordered">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="icon-share font-red-sunglo"></i>
+                                    <span class="caption-subject font-red-sunglo bold uppercase">动态分页(jQuery Bootpag)</span>
+                                </div>
+                                <div class="actions">
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-cloud-upload"></i>
+                                    </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-wrench"></i>
+                                    </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-trash"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <div>
+                                    <h4 class="block">基本分页</h4>
+                                    <p id="dynamic_pager_content1" class="well"> 内容页1 </p>
+                                    <p id="dynamic_pager_demo1"> </p>
+                                </div>
+                                <hr>
+                                <div>
+                                    <h4 class="block">高级分页</h4>
+                                    <p id="dynamic_pager_content2" class="well"> 内容页1 </p>
+                                    <p id="dynamic_pager_demo2"> </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END PAGINATION PORTLET-->
+                        <!-- BEGIN WELL PORTLET-->
+                        <div class="portlet light bordered">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="icon-share font-red-sunglo"></i>
+                                    <span class="caption-subject font-red-sunglo bold uppercase">页面Well效果</span>
+                                </div>
+                                <div class="actions">
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-cloud-upload"></i>
+                                    </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-wrench"></i>
+                                    </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-trash"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <div class="well well-lg">
+                                    <h4 class="block">large well</h4>
+                                    <p> superui第一版发布啦！！！！！！！！！！！！！！！！！！！ </p>
+                                </div>
+                                <div class="well">
+                                    <h4 class="block">default well</h4>
+                                    <p> superui第一版发布啦！！！！！！！！！！！！！！！！！！！ </p>
+                                </div>
+                                <div class="well well-sm">
+                                    <h4 class="block">small well</h4>
+                                    <p> superui第一版发布啦！！！！！！！！！！！！！！！！！！！ </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END WELL PORTLET-->
+                        <!-- BEGIN MEDIA PORTLET-->
+                        <div class="portlet light bordered">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="icon-share font-red-sunglo"></i>
+                                    <span class="caption-subject font-red-sunglo bold uppercase">媒体对象</span>
+                                </div>
+                                <div class="actions">
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-cloud-upload"></i>
+                                    </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-wrench"></i>
+                                    </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-trash"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <div class="note note-success">
+                                    <p>博客论坛类页面效果 </p>
+                                </div>
+                                <div class="clearfix">
+                                    <ul class="media-list">
+                                        <li class="media">
+                                            <a class="pull-left" href="javascript:;">
+                                                <img class="media-object" src="../assets/global/plugins/holder.js/64x64" alt=""> </a>
+                                            <div class="media-body">
+                                                <h4 class="media-heading">页头</h4>
+                                                <p> superui第一版发布了！！！！！！！！！！ </p>
+                                                <!-- Nested media object -->
+                                                <div class="media">
+                                                    <a class="pull-left" href="javascript:;">
+                                                        <img class="media-object" src="../assets/global/plugins/holder.js/64x64" alt=""> </a>
+                                                    <div class="media-body">
+                                                        <h4 class="media-heading">第二版本</h4> superui第二版发布了！！！！！！！！！！
+                                                        <div class="media">
+                                                            <a class="pull-left" href="javascript:;">
+                                                                <img class="media-object" src="../assets/global/plugins/holder.js/64x64" alt=""> </a>
+                                                            <div class="media-body">
+                                                                <h4 class="media-heading">第三版</h4> superui第三版发布了！！！！！！！！！！ </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Nested media object -->
+                                                <div class="media">
+                                                    <a class="pull-left" href="javascript:;">
+                                                        <img class="media-object" src="../assets/global/plugins/holder.js/64x64" alt=""> </a>
+                                                    <div class="media-body">
+                                                        <h4 class="media-heading">第四版</h4> superui第四版发布了！！！！！！！！！！ </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="media">
+                                            <a class="pull-right" href="javascript:;">
+                                                <img class="media-object" src="../assets/global/plugins/holder.js/64x64" alt=""> </a>
+                                            <div class="media-body">
+                                                <h4 class="media-heading">第五版</h4> superui第五版发布了！！！！！！！！！！ </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END FOOTER -->
+        <!--[if lt IE 9]>
+    <script src="../content/superui/base/base-core/excanvas.min.js"></script>
+    <script src="../content/superui/base/base-core/respond.min.js"></script>
+    <![endif]-->
+        <!-- 全局公共类库Begin -->
+        <script src="../content/superui/min/js/superui.common.min.js"></script>
+        <!-- 全局主题核心类库 end -->
+    </body>
+<script type="text/javascript">
+    $(function() {
+        if (!jQuery().pulsate) {
+            return;
+        }
+        if (App.isIE8() === true) {
+            return; // 
+        }
+        if (jQuery().pulsate) {
+            jQuery('#pulsate-regular').pulsate({
+                color: "#bf1c56"
+            });
+
+            jQuery('#pulsate-once').click(function() {
+                $('#pulsate-once-target').pulsate({
+                    color: "#399bc3",
+                    repeat: false
+                });
+            });
+
+            jQuery('#pulsate-crazy').click(function() {
+                $('#pulsate-crazy-target').pulsate({
+                    color: "#fdbe41",
+                    reach: 50,
+                    repeat: 10,
+                    speed: 100,
+                    glow: true
+                });
+            });
+        }
+
+        $('#dynamic_pager_demo1').bootpag({
+            paginationClass: 'pagination',
+            next: '<i class="fa fa-angle-right"></i>',
+            prev: '<i class="fa fa-angle-left"></i>',
+            total: 6,
+            page: 1
+        }).on("page", function (event, num) {
+            $("#dynamic_pager_content1").html("Page " + num + " content here"); // or some ajax content loading...
+        });
+
+        $('#dynamic_pager_demo2').bootpag({
+            paginationClass: 'pagination pagination-sm',
+            next: '<i class="fa fa-angle-right"></i>',
+            prev: '<i class="fa fa-angle-left"></i>',
+            total: 24,
+            page: 1,
+            maxVisible: 6
+        }).on('page', function (event, num) {
+            $("#dynamic_pager_content2").html("Page " + num + " content here"); // or some ajax content loading...
+        });
+    });
+</script>
+</html>

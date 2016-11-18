@@ -1,0 +1,345 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+    <!--<![endif]-->
+    <!-- BEGIN HEAD -->
+
+    <head>
+        <meta charset="utf-8" />
+        <title>SuperMgr前端框架</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <!--全局通用框架样式 begin-->
+        <!-- 全局基本样式 -->
+        <link href="../content/superui/min/css/superui.common.min.css" rel="stylesheet" />
+        <!-- 全局主题样式 -->
+        <link href="../content/superui/global/css/components.min.css" id="style_components" rel="stylesheet" />
+        <link href="../content/superui/pages/layouts/css/themes/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
+        <link href="../content/plugins/jstree/dist/themes/default/style.min.css" rel="stylesheet" />
+        <link href="../content/plugins/bootstrap-table/bootstrap-table.css" rel="stylesheet" />
+        <style type="text/css">
+        </style>
+    <!--全局通用框架样式 end-->
+        </head>
+    <body style="background-color:white">
+        <div class="page-container">
+            <div class="page-content">
+                <h3 class="page-title">
+                    基本bootstrap table表格
+                    <small>基本表格例子</small>
+                </h3>
+                <!-- END PAGE TITLE-->
+                <!-- END PAGE HEADER-->
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- BEGIN SAMPLE TABLE PORTLET-->
+                        <div class="portlet light bordered">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="icon-social-dribbble font-green"></i>
+                                    <span class="caption-subject font-green bold uppercase">简单表格</span>
+                                </div>
+                                <div class="actions">
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-cloud-upload"></i>
+                                    </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-wrench"></i>
+                                    </a>
+                                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                        <i class="icon-trash"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                             
+                                    <table class="table-scrollable table table-hover" id="table"
+                                           data-toggle="table"
+                                           data-pagination="true"
+                                           data-search="true"
+                                           data-advanced-search="true"
+                                           data-id-table="advancedTable"
+                                           data-url="json/user.json">
+                                        <thead>
+                                            <tr>
+                                                <th data-checkbox="true"></th>
+                                                <th data-field="id" data-sortable="true">Id</th>
+                                                <th data-field="lastname" data-sortable="true">姓</th>
+                                                <th data-field="username" data-sortable="true" data-formatter="nameFormatter">用户名</th>
+                                                <th data-field="state" data-sortable="true" data-formatter="stateFormatter">状态</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END SAMPLE TABLE PORTLET-->
+                    <div class="col-md-6">
+                        <!-- BEGIN SAMPLE TABLE PORTLET-->
+                        <div class="portlet box green">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-comments"></i>带条纹表格
+                                </div>
+                                <div class="tools">
+                                    <a href="javascript:;" class="collapse"> </a>
+                                    <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+                                    <a href="javascript:;" class="reload"> </a>
+                                    <a href="javascript:;" class="remove"> </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <div class="table-scrollable">
+                                    <table class="table-striped table-hover" id="table"
+                                           data-toggle="table"
+                                           data-pagination="true"
+                                           data-search="true"
+                                           data-advanced-search="true"
+                                           data-id-table="advancedTable"
+                                           data-url="json/user.json">
+                                        <thead>
+                                            <tr>
+                                                <th data-checkbox="true"></th>
+                                                <th data-field="id" data-sortable="true">Id</th>
+                                                <th data-field="lastname" data-sortable="true">姓</th>
+                                                <th data-field="username" data-sortable="true" data-formatter="nameFormatter">用户名</th>
+                                                <th data-field="state" data-sortable="true" data-formatter="stateFormatter">状态</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END SAMPLE TABLE PORTLET-->
+                    </div>
+                  
+                </div>
+                <div class="row">
+                  
+                    <div class="col-md-6">
+                        <!-- BEGIN CONDENSED TABLE PORTLET-->
+                        <div class="portlet box red">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-picture"></i>压缩表格
+                                </div>
+                                <div class="tools">
+                                    <a href="javascript:;" class="collapse"> </a>
+                                    <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+                                    <a href="javascript:;" class="reload"> </a>
+                                    <a href="javascript:;" class="remove"> </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <div class="table-scrollable">
+                        
+                                    <table class="table-striped table-condensed table-hover" id="table"
+                                           data-toggle="table"
+                                           data-pagination="true"
+                                           data-search="true"
+                                           data-advanced-search="true"
+                                           data-id-table="advancedTable"
+                                           data-url="json/user.json">
+                                        <thead>
+                                            <tr>
+                                                <th data-checkbox="true"></th>
+                                                <th data-field="id" data-sortable="true">Id</th>
+                                                <th data-field="lastname" data-sortable="true">姓</th>
+                                                <th data-field="username" data-sortable="true" data-formatter="nameFormatter">用户名</th>
+                                                <th data-field="state" data-sortable="true" data-formatter="stateFormatter">状态</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END CONDENSED TABLE PORTLET-->
+                    </div>
+                    <div class="col-md-6">
+                        <!-- BEGIN CONDENSED TABLE PORTLET-->
+                        <div class="portlet box red">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-picture"></i>浅色背景表格
+                                </div>
+                                <div class="tools">
+                                    <a href="javascript:;" class="collapse"> </a>
+                                    <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+                                    <a href="javascript:;" class="reload"> </a>
+                                    <a href="javascript:;" class="remove"> </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <div class="table-scrollable">
+
+                                    <table class="table-striped table-light table-hover" id="table"
+                                           data-toggle="table"
+                                           data-pagination="true"
+                                           data-search="true"
+                                           data-advanced-search="true"
+                                           data-id-table="advancedTable"
+                                           data-url="json/user.json">
+                                        <thead>
+                                            <tr>
+                                                <th data-checkbox="true"></th>
+                                                <th data-field="id" data-sortable="true">Id</th>
+                                                <th data-field="lastname" data-sortable="true">姓</th>
+                                                <th data-field="username" data-sortable="true" data-formatter="nameFormatter">用户名</th>
+                                                <th data-field="state" data-sortable="true" data-formatter="stateFormatter">状态</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END CONDENSED TABLE PORTLET-->
+                    </div>
+                </div>
+             
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- BEGIN SAMPLE TABLE PORTLET-->
+                        <div class="portlet box blue">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-comments"></i>带背景行
+                                </div>
+                                <div class="tools">
+                                    <a href="javascript:;" class="collapse"> </a>
+                                    <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+                                    <a href="javascript:;" class="reload"> </a>
+                                    <a href="javascript:;" class="remove"> </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <table class="table-scrollable table table-hover" id="table"
+                                       data-toggle="table"
+                                       data-pagination="true"
+                                       data-search="true"
+                                       data-advanced-search="true"
+                                       data-id-table="advancedTable"
+                                       data-url="json/user.json" data-row-style="rowStyle">
+                                    <thead>
+                                        <tr>
+                                            <th data-checkbox="true"></th>
+                                            <th data-field="id" data-sortable="true">Id</th>
+                                            <th data-field="lastname" data-sortable="true">姓</th>
+                                            <th data-field="username" data-sortable="true" data-formatter="nameFormatter">用户名</th>
+                                            <th data-field="state" data-sortable="true" data-formatter="stateFormatter">状态</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- END SAMPLE TABLE PORTLET-->
+                    </div>
+                   <div class="col-md-6">
+                       <div class="portlet light bordered">
+                           <div class="portlet-title">
+                               <div class="caption">
+                                   <i class="icon-social-dribbble font-green"></i>
+                                   <span class="caption-subject font-green bold uppercase">扩展表格</span>
+                               </div>
+                               <div class="actions">
+                                   <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                       <i class="icon-cloud-upload"></i>
+                                   </a>
+                                   <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                       <i class="icon-wrench"></i>
+                                   </a>
+                                   <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                       <i class="icon-trash"></i>
+                                   </a>
+                               </div>
+                           </div>
+                           <div class="portlet-body">
+
+                               <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalTable">
+                                   模态窗体打开表格
+                               </button>
+
+                           </div>
+                       </div>
+                    
+                       <div class="modal fade" id="modalTable" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                           <div class="modal-dialog">
+                               <div class="modal-content">
+                                   <div class="modal-header">
+                                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                           <span aria-hidden="true">&times;</span>
+                                       </button>
+                                       <h4 class="modal-title">Modal table</h4>
+                                   </div>
+                                   <div class="modal-body">
+                                       <table id="table"
+                                              data-toggle="table"
+                                              data-height="299"
+                                              data-url="json/data1.json">
+                                           <thead>
+                                               <tr>
+                                                   <th data-field="id">ID</th>
+                                                   <th data-field="name">Item Name</th>
+                                                   <th data-field="price">Item Price</th>
+                                               </tr>
+                                           </thead>
+                                       </table>
+                                   </div>
+                                   <div class="modal-footer">
+                                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                   </div>
+                               </div><!-- /.modal-content -->
+                           </div><!-- /.modal-dialog -->
+                       </div><!-- /.modal -->
+                   </div>
+                </div>
+            
+            </div>
+            </div>
+            <!-- END CONTENT BODY -->
+      
+        <!--[if lt IE 9]>
+    <script src="../content/superui/base/base-core/excanvas.min.js"></script>
+    <script src="../content/superui/base/base-core/respond.min.js"></script>
+    <![endif]-->
+        <!-- 全局公共类库Begin -->
+        <script src="../content/superui/min/js/superui.common.min.js"></script>
+        <script src="../content/plugins/bootstrap-table/bootstrap-table.js"></script>
+        <script src="../content/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
+    </body>
+<script>
+    function nameFormatter(value, row) {
+        var icon = row.id % 2 === 0 ? 'glyphicon-star' : 'glyphicon-star-empty'
+
+        return '<i class="glyphicon ' + icon + '"></i> ' + value;
+    }
+
+    function stateFormatter(value, row) {
+      
+        if (row.state === "1") {
+            return ' <span class="label label-sm label-success"> 在职 </span>';
+        }
+        else if (row.state == "2") {
+            return ' <span class="label label-sm label-warning"> 实习 </span>';
+        }
+        else {
+            return '<span class="label label-sm label-danger"> 离职 </span>';
+        }
+      
+    }
+    function rowStyle(row, index) {
+        var classes = ['active', 'success', 'info', 'warning', 'danger'];
+
+        if (index % 2 === 0 && index / 2 < classes.length) {
+            return {
+                classes: classes[index / 2]
+            };
+        }
+        return {};
+    }
+</script>
+</html>

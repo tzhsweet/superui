@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+    <!--<![endif]-->
+    <!-- BEGIN HEAD -->
+
+    <head>
+        <meta charset="utf-8" />
+        <title>SuperMgr前端框架</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <!--全局通用框架样式 begin-->
+        <!-- 全局基本样式 -->
+        <link href="../content/superui/min/css/superui.common.min.css" rel="stylesheet" />
+        <!-- 全局主题样式 -->
+        <link href="../content/superui/global/css/components.min.css" id="style_components" rel="stylesheet" />
+        <link href="../content/superui/pages/layouts/css/themes/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
+        <!--全局通用框架样式 end-->
+    </head>
+
+    <body>
+        <div class="page-container">
+            <div class="page-content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="portlet light bordered">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="icon-bubble font-green-sharp"></i>
+                                    <span class="caption-subject font-green-sharp bold uppercase">弹出层 Demos</span>
+                                </div>
+                                <div class="actions">
+                                    <div class="btn-group">
+                                        <a class="btn green-haze btn-outline btn-circle btn-sm" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true"> Actions
+                                            <i class="fa fa-angle-down"></i>
+                                        </a>
+                                        <ul class="dropdown-menu pull-right">
+                                            <li>
+                                                <a href="javascript:;"> Option 1</a>
+                                            </li>
+                                            <li class="divider"> </li>
+                                            <li>
+                                                <a href="javascript:;">Option 2</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">Option 3</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">Option 4</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <h3>基本例子</h3>
+                                <p> 小型弹出框！ </p>
+                                <button class="btn green-sharp btn-large" data-toggle="confirmation" data-original-title="你确定么?" title="">默认配置</button>
+                                <h3>用户自定义按钮</h3>
+                                <button class="btn red-mint" data-toggle="confirmation" data-placement="right" data-btn-ok-label="继续" data-btn-ok-icon="icon-like" data-btn-ok-class="btn-success" data-btn-cancel-label="取消" data-btn-cancel-icon="icon-close"
+                                    data-btn-cancel-class="btn-danger">确定</button>
+                                <h3>弹出方向</h3>
+                                <button class="btn btn-outline green-sharp  uppercase" data-toggle="confirmation" data-placement="left">左侧弹出！</button>
+                                <button class="btn btn-outline red-mint  uppercase" data-toggle="confirmation" data-placement="top">顶部弹出！</button>
+                                <button class="btn btn-outline yellow-mint  uppercase" data-toggle="confirmation" data-placement="bottom">底部弹出！</button>
+                                <button class="btn btn-outline purple-sharp  uppercase" data-toggle="confirmation" data-placement="right">右边弹出！</button>
+                                <h3>只允许单个弹出层实例</h3>
+                                <p> 只能显示一个！</p>
+                                <button class="btn btn-outline green-sharp  uppercase" data-toggle="confirmation" data-singleton="true">配置1</button>
+                                <button class="btn btn-outline red-mint  uppercase" data-toggle="confirmation" data-singleton="true">配置 2</button>
+                                <h3>Popout式弹出框</h3>
+                                <p>点击任何地方都可以关闭弹出层</p>
+                                <button class="btn green-sharp btn-circle" data-toggle="confirmation" data-popout="true">确认 1</button>
+                                <button class="btn red-mint btn-circle" data-toggle="confirmation" data-popout="true">确认 2</button>
+                                <h3>事件处理</h3>
+                                <p> 为按钮响应事件</p>
+                                <button class="btn yellow-mint uppercase btn-circle" data-toggle="confirmation" id="bs_confirmation_demo_1">点我 1</button>
+                                <button class="btn grey-mint uppercase btn-circle" data-toggle="confirmation" id="bs_confirmation_demo_2">点我 2</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END CONTENT BODY -->
+        </div>
+        <div class="scroll-to-top">
+            <i class="icon-arrow-up"></i>
+        </div>
+        <!--[if lt IE 9]>
+    <script src="../content/superui/base/base-core/excanvas.min.js"></script>
+    <script src="../content/superui/base/base-core/respond.min.js"></script>
+    <![endif]-->
+        <!-- 全局公共类库Begin -->
+    <script src="../content/superui/min/js/superui.common.min.js"></script>
+        <script src="../content/plugins/bootstrap-confirmation/bootstrap-confirmation.js"></script>
+      
+       
+    </body>
+<script type="text/javascript">
+    $(function() {
+        $('#bs_confirmation_demo_1').on('confirmed.bs.confirmation', function () {
+            alert('You confirmed action #1');
+        });
+
+        $('#bs_confirmation_demo_1').on('canceled.bs.confirmation', function () {
+            alert('You canceled action #1');
+        });
+
+        $('#bs_confirmation_demo_2').on('confirmed.bs.confirmation', function () {
+            alert('You confirmed action #2');
+        });
+
+        $('#bs_confirmation_demo_2').on('canceled.bs.confirmation', function () {
+            alert('You canceled action #2');
+        });
+    });
+</script>
+</html>
