@@ -1,0 +1,282 @@
+﻿<!DOCTYPE html>
+
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+    <!--<![endif]-->
+    <!-- BEGIN HEAD -->
+
+    <head>
+        <meta charset="utf-8" />
+        <title>SuperUI前端框架</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+
+        <link rel="stylesheet" href="../content/ui/global/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link href="../content/ui/global/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../content/adminlte/dist/css/AdminLTE.css">
+        <link rel="stylesheet" href="../content/adminlte/dist/css/skins/_all-skins.min.css">
+        <link href="../content/min/css/supershopui.common.min.css" rel="stylesheet"/>
+
+        <link href="../content/plugins/jquery-file-upload/blueimp-gallery/blueimp-gallery.min.css" rel="stylesheet" type="text/css" />
+        <link href="../content/plugins/jquery-file-upload/css/jquery.fileupload.css" rel="stylesheet" type="text/css" />
+        <link href="../content/plugins/jquery-file-upload/css/jquery.fileupload-ui.css" rel="stylesheet" type="text/css" />
+        </head>
+    <!-- END HEAD -->
+
+<body>
+
+    <section class="content-header">
+        <h1>
+            多文件上传组件
+            <small>牛逼的多文件上传组件<a class="btn red btn-outline" href="https://github.com/blueimp/jQuery-File-Upload" target="_blank">官方文档</a></small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">UI</a></li>
+            <li class="active"></li>
+        </ol>
+    </section>
+    <!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-danger">
+                <div class="box-header">
+                    <h3 class="box-title">jQuery Validation验证插件</h3>
+                </div>
+                <div class="box-body">
+                    <h3>jQuery Validation验证插件</h3>
+                    <p>
+                        多文件上传控件, 拖拽支持, 进度条以及图片预览。
+                        <br> 支持跨域，分块和可恢复的文件上传和客户端的图像大小调整.
+                        <br> 支持标准的HTML表单文件上传任何服务器端平台（PHP, Python, Ruby on Rails, Java, Node.js,等等)
+                    </p>
+                    <p>
+                        <a class="btn red btn-outline" href="https://github.com/blueimp/jQuery-File-Upload" target="_blank">官方文档</a>
+                    </p>
+                </div>
+            </div>
+          
+            <form id="fileupload" action="../content/plugins/jquery-file-upload/server/php/" method="POST" enctype="multipart/form-data">
+                <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+                <div class="row fileupload-buttonbar">
+                    <div class="col-lg-7">
+                        <!-- The fileinput-button span is used to style the file input field as button -->
+                        <span class="btn btn-success fileinput-button">
+                            <i class="fa fa-plus"></i>
+                            <span> 添加文件... </span>
+                            <input type="file" name="files[]" multiple="">
+                        </span>
+                        <button type="submit" class="btn btn-blue start">
+                            <i class="fa fa-upload"></i>
+                            <span> 开始上传 </span>
+                        </button>
+                        <button type="reset" class="btn btn-warning cancel">
+                            <i class="fa fa-ban-circle"></i>
+                            <span> 取消上传 </span>
+                        </button>
+                        <button type="button" class="btn btn-primary delete">
+                            <i class="fa fa-trash"></i>
+                            <span> 删除 </span>
+                        </button>
+                        <input type="checkbox" class="toggle">
+                        <!-- The global file processing state -->
+                        <span class="fileupload-process"> </span>
+                    </div>
+                    <!-- The global progress information -->
+                    <div class="col-lg-5 fileupload-progress fade">
+                        <!-- The global progress bar -->
+                        <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar progress-bar-success" style="width: 0%;"> </div>
+                        </div>
+                        <!-- The extended global progress information -->
+                        <div class="progress-extended"> &nbsp; </div>
+                    </div>
+                </div>
+                <!-- The table listing the files available for upload/download -->
+                <table role="presentation" class="table table-striped clearfix">
+                    <tbody class="files"> </tbody>
+                </table>
+            </form>
+            <div class="box box-success">
+                <div class="box-header">
+                    <h3 class="box-title">demo备注</h3>
+                </div>
+                <div class="box-body">
+                    <ul>
+                        <li>
+                            demo上传最大尺寸为
+                            <strong>5 MB</strong> (默认无大小限制).
+                        </li>
+                        <li>
+                            仅支持图片格式(
+                            <strong>JPG, GIF, PNG</strong>) (默认无文件格式限制).
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-filter=":even">
+        <div class="slides"> </div>
+        <h3 class="title"></h3>
+        <a class="prev"> ‹ </a>
+        <a class="next"> › </a>
+        <a class="close white"> </a>
+        <a class="play-pause"> </a>
+        <ol class="indicator"> </ol>
+    </div>
+    <script id="template-upload" type="text/x-tmpl">
+        {% for (var i=0, file; file=o.files[i]; i++) { %}
+        <tr class="template-upload fade">
+            <td>
+                <span class="preview"></span>
+            </td>
+            <td>
+                <p class="name">{%=file.name%}</p>
+                <strong class="error text-danger label label-danger"></strong>
+            </td>
+            <td>
+                <p class="size">进度...</p>
+                <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                    <div class="progress-bar progress-bar-success" style="width:0%;"></div>
+                </div>
+            </td>
+            <td>
+                {% if (!i && !o.options.autoUpload) { %}
+                <button class="btn blue start" disabled>
+                    <i class="fa fa-upload"></i>
+                    <span>开始</span>
+                </button> {% } %} {% if (!i) { %}
+                <button class="btn red cancel">
+                    <i class="fa fa-ban"></i>
+                    <span>取消</span>
+                </button> {% } %}
+            </td>
+        </tr> {% } %}
+    </script>
+    <script id="template-download" type="text/x-tmpl">
+        {% for (var i=0, file; file=o.files[i]; i++) { %}
+        <tr class="template-download fade">
+            <td>
+                <span class="preview">
+                    {% if (file.thumbnailUrl) { %}
+                    <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" data-gallery>
+                        <img src="{%=file.thumbnailUrl%}">
+                    </a> {% } %}
+                </span>
+            </td>
+            <td>
+                <p class="name">
+                    {% if (file.url) { %}
+                    <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" {%=file.thumbnailUrl? 'data-gallery'
+                       '' %}>{%=file.name%}</a> {% } else { %}
+                    <span>{%=file.name%}</span> {% } %}
+                </p> {% if (file.error) { %}
+                <div>
+                    <span class="label label-danger">错误</span> {%=file.error%}
+                </div> {% } %}
+            </td>
+            <td>
+                <span class="size">{%=o.formatFileSize(file.size)%}</span>
+            </td>
+            <td>
+                {% if (file.deleteUrl) { %}
+                <button class="btn red delete btn-sm" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}" {% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}' {% } %}>
+                    <i class="fa fa-trash-o"></i>
+                    <span>删除</span>
+                </button>
+                <input type="checkbox" name="delete" value="1" class="toggle"> {% } else { %}
+                <button class="btn yellow cancel btn-sm">
+                    <i class="fa fa-ban"></i>
+                    <span>取消</span>
+                </button> {% } %}
+            </td>
+        </tr> {% } %}
+    </script>
+</section>
+
+<script src="../content/ui/global/jQuery/jquery.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="../content/ui/global/bootstrap/js/bootstrap.min.js"></script>
+<script src="../content/min/js/supershopui.common.js"></script>
+
+
+<script src="../content/plugins/fancybox/source/jquery.fancybox.pack.js"></script>
+<script src="../content/plugins/jquery-file-upload/js/vendor/jquery.ui.widget.js" type="text/javascript"></script>
+<script src="../content/plugins/jquery-file-upload/js/vendor/tmpl.min.js" type="text/javascript"></script>
+<script src="../content/plugins/jquery-file-upload/js/vendor/load-image.min.js" type="text/javascript"></script>
+<script src="../content/plugins/jquery-file-upload/js/vendor/canvas-to-blob.min.js" type="text/javascript"></script>
+<script src="../content/plugins/jquery-file-upload/blueimp-gallery/jquery.blueimp-gallery.min.js" type="text/javascript"></script>
+<script src="../content/plugins/jquery-file-upload/js/jquery.iframe-transport.js" type="text/javascript"></script>
+<script src="../content/plugins/jquery-file-upload/js/jquery.fileupload.js" type="text/javascript"></script>
+<script src="../content/plugins/jquery-file-upload/js/jquery.fileupload-process.js" type="text/javascript"></script>
+<script src="../content/plugins/jquery-file-upload/js/jquery.fileupload-image.js" type="text/javascript"></script>
+<script src="../content/plugins/jquery-file-upload/js/jquery.fileupload-audio.js" type="text/javascript"></script>
+<script src="../content/plugins/jquery-file-upload/js/jquery.fileupload-video.js" type="text/javascript"></script>
+<script src="../content/plugins/jquery-file-upload/js/jquery.fileupload-validate.js" type="text/javascript"></script>
+<script src="../content/plugins/jquery-file-upload/js/jquery.fileupload-ui.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+    $(function() {
+        // Initialize the jQuery File Upload widget:
+        $('#fileupload').fileupload({
+            disableImageResize: false,
+            autoUpload: false,
+            disableImageResize: /Android(?!.*Chrome)|Opera/.test(window.navigator.userAgent),
+            maxFileSize: 5000000,
+            acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
+            // Uncomment the following to send cross-domain cookies:
+            //xhrFields: {withCredentials: true},                
+        });
+
+        // Enable iframe cross-domain access via redirect option:
+        $('#fileupload').fileupload(
+            'option',
+            'redirect',
+            window.location.href.replace(
+                /\/[^\/]*$/,
+                '/cors/result.html?%s'
+            )
+        );
+
+        // Upload server status check for browsers with CORS support:
+        if ($.support.cors) {
+            $.ajax({
+                type: 'HEAD'
+            }).fail(function() {
+                $('<div class="alert alert-danger"/>')
+                    .text('Upload server currently unavailable - ' +
+                        new Date())
+                    .appendTo('#fileupload');
+            });
+        }
+
+        // Load & display existing files:
+        $('#fileupload').addClass('fileupload-processing');
+        $.ajax({
+            // Uncomment the following to send cross-domain cookies:
+            //xhrFields: {withCredentials: true},
+            url: $('#fileupload').attr("action"),
+            dataType: 'json',
+            context: $('#fileupload')[0]
+        }).always(function() {
+            $(this).removeClass('fileupload-processing');
+        }).done(function(result) {
+            $(this).fileupload('option', 'done')
+                .call(this, $.Event('done'), { result: result });
+        });
+    });
+</script>
+
+</body>
+
+</html>

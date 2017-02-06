@@ -7,79 +7,68 @@
 <!-- BEGIN HEAD -->
 <head>
     <meta charset="utf-8" />
-    <title>SuperMgr前端框架</title>
+    <title></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="" name="description" />
     <meta content="" name="author" />
-    <!--全局通用框架样式 begin-->
-    <!-- 全局基本样式 -->
-    <link href="../content/superui/min/css/superui.common.min.css" rel="stylesheet" />
-    <!-- 全局主题样式 -->
-    <link href="../content/superui/global/css/components.min.css" id="style_components" rel="stylesheet" />
-    <link href="../content/superui/pages/layouts/css/themes/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color"/>
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="../content/ui/global/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link href="../content/ui/global/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../content/adminlte/dist/css/AdminLTE.css">
+    <link rel="stylesheet" href="../content/adminlte/dist/css/skins/_all-skins.min.css">
+    <link href="../content/min/css/supershopui.common.min.css" rel="stylesheet"/>
+
     <link href="../content/plugins/jqgrid/jqgrid.css" rel="stylesheet" />
     <style type="text/css">
     </style>
     <!--全局通用框架样式 end-->
 </head>
-<body style="background-color:white">
-    <div class="page-container">
-        <div class="page-content">
-            <h3 class="page-title">
-                jqgrid表格
-                <small>基本表格例子</small>
-            </h3>
-            <!-- END PAGE TITLE-->
-            <!-- END PAGE HEADER-->
-            <div class="row">
-                <div class="col-md-12">
-                    <!-- BEGIN SAMPLE TABLE PORTLET-->
-                    <div class="portlet light bordered">
-                        <div class="portlet-title">
-                            <div class="caption">
-                                <i class="icon-social-dribbble font-green"></i>
-                                <span class="caption-subject font-green bold uppercase">简单表格</span>
-                            </div>
-                            <div class="actions">
-                                <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
-                                    <i class="icon-cloud-upload"></i>
-                                </a>
-                                <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
-                                    <i class="icon-wrench"></i>
-                                </a>
-                                <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
-                                    <i class="icon-trash"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="portlet-body">
+<body>
+    <section class="content-header">
+        <h1>
+            jqgrid表格
+            <small>jqgrid是一个传统表格，功能强大，但是只适用于PC端</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">Tables</a></li>
+            <li class="active">jqgrid</li>
+        </ol>
+    </section>
+    <!-- Main content -->
+    <section class="content">
 
-                            <div class="gridPanel">
-                                <table id="gridTable"></table>
-                                <div id="gridPager"></div>
-                            </div>
-
-                        </div>
-                    </div>
+        <div class="row">
+            <div class="col-md-12">
+                <!-- BEGIN SAMPLE TABLE PORTLET-->
+                <div class="box-header with-border">
+                    <h3 class="box-title">简单表格</h3>
                 </div>
-                <!-- END SAMPLE TABLE PORTLET-->
-               
+                    <div class="box-body">
 
+                        <div class="gridPanel">
+                            <table id="gridTable"></table>
+                            <div id="gridPager"></div>
+                        </div>
+
+                    </div>
+              
             </div>
 
         </div>
-    </div>
-    <!-- END CONTENT BODY -->
-    <!--[if lt IE 9]>
-    <script src="../content/superui/base/base-core/excanvas.min.js"></script>
-    <script src="../content/superui/base/base-core/respond.min.js"></script>
-    <![endif]-->
-    <!-- 全局公共类库Begin -->
-<script src="../content/superui/min/js/superui.common.min.js"></script>
+    </section>
 
-    <script src="../content/plugins/jqgrid/grid.locale-cn.js"></script>
-    <script src="../content/plugins/jqgrid/jqgrid.min.js"></script>
+<script src="../content/ui/global/jQuery/jquery.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+
+<script src="../content/ui/global/bootstrap/js/bootstrap.min.js"></script>
+<script src="../content/min/js/supershopui.common.js"></script>
+
+<script src="../content/plugins/jqgrid/grid.locale-cn.js"></script>
+<script src="../content/plugins/jqgrid/jqgrid.min.js"></script>
 </body>
 <script>
     $(function () {
@@ -92,7 +81,7 @@
         $(window).resize(function (e) {
             window.setTimeout(function () {
                 $('#gridTable').setGridWidth(($('.gridPanel').width()));
-                var height = App.getViewPort().height - $('.page-footer').outerHeight() - $('.page-header').outerHeight();
+                var height = App.getIframeLayoutHeight();
                 $("#gridTable").setGridHeight($(window).height() - height);
 
             }, 200);
@@ -164,9 +153,9 @@
                     align: "center",
                     formatter: function (cellvalue, options, rowObject) {
                         if (cellvalue == 1) {
-                            return '<span onclick=\"btn_disabled(\'' + rowObject.UserId + '\')\" class=\"label label-success\" style=\"cursor: pointer;\">正常</span>';
+                            return '<span onclick=\"btn_disabled(\'' + rowObject.UserId + '\')\" class=\"label label-sm label-success\" style=\"cursor: pointer;\">正常</span>';
                         } else if (cellvalue == 0) {
-                            return '<span onclick=\"btn_enabled(\'' + rowObject.UserId + '\')\" class=\"label label-warning\" style=\"cursor: pointer;\">禁用</span>';
+                            return '<span onclick=\"btn_enabled(\'' + rowObject.UserId + '\')\" class=\"label label-sm label-danger\" style=\"cursor: pointer;\">禁用</span>';
                         }
                     }
                 },

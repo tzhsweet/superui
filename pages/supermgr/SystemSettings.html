@@ -1,0 +1,250 @@
+﻿
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>SuperMgr后台框架</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="../../content/ui/global/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link href="../../content/ui/global/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../content/adminlte/dist/css/AdminLTE.css">
+    <link rel="stylesheet" href="../../content/adminlte/dist/css/skins/_all-skins.min.css">
+    <link href="../../content/min/css/supershopui.common.min.css" rel="stylesheet" />
+    <link href="/content/supermgr/Base/css/common.css" rel="stylesheet" />
+
+
+    <link href="/content/plugins/wizard/wizard.css" rel="stylesheet" />
+    <link href="/content/plugins/wdtree/tree.css" rel="stylesheet" />
+
+    <link href="/Content/plugins/jqgrid/jqgrid.css" rel="stylesheet" />
+
+    <script src="/Content/plugins/datepicker/WdatePicker.js"></script>
+
+    <link rel="stylesheet" href="/content/plugins/iCheck/all.css">
+</head>
+<body>
+    <section class="content-header">
+        <h1>
+            系统设置
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active"><a href="#">系统设置</a></li>
+        </ol>
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#tab_1" data-toggle="tab">站点基本设置</a></li>
+                <li><a href="#tab_2" data-toggle="tab">SEO设置</a></li>
+                <li><a href="#tab_3" data-toggle="tab">站点状态</a></li>
+                <li><a href="#tab_4" data-toggle="tab">会员注册</a></li>
+               
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab_1">
+                    <form role="form">
+                        <div class="box-body">
+                            <table class="form">
+                                <tr>
+                                    <th class="formTitle">网站名称<font face="宋体">*</font></th>
+                                    <td class="formValue">
+                                        <input id="EnCode" type="text" class="form-control" placeholder="显示在商城顶部欢迎信息等位置" isvalid="yes" checkexpession="NotNull"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="formTitle">网站logo</th>
+                                    <td class="formValue">
+                                        <input id="Icon" type="text" class="form-control"/>
+                                        <span class="input-button selectmoduleicon" title="最佳尺寸：270*60 显示在商城头部、会员登录处等位置">...</span>
+                                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="formTitle">后台网站logo</th>
+                                    <td class="formValue">
+                                        <input id="Icon" type="text" class="form-control"/>
+                                        <span class="input-button selectmoduleicon" title="最佳尺寸：270*60 显示在后台位置">...</span>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="formTitle">开启url重写<font face="宋体">*</font></th>
+                                    <td class="formValue">
+                                      是
+                                      <input type="radio" name="r1" class="minimal" checked>
+                                       
+                                        否
+                                        <input type="radio" name="r1" class="minimal">
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="formTitle" valign="top" style="padding-top: 4px;">
+                                        底部版权信息
+                                    </th>
+                                    <td class="formValue">
+                                        <input type="text" class="form-control" placeholder="" isvalid="yes"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="formTitle" valign="top" style="padding-top: 4px;">
+                                        描述
+                                    </th>
+                                    <td class="formValue">
+                                        <textarea id="Description" class="form-control" style="height: 70px;" placeholder="在80个汉字，160个字符以内"></textarea>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th class="formTitle" valign="top" style="padding-top: 4px;">
+                                        统计代码
+                                    </th>
+                                    <td class="formValue">
+                                        <textarea class="form-control" style="height: 70px;" placeholder="在商城（前台）各个页面加上第三方流量统计代码，用于记录各页面访问情况"></textarea>
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                        </div>
+                        <!-- /.box-body -->
+
+                    </form>
+
+
+                </div>
+                <!-- /.tab-pane -->
+                <div class="tab-pane" id="tab_2">
+                    <form role="form">
+                        <div class="box-body">
+                            <table class="form">
+                                <tr>
+                                    <th class="formTitle">SEO title：<font face="宋体"></font></th>
+                                    <td class="formValue">
+                                        <input  type="text" class="form-control" placeholder="" isvalid="yes" checkexpession="NotNull" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="formTitle">SEO Keywords</th>
+                                    <td class="formValue">
+                                       
+                                        <input type="text" class="form-control" placeholder="" isvalid="yes" checkexpession="NotNull" />
+                                    </td>
+                                </tr>
+                            
+                                <tr>
+                                    <th class="formTitle">SEO Desciption</th>
+                                    <td class="formValue">
+                                        <textarea class="form-control" style="height: 70px;" placeholder=""></textarea>
+                                       
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                        </div>
+                        <!-- /.box-body -->
+
+                    </form>
+                </div>
+                <!-- /.tab-pane -->
+                <div class="tab-pane" id="tab_3">
+                    <form role="form">
+                        <div class="box-body">
+                            <table class="form">
+                                <tr>
+                                    <th class="formTitle">是否关闭站点：<font face="宋体"></font></th>
+                                    <td class="formValue">
+                                        是<input type="radio" name="r2" class="minimal">
+                                        否<input type="radio" name="r2" class="minimal" checked> (勾选关闭站点后，前台和商家中心全部功能不能使用, 请您谨慎操作！)
+                                    </td>
+                                </tr>
+
+
+                            </table>
+
+
+                        </div>
+                        <!-- /.box-body -->
+
+                    </form>
+                </div>
+                <div class="tab-pane" id="tab_4">
+                    <form role="form">
+                        <div class="box-body">
+                            <table class="form">
+                                <tr>
+                                    <th class="formTitle">是否手机验证：<font face="宋体"></font></th>
+                                    <td class="formValue">
+                                        是<input type="radio" name="r2" class="minimal">
+                                        否<input type="radio" name="r2" class="minimal" checked> (勾选手机验证后，会员注册需要经过手机验证！)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="formTitle" valign="top" style="padding-top: 4px;">
+                                        会员注册协议：
+                                    </th>
+                                    <td class="formValue">
+                                        <textarea class="form-control" style="height: 300px;" placeholder="最大10000字符"></textarea>
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                        </div>
+                        <!-- /.box-body -->
+
+                    </form>
+                </div>
+                <!-- /.tab-pane -->
+
+            </div>
+            <div class="box-footer">
+                <button type="submit" class="btn btn-success">保存</button>
+            </div>
+            <!-- /.tab-content -->
+        </div>
+
+    
+
+    </section>
+</body>
+</html>
+
+
+<script src="/content/ui/global/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="/content/ui/global/bootstrap/js/bootstrap.min.js"></script>
+
+<script src="/content/min/js/supershopui.common.js"></script>
+
+<script src="/content/supermgr/Base/js/common.js"></script>
+<script src="/Content/plugins/jqgrid/grid.locale-cn.js"></script>
+<script src="/Content/plugins/jqgrid/jqgrid.js"></script>
+
+<script src="/content/plugins/wizard/wizard.js"></script>
+<script src="/Content/plugins/validator/validator.js"></script>
+
+<script src="/content/plugins/iCheck/icheck.min.js"></script>
+<script src="/content/plugins/wdtree/tree.js"></script>
+<script>
+    $(function() {
+        $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+            checkboxClass: 'icheckbox_minimal-blue',
+            radioClass: 'iradio_minimal-blue'
+        });
+    });
+</script>

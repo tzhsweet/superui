@@ -1,0 +1,149 @@
+﻿
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>SuperMgr后台框架</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="../../content/ui/global/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link href="../../content/ui/global/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../content/adminlte/dist/css/AdminLTE.css">
+    <link rel="stylesheet" href="../../content/adminlte/dist/css/skins/_all-skins.min.css">
+    <link href="../../content/min/css/supershopui.common.min.css" rel="stylesheet" />
+    <link href="/content/supermgr/Base/css/common.css" rel="stylesheet"/>
+
+
+
+    <link href="/content/plugins/wizard/wizard.css" rel="stylesheet" />
+    <link href="/content/plugins/wdtree/tree.css" rel="stylesheet" />
+
+    <script src="/Content/plugins/datepicker/WdatePicker.js"></script>
+    <style type="text/css">
+        .formDiv {
+            margin-left: 10px;
+            margin-right: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container" style="background-color: white;">
+        <div class="page-content" style="background-color: white; padding: 15px;">
+            <form id="form1">
+
+                <div class="formDiv">
+                    <div class="tab-content" style="padding-top: 15px;">
+                        <div id="BaseInfo" class="tab-pane active" style=" padding-right:30px;">
+                            <table class="form">
+                                <tr>
+
+                                    <td class="formTitle">任务名称<font face="宋体">*</font></td>
+                                    <td class="formValue">
+                                        <input id="TaskName" type="text" class="form-control" placeholder="任务名称" isvalid="yes" checkexpession="NotNull" />
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <td class="formTitle">任务分组</td>
+                                    <td class="formValue">
+                                        <input id="TaskGroupName" type="text" class="form-control" placeholder="任务分组，暂时没做细致划分" />
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <td class="formTitle">任务类型<font face="宋体">*</font></td>
+                                    <td class="formValue">
+                                        <div id="TaskType" type="select" class="ui-select" isvalid="yes" checkexpession="NotNull">
+                                            <ul>
+                                                <li data-value="1">复杂任务</li>
+                                                <li data-value="0">单次任务</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                             
+                                <tr>
+
+                                    <td class="formTitle">创建时间<font face="宋体">*</font></td>
+                                    <td class="formValue">
+
+                                        <input id="BeginTime" type="text" class="form-control input-wdatepicker" onfocus="WdatePicker()" placeholder="简单任务必填" checkexpession="NotNull" isvalid="yes" />
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <td class="formTitle">程序集<font face="宋体">*</font></td>
+                                    <td class="formValue">
+                                        <input id="AssemblyDll" type="text" class="form-control" placeholder="程序集名：如SuperMgr.Task" isvalid="yes" checkexpession="NotNull" />
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <td class="formTitle">调用类名<font face="宋体">*</font></td>
+                                    <td class="formValue">
+                                        <input id="Class" type="text" class="form-control" placeholder="程序类名：如SuperMgr.Task.Jobs.TestJob" onblur="$.fn.existField(this.id, '/SysMgr/SchedulerMgr/ExistDataCode')" isvalid="yes" checkexpession="NotNull" />
+                                    </td>
+                                </tr>
+
+                                <tr>
+
+                                    <td class="formTitle">cron表达式</td>
+                                    <td class="formValue">
+                                        <input id="CronExpressionString" type="text" class="form-control" placeholder="复杂任务必填" />
+                                    </td>
+                                </tr>
+
+                                <tr>
+
+                                    <td class="formTitle">任务描述</td>
+                                    <td class="formValue">
+                                        <textarea rows="5" style="width: 100%" clas="form-control" id="TaskDesc" placeholder="任务描述"></textarea>
+                                    </td>
+                                </tr>
+
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+  
+</body>
+</html>
+
+
+<script src="/content/ui/global/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="/content/ui/global/bootstrap/js/bootstrap.min.js"></script>
+<script src="/content/min/js/supershopui.common.js"></script>
+
+<script src="/content/supermgr/Base/js/common.js"></script>
+
+<script src="/content/plugins/wizard/wizard.js"></script>
+<script src="/Content/plugins/validator/validator.js"></script>
+
+
+<script src="/content/plugins/wdtree/tree.js"></script>
+
+<script src="/content/supermgr/Module/SchedulerMgr/SchedulerMgr.js"></script>
+<script type="text/javascript">
+        var schedulerMgr = new SchedulerMgr();
+        schedulerMgr.initFormControl(true);
+        window.AcceptClick = schedulerMgr.AcceptClick;
+</script>

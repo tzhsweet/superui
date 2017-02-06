@@ -1,0 +1,1106 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+    <!--<![endif]-->
+    <!-- BEGIN HEAD -->
+
+    <head>
+        <meta charset="utf-8" />
+        <title>SuperUI前端框架</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author"/>
+
+        <link rel="stylesheet" href="../content/ui/global/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link href="../content/ui/global/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../content/adminlte/dist/css/AdminLTE.css">
+        <link rel="stylesheet" href="../content/adminlte/dist/css/skins/_all-skins.min.css">
+        <link href="../content/min/css/supershopui.common.min.css" rel="stylesheet" />
+
+        <link href="../content/plugins/select2/css/select2.min.css" rel="stylesheet" />
+
+        <link href="../content/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet" />
+        <style type="text/css">
+           /*解决select2兼容问题*/
+            span.select2-container 
+            {
+                z-index:10050;
+            }
+        </style>
+    </head>
+
+    <!-- END HEAD -->
+
+<body>
+    <section class="content-header">
+        <h1>
+            Select2 下拉框组件
+            <small>支持搜索、远程ajax加载、以及滚动条</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">UI</a></li>
+            <li class="active">Select2</li>
+        </ol>
+    </section>
+    <!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- BEGIN box-->
+            <div class="box box-primary  bordered">
+                <div class="box-header">
+                        <i class="icon-social-dribbble font-green"></i>
+                        <h3 class="box-title">默认textbox效果</h3>
+                 
+                </div>
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="default" class="control-label">默认textbox效果</label>
+                        <input id="default" type="text" class="form-control" placeholder="Placeholder text">
+                    </div>
+                    <div class="form-group">
+                        <label for="single" class="control-label">Select2 单选</label>
+                        <select id="single" class="form-control select2">
+                            <option></option>
+                            <optgroup label="Alaskan">
+                                <option value="AK">Alaska</option>
+                                <option value="HI" disabled="disabled">Hawaii</option>
+                            </optgroup>
+                            <optgroup label="Pacific Time Zone">
+                                <option value="CA">California</option>
+                                <option value="NV">Nevada</option>
+                                <option value="OR">Oregon</option>
+                                <option value="WA">Washington</option>
+                            </optgroup>
+                            <optgroup label="Mountain Time Zone">
+                                <option value="AZ">Arizona</option>
+                                <option value="CO">Colorado</option>
+                                <option value="ID">Idaho</option>
+                                <option value="MT">Montana</option>
+                                <option value="NE">Nebraska</option>
+                                <option value="NM">New Mexico</option>
+                                <option value="ND">North Dakota</option>
+                                <option value="UT">Utah</option>
+                                <option value="WY">Wyoming</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="multiple" class="control-label">Select2 多选</label>
+                        <select id="multiple" class="form-control select2-multiple" multiple>
+                            <optgroup label="Alaskan">
+                                <option value="AK">Alaska</option>
+                                <option value="HI" disabled="disabled">Hawaii</option>
+                            </optgroup>
+                            <optgroup label="Pacific Time Zone">
+                                <option value="CA">California</option>
+                                <option value="NV">Nevada</option>
+                                <option value="OR">Oregon</option>
+                                <option value="WA">Washington</option>
+                            </optgroup>
+                            <optgroup label="Mountain Time Zone">
+                                <option value="AZ">Arizona</option>
+                                <option value="CO">Colorado</option>
+                                <option value="ID">Idaho</option>
+                                <option value="MT">Montana</option>
+                                <option value="NE">Nebraska</option>
+                                <option value="NM">New Mexico</option>
+                                <option value="ND">North Dakota</option>
+                                <option value="UT">Utah</option>
+                                <option value="WY">Wyoming</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="box box-success bordered">
+                <div class="box-header">
+                    <i class="icon-social-dribbble font-purple"></i>
+                    <h3 class="box-title">输入框组</h3>
+                   
+                </div>
+                <div class="box-body">
+                    <div class="well">
+                        Select2可以直接追加bootstrap风格的inputgroup组件（
+                        <a href="http://getbootstrap.com/components/#input-groups">Bootstrap Input Group</a>）, 通过添加 <code>.select2-bootstrap-prepend</code> 或者 <code>.select2-bootstrap-append</code> 到 <code>.input-group</code> 控件中，来达到各种样式效果。
+                    </div>
+                    <div class="form-group">
+                        <label for="select2-single-append" class="control-label">Select2 带checkbox效果</label>
+                        <div class="input-group select2-bootstrap-prepend">
+                            <span class="input-group-addon">
+                                <input type="checkbox" checked>
+                            </span>
+                            <select id="select2-single-append" class="form-control select2-allow-clear">
+                                <option></option>
+                                <optgroup label="Alaskan">
+                                    <option value="AK">Alaska</option>
+                                    <option value="HI" disabled="disabled">Hawaii</option>
+                                </optgroup>
+                                <optgroup label="Pacific Time Zone">
+                                    <option value="CA">California</option>
+                                    <option value="NV">Nevada</option>
+                                    <option value="OR">Oregon</option>
+                                    <option value="WA">Washington</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="single-append-radio" class="control-label">Select2 带多选Radiobutton效果</label>
+                        <div class="input-group select2-bootstrap-prepend">
+                            <span class="input-group-addon">
+                                <input type="radio">
+                            </span>
+                            <select id="single-append-radio" class="form-control select2-allow-clear" multiple>
+                                <option></option>
+                                <optgroup label="Alaskan">
+                                    <option value="AK">Alaska</option>
+                                    <option value="HI" disabled="disabled">Hawaii</option>
+                                </optgroup>
+                                <optgroup label="Pacific Time Zone">
+                                    <option value="CA">California</option>
+                                    <option value="NV">Nevada</option>
+                                    <option value="OR">Oregon</option>
+                                    <option value="WA">Washington</option>
+                                </optgroup>
+                                <optgroup label="Mountain Time Zone">
+                                    <option value="AZ">Arizona</option>
+                                    <option value="CO">Colorado</option>
+                                    <option value="ID">Idaho</option>
+                                    <option value="MT">Montana</option>
+                                    <option value="NE">Nebraska</option>
+                                    <option value="NM">New Mexico</option>
+                                    <option value="ND">North Dakota</option>
+                                    <option value="UT">Utah</option>
+                                    <option value="WY">Wyoming</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="single-append-text" class="control-label">Select2追加效果</label>
+                        <div class="input-group select2-bootstrap-append">
+                            <select id="single-append-text" class="form-control select2-allow-clear">
+                                <option></option>
+                                <optgroup label="Alaskan">
+                                    <option value="AK">Alaska</option>
+                                    <option value="HI" disabled="disabled">Hawaii</option>
+                                </optgroup>
+                                <optgroup label="Pacific Time Zone">
+                                    <option value="CA">California</option>
+                                    <option value="NV">Nevada</option>
+                                    <option value="OR">Oregon</option>
+                                    <option value="WA">Washington</option>
+                                </optgroup>
+                                <optgroup label="Mountain Time Zone">
+                                    <option value="AZ">Arizona</option>
+                                    <option value="CO">Colorado</option>
+                                    <option value="ID">Idaho</option>
+                                    <option value="MT">Montana</option>
+                                    <option value="NE">Nebraska</option>
+                                    <option value="NM">New Mexico</option>
+                                    <option value="ND">North Dakota</option>
+                                    <option value="UT">Utah</option>
+                                    <option value="WY">Wyoming</option>
+                                </optgroup>
+                            </select>
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" data-select2-open="single-append-text">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="single-prepend-text" class="control-label">Select2组件前面加样式</label>
+                        <div class="input-group select2-bootstrap-prepend">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" data-select2-open="single-prepend-text">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </span>
+                            <select id="single-prepend-text" class="form-control select2">
+                                <option></option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="multi-append" class="control-label">Select2多种追加效果</label>
+                        <div class="input-group select2-bootstrap-append">
+                            <select id="multi-append" class="form-control select2" multiple>
+                                <option></option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                            </select>
+                            <span class="input-group-btn">
+                                <button class="btn btn-success" type="button" data-select2-open="multi-append">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="multi-prepend" class="control-label">Select2追加效果</label>
+                        <div class="input-group select2-bootstrap-prepend">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" data-select2-open="multi-prepend"> 国家 </button>
+                            </span>
+                            <select id="multi-prepend" class="form-control select2" multiple>
+                                <option></option>
+                                <optgroup label="Alaskan">
+                                    <option value="AK">Alaska</option>
+                                    <option value="HI" disabled="disabled">Hawaii</option>
+                                </optgroup>
+                                <optgroup label="Pacific Time Zone">
+                                    <option value="CA">California</option>
+                                    <option value="NV">Nevada</option>
+                                    <option value="OR">Oregon</option>
+                                    <option value="WA">Washington</option>
+                                </optgroup>
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box box-info bordered">
+                <div class="box-header">
+                        <i class="icon-social-dribbble font-dark"></i>
+                        <h3 class="box-title">Bootstrap Control Sizing</h3>
+                
+                  
+                </div>
+                <div class="box-body">
+                    <div class="well">
+                        <p>
+                            组件提供了 small 和 large 两种大小的Select2样式
+                            <a href="http://getbootstrap.com/components/#input-groups"> Bootstrap Input Groups</a> 和
+                            <a href="http://getbootstrap.com/css/#forms-control-sizes">Bootstrap Control Sizing</a>的样式可以通过(e. g. Select2 in <code>.input-group.input-group-sm</code> 或者 <code>.input-group.input-group-lg</code>). 你可以应用
+                            <a href="http://getbootstrap.com/css/#forms-control-sizes">Bootstrap Control Sizing</a> 的class直接设置 <code>.select2-container</code> 来修改它的外形。
+                        </p>
+                        <p>
+                            <h4 class="sbold">为什么有些Select2组件没有缩放?</h4>
+                        <p>
+                            <code>.select2-container--bootstrap.input-sm</code> 和 <code>.select2-container--bootstrap.input-lg</code> , 可以方便你修改它的样式。 <code>&lt;select&gt;</code> 你现在必须通过 <code>.select2-container--bootstrap</code>来修改它的样式:
+                        </p>
+                        <button class='btn btn-success  uppercase btn-set-scaling-classes js-btn-set-scaling-classes'>设置尺寸样式</button>
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="select2-multiple-input-sm" class="control-label">col-md-4</label>
+                            <select id="select2-multiple-input-sm" class="form-control input-sm select2-multiple" multiple dir="rtl">
+                                <optgroup label="Alaskan">
+                                    <option value="AK">Alaska</option>
+                                    <option value="HI" disabled="disabled">Hawaii</option>
+                                </optgroup>
+                                <optgroup label="Pacific Time Zone">
+                                    <option value="CA">California</option>
+                                    <option value="NV">Nevada</option>
+                                    <option value="OR">Oregon</option>
+                                    <option value="WA">Washington</option>
+                                </optgroup>
+                            </select>
+                            <p class="help-block">
+                                <a href="https://select2.github.io/examples.html#rtl">RTL支持</a> 只需要设置属性 <code>dir="rtl"</code>
+                            </p>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="select2-single-input-sm" class="control-label">col-md-3</label>
+                            <select id="select2-single-input-sm" class="form-control input-sm select2-multiple">
+                                <optgroup label="Alaskan">
+                                    <option value="AK">Alaska</option>
+                                    <option value="HI" disabled="disabled">Hawaii</option>
+                                </optgroup>
+                                <optgroup label="Pacific Time Zone">
+                                    <option value="CA">California</option>
+                                    <option value="NV">Nevada</option>
+                                    <option value="OR">Oregon</option>
+                                    <option value="WA">Washington</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="bootstrap-input-sm" class="control-label">Bootstrap风格输入框</label>
+                            <input id="bootstrap-input-sm" class="form-control input-sm" placeholder=".input-sm">
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group has-success">
+                                <label for="select2-single-input-group-sm" class="control-label">col-md-3</label>
+                                <div class="input-group input-group-sm select2-bootstrap-prepend">
+                                    <span class="input-group-addon">
+                                        <input type="radio">
+                                    </span>
+                                    <select id="select2-single-input-group-sm" class="form-control select2">
+                                        <option></option>
+                                        <optgroup label="Alaskan">
+                                            <option value="AK">Alaska</option>
+                                            <option value="HI" disabled="disabled">Hawaii</option>
+                                        </optgroup>
+                                        <optgroup label="Pacific Time Zone">
+                                            <option value="CA">California</option>
+                                            <option value="NV">Nevada</option>
+                                            <option value="OR">Oregon</option>
+                                            <option value="WA">Washington</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 has-warning">
+                            <label for="select2-multiple" class="control-label">col-md-4</label>
+                            <select id="select2-multiple" class="form-control select2-multiple" multiple>
+                                <optgroup label="Alaskan">
+                                    <option value="AK">Alaska</option>
+                                    <option value="HI" disabled="disabled">Hawaii</option>
+                                </optgroup>
+                                <optgroup label="Pacific Time Zone">
+                                    <option value="CA">California</option>
+                                    <option value="NV">Nevada</option>
+                                    <option value="OR">Oregon</option>
+                                    <option value="WA">Washington</option>
+                                </optgroup>
+                            </select>
+                            <p class="help-block">
+                                示例
+                                <a href="http://getbootstrap.com/css/#forms-help-text">请查看文档</a>.
+                            </p>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="span_small" class="control-label">col-md-3</label>
+                            <select id="span_small" class="form-control select2">
+                                <optgroup label="Alaskan">
+                                    <option value="AK">Alaska</option>
+                                    <option value="HI" disabled="disabled">Hawaii</option>
+                                </optgroup>
+                                <optgroup label="Pacific Time Zone">
+                                    <option value="CA">California</option>
+                                    <option value="NV">Nevada</option>
+                                    <option value="OR">Oregon</option>
+                                    <option value="WA">Washington</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="span-medium">Bootstrap输入框</label>
+                            <input id="span-medium" class="form-control" placeholder=".col-md-2">
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="span_large" class="control-label">col-md-3</label>
+                                <div class="input-group select2-bootstrap-prepend">
+                                    <span class="input-group-addon">
+                                        <input type="checkbox" checked>
+                                    </span>
+                                    <select id="span_large" class="form-control select2">
+                                        <option></option>
+                                        <optgroup label="Alaskan">
+                                            <option value="AK">Alaska</option>
+                                            <option value="HI" disabled="disabled">Hawaii</option>
+                                        </optgroup>
+                                        <optgroup label="Pacific Time Zone">
+                                            <option value="CA">California</option>
+                                            <option value="NV">Nevada</option>
+                                            <option value="OR">Oregon</option>
+                                            <option value="WA">Washington</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="select2-multiple-input-lg" class="control-label">col-md-4</label>
+                            <select id="select2-multiple-input-lg" class="form-control input-lg select2-multiple" multiple>
+                                <optgroup label="Alaskan">
+                                    <option value="AK">Alaska</option>
+                                    <option value="HI" disabled="disabled">Hawaii</option>
+                                </optgroup>
+                                <optgroup label="Pacific Time Zone">
+                                    <option value="CA">California</option>
+                                    <option value="NV">Nevada</option>
+                                    <option value="OR">Oregon</option>
+                                    <option value="WA">Washington</option>
+                                </optgroup>
+                                <optgroup label="Mountain Time Zone">
+                                    <option value="AZ">Arizona</option>
+                                    <option value="CO">Colorado</option>
+                                    <option value="ID">Idaho</option>
+                                    <option value="MT">Montana</option>
+                                    <option value="NE">Nebraska</option>
+                                    <option value="NM">New Mexico</option>
+                                    <option value="ND">North Dakota</option>
+                                    <option value="UT">Utah</option>
+                                    <option value="WY">Wyoming</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="select2-single-input-lg" class="control-label">col-md-3</label>
+                            <select id="select2-single-input-lg" class="form-control input-lg select2-multiple" dir="rtl">
+                                <optgroup label="Alaskan">
+                                    <option value="AK">Alaska</option>
+                                    <option value="HI" disabled="disabled">Hawaii</option>
+                                </optgroup>
+                                <optgroup label="Pacific Time Zone">
+                                    <option value="CA">California</option>
+                                    <option value="NV">Nevada</option>
+                                    <option value="OR">Oregon</option>
+                                    <option value="WA">Washington</option>
+                                </optgroup>
+                                <optgroup label="Mountain Time Zone">
+                                    <option value="AZ">Arizona</option>
+                                    <option value="CO">Colorado</option>
+                                    <option value="ID">Idaho</option>
+                                    <option value="MT">Montana</option>
+                                    <option value="NE">Nebraska</option>
+                                    <option value="NM">New Mexico</option>
+                                    <option value="ND">North Dakota</option>
+                                    <option value="UT">Utah</option>
+                                    <option value="WY">Wyoming</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="bootstrap-input-lg" class="control-label">Bootstrap input</label>
+                            <input id="bootstrap-input-lg" class="form-control input-lg" placeholder=".input-lg">
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group has-error">
+                                <label for="select2-multiple-input-group-lg" class="control-label">col-md-3</label>
+                                <div class="input-group input-group-lg select2-bootstrap-prepend">
+                                    <span class="input-group-addon">
+                                        <input type="radio">
+                                    </span>
+                                    <select id="select2-multiple-input-group-lg" class="form-control select2">
+                                        <option></option>
+                                        <optgroup label="Alaskan">
+                                            <option value="AK">Alaska</option>
+                                            <option value="HI" disabled="disabled">Hawaii</option>
+                                        </optgroup>
+                                        <optgroup label="Pacific Time Zone">
+                                            <option value="CA">California</option>
+                                            <option value="NV">Nevada</option>
+                                            <option value="OR">Oregon</option>
+                                            <option value="WA">Washington</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="m-heading-1 border-green m-bordered">
+                        <h3>远程Ajax获取数据</h3>
+                        <p>
+                            你也可以通过
+                            <a href="http://getbootstrap.com/css/?#forms-horizontal">Bootstrap's Horizontal Forms</a> 和
+                            <a href="http://getbootstrap.com/css/?#horizontal-form-group-sizes">Horizontal Form Group Sizes</a>来修改样式
+                        </p>
+                    </div>
+                    <form class="form-horizontal">
+                        <div class="form-group form-group-lg">
+                            <label class="col-sm-2 control-label" for="formGroupInputLarge">大标题</label>
+                            <div class="col-sm-5">
+                                <input class="form-control" type="text" id="formGroupInputLarge" placeholder="Large input">
+                            </div>
+                            <div class="col-sm-5">
+                                <select id="select2-button-addons-single-input-group-sm" class="form-control js-data-example-ajax">
+                                    <option value="2126244" selected="selected">SuperUI 1.0</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-2 control-label" for="formGroupInputSmall">小标题</label>
+                            <div class="col-sm-5">
+                                <input class="form-control" type="text" id="formGroupInputSmall" placeholder="Small input">
+                            </div>
+                            <div class="col-sm-5">
+                                <select id="select2-button-addons-single-input-group-sm" class="form-control js-data-example-ajax" dir="rtl">
+                                    <option value="2126244" selected="selected">SuperUI 1.0</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">邮件</label>
+                            <div class="col-sm-10">
+                                <select id="select2-button-addons-single-input-group-sm" class="form-control js-data-example-ajax" multiple>
+                                    <option value="2126244" selected="selected">SuperUI 1.0</option>
+                                    <option value="3620194" selected="selected">SuperUI 2.0</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox">记住我
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-default">登录</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="box box-danger bordered">
+                <div class="box-header">
+                   
+                        <i class="icon-settings font-red"></i>
+                    <h3 class="box-title">内联表单</h3>
+                   
+                </div>
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <form class="form-inline margin-bottom-20">
+                                <div class="form-group">
+                                    <label class="sr-only" for="exampleInputAmount">总额</label>
+                                    <div class="input-group select2-bootstrap-append select2-bootstrap-prepend input-large">
+                                        <div class="input-group-addon">$</div>
+                                        <select class="form-control select2">
+                                            <option></option>
+                                            <optgroup label="Alaskan">
+                                                <option value="AK">Alaska</option>
+                                                <option value="HI" disabled="disabled">Hawaii</option>
+                                            </optgroup>
+                                            <optgroup label="Pacific Time Zone">
+                                                <option value="CA">California</option>
+                                                <option value="NV">Nevada</option>
+                                                <option value="OR">Oregon</option>
+                                                <option value="WA">Washington</option>
+                                            </optgroup>
+                                        </select>
+                                        <div class="input-group-addon">.00</div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn green">转账</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <form class="form-inline margin-bottom-10">
+                                <div class="form-group">
+                                    <label class="sr-only" for="exampleInputEmail3">邮件地址</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail3" placeholder="输入邮件">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="exampleInputPassword3">密码</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword3" placeholder="密码">
+                                </div>
+                                <select class="form-control select2 input-large">
+                                    <option></option>
+                                    <optgroup label="Alaskan">
+                                        <option value="AK">Alaska</option>
+                                        <option value="HI" disabled="disabled">Hawaii</option>
+                                    </optgroup>
+                                    <optgroup label="Pacific Time Zone">
+                                        <option value="CA">California</option>
+                                        <option value="NV">Nevada</option>
+                                        <option value="OR">Oregon</option>
+                                        <option value="WA">Washington</option>
+                                    </optgroup>
+                                </select>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> 记住我
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn red">登录</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="m-heading-1 border-red m-bordered">
+                        <h3>附加按钮</h3>
+                        <p>
+                            <a href="http://getbootstrap.com/components/#input-groups-buttons">附加按钮</a>
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <label for="select2-button-addons-single-input-group-sm" class="control-label">Select2 用户自定义加载数据</label>
+                            <div class="input-group input-group-sm select2-bootstrap-prepend">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="button" data-select2-open="select2-button-addons-single-input-group-sm"> State </button>
+                                </div>
+                                <select id="select2-button-addons-single-input-group-sm" class="form-control js-data-example-ajax" dir="rtl">
+                                    <option value="2126244" selected="selected">SuperUI 1.0</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <label for="select2-button-addons-multiple-input-group-sm" class="control-label">col-md-5</label>
+                            <div class="input-group input-group-sm select2-bootstrap-prepend">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" data-select2-open="select2-button-addons-multiple-input-group-sm">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                                <select id="select2-button-addons-multiple-input-group-sm" class="form-control select2-multiple" multiple>
+                                    <optgroup label="Alaskan">
+                                        <option value="AK">Alaska</option>
+                                        <option value="HI" disabled="disabled">Hawaii</option>
+                                    </optgroup>
+                                    <optgroup label="Pacific Time Zone">
+                                        <option value="CA">California</option>
+                                        <option value="NV">Nevada</option>
+                                        <option value="OR">Oregon</option>
+                                        <option value="WA">Washington</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <label for="select2-button-addons-single-input-group" class="control-label">Select2 用户自定义加载数据</label>
+                            <div class="input-group select2-bootstrap-prepend">
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                        动作
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="#">动作</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">动作</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">动作</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="#">动作</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <select id="select2-button-addons-single-input-group" class="form-control js-data-example-ajax">
+                                    <option value="3620194" selected="selected">select2组件</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <label for="select2-input-group-append" class="control-label">col-md-5</label>
+                            <div class="input-group has-warning select2-bootstrap-prepend">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" data-select2-open="select2-input-group-append">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                                <select id="select2-input-group-append" class="form-control select2-multiple" multiple>
+                                    <optgroup label="Alaskan">
+                                        <option value="AK">Alaska</option>
+                                        <option value="HI" disabled="disabled">Hawaii</option>
+                                    </optgroup>
+                                    <optgroup label="Pacific Time Zone">
+                                        <option value="CA">California</option>
+                                        <option value="NV">Nevada</option>
+                                        <option value="OR">Oregon</option>
+                                        <option value="WA">Washington</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <label for="select2-button-addons-single-input-group-lg" class="control-label">Select2 用户自定义加载数据</label>
+                            <div class="input-group input-group-lg select2-bootstrap-append">
+                                <select id="select2-button-addons-single-input-group-lg" class="form-control js-data-example-ajax" multiple>
+                                    <option value="2126244" selected="selected">SuperUI V1.0</option>
+                                    <option value="3620194" selected="selected">SuperUI V1.0</option>
+                                </select>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" data-select2-open="select2-button-addons-single-input-group-lg">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <label for="select2-button-addons-multi-input-group-lg" class="control-label">col-md-5</label>
+                            <div class="input-group input-group-lg select2-bootstrap-prepend">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" data-select2-open="select2-button-addons-multi-input-group-lg">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                                <select id="select2-button-addons-multi-input-group-lg" class="form-control select2-multiple" multiple>
+                                    <optgroup label="Alaskan">
+                                        <option value="AK">Alaska</option>
+                                        <option value="HI" disabled="disabled">Hawaii</option>
+                                    </optgroup>
+                                    <optgroup label="Pacific Time Zone">
+                                        <option value="CA">California</option>
+                                        <option value="NV">Nevada</option>
+                                        <option value="OR">Oregon</option>
+                                        <option value="WA">Washington</option>
+                                    </optgroup>
+                                    <optgroup label="Mountain Time Zone">
+                                        <option value="AZ">Arizona</option>
+                                        <option value="CO">Colorado</option>
+                                        <option value="ID">Idaho</option>
+                                        <option value="MT">Montana</option>
+                                        <option value="NE">Nebraska</option>
+                                        <option value="NM">New Mexico</option>
+                                        <option value="ND">North Dakota</option>
+                                        <option value="UT">Utah</option>
+                                        <option value="WY">Wyoming</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box box-success bordered">
+                <div class="box-header">
+                    <div class="caption">
+                        <i class="icon-layers font-red"></i>
+                        <h3 class="box-title">模态窗体中显示Select2组件</h3>
+                    </div>
+                 
+                </div>
+                <div class="box-body">
+                    <p>
+                        Select2可以很好的与bootstrap的
+                        <a href="http://getbootstrap.com/javascript/#modals" target="_blank"> 模态窗体</a>兼容。
+                    </p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button type="submit" class="btn green" data-target="#modal_demo_1" data-toggle="modal">加载模态窗体1</button>
+                            <button type="submit" class="btn red" data-target="#modal_demo_2" data-toggle="modal">加载模态窗体2</button>
+                        </div>
+                    </div>
+                    <div id="modal_demo_1" class="modal fade" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                    <h4 class="modal-title">Select2组件</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="#" class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-4">单选</label>
+                                            <div class="col-md-8">
+                                                <select class="form-control select2">
+                                                    <option></option>
+                                                    <optgroup label="Alaskan">
+                                                        <option value="AK">Alaska</option>
+                                                        <option value="HI" disabled="disabled">Hawaii</option>
+                                                    </optgroup>
+                                                    <optgroup label="Pacific Time Zone">
+                                                        <option value="CA">California</option>
+                                                        <option value="NV">Nevada</option>
+                                                        <option value="OR">Oregon</option>
+                                                        <option value="WA">Washington</option>
+                                                    </optgroup>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-4">多选</label>
+                                            <div class="col-md-8">
+                                                <select class="form-control select2-multiple" multiple>
+                                                    <optgroup label="Alaskan">
+                                                        <option value="AK">Alaska</option>
+                                                        <option value="HI" disabled="disabled">Hawaii</option>
+                                                    </optgroup>
+                                                    <optgroup label="Pacific Time Zone">
+                                                        <option value="CA">California</option>
+                                                        <option value="NV">Nevada</option>
+                                                        <option value="OR">Oregon</option>
+                                                        <option value="WA">Washington</option>
+                                                    </optgroup>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn dark btn-outline" data-dismiss="modal" aria-hidden="true">关闭</button>
+                                    <button class="btn green" data-dismiss="modal">保存</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="modal_demo_2" class="modal fade" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                    <h4 class="modal-title">Select2 组件</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="#" class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-4">输入框组</label>
+                                            <div class="col-md-8">
+                                                <div class="input-group select2-bootstrap-prepend">
+                                                    <span class="input-group-addon">
+                                                        <input type="checkbox" checked>
+                                                    </span>
+                                                    <select id="select2-single-append" class="form-control select2-allow-clear">
+                                                        <option></option>
+                                                        <optgroup label="Alaskan">
+                                                            <option value="AK">Alaska</option>
+                                                            <option value="HI" disabled="disabled">Hawaii</option>
+                                                        </optgroup>
+                                                        <optgroup label="Pacific Time Zone">
+                                                            <option value="CA">California</option>
+                                                            <option value="NV">Nevada</option>
+                                                            <option value="OR">Oregon</option>
+                                                            <option value="WA">Washington</option>
+                                                        </optgroup>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-4">Select2多种追加</label>
+                                            <div class="col-md-8">
+                                                <div class="input-group select2-bootstrap-append">
+                                                    <select id="multi-append" class="form-control select2" multiple>
+                                                        <option></option>
+                                                        <option value="A">A</option>
+                                                        <option value="B">B</option>
+                                                        <option value="C">C</option>
+                                                    </select>
+                                                    <span class="input-group-btn">
+                                                        <button class="btn btn-default" type="button" data-select2-open="multi-append">
+                                                            <span class="glyphicon glyphicon-search"></span>
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn dark btn-outline" data-dismiss="modal" aria-hidden="true">关闭</button>
+                                    <button class="btn green" data-dismiss="modal">保存</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box box-danger bordered">
+                <div class="box-header">
+                 
+                        <i class="icon-feed dark"></i>
+                    <h3 class="box-title">禁用输入框和设置</h3>
+                 
+                </div>
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="select2-disabled-inputs-single" class="control-label">col-md-3</label>
+                                <div class="input-group select2-bootstrap-prepend">
+                                    <span class="input-group-addon">
+                                        <input type="checkbox">
+                                    </span>
+                                    <select id="select2-disabled-inputs-single" class="form-control select2" disabled>
+                                        <option></option>
+                                        <optgroup label="Alaskan">
+                                            <option value="AK">Alaska</option>
+                                            <option value="HI" disabled="disabled">Hawaii</option>
+                                        </optgroup>
+                                        <optgroup label="Pacific Time Zone">
+                                            <option value="CA">California</option>
+                                            <option value="NV">Nevada</option>
+                                            <option value="OR">Oregon</option>
+                                            <option value="WA">Washington</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="select2-disabled-inputs-multiple" class="control-label">col-md-3</label>
+                                <div class="input-group select2-bootstrap-prepend">
+                                    <span class="input-group-addon">
+                                        <input type="checkbox" checked>
+                                    </span>
+                                    <select id="select2-disabled-inputs-multiple" class="form-control select2-multiple" multiple>
+                                        <option></option>
+                                        <optgroup label="Alaskan">
+                                            <option value="AK">Alaska</option>
+                                            <option value="HI" disabled="disabled">Hawaii</option>
+                                        </optgroup>
+                                        <optgroup label="Pacific Time Zone">
+                                            <option value="CA">California</option>
+                                            <option value="NV">Nevada</option>
+                                            <option value="OR">Oregon</option>
+                                            <option value="WA">Washington</option>
+                                        </optgroup>
+                                        <optgroup label="Mountain Time Zone">
+                                            <option value="AZ">Arizona</option>
+                                            <option value="CO">Colorado</option>
+                                            <option value="ID">Idaho</option>
+                                            <option value="MT">Montana</option>
+                                            <option value="NE">Nebraska</option>
+                                            <option value="NM">New Mexico</option>
+                                            <option value="ND">North Dakota</option>
+                                            <option value="UT">Utah</option>
+                                            <option value="WY">Wyoming</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="../content/ui/global/jQuery/jquery.min.js"></script>
+<script src="../content/ui/global/bootstrap/js/bootstrap.min.js"></script>
+<script src="../content/min/js/supershopui.common.js"></script>
+<script src="../content/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+<script src="../content/plugins/select2/js/select2.full.min.js"></script>
+<script>
+    $(function() {
+
+        // Set the "bootstrap" theme as the default theme for all Select2
+        // widgets.
+        //
+        // @see https://github.com/select2/select2/issues/2927
+        $.fn.select2.defaults.set("theme", "bootstrap");
+
+        var placeholder = "Select a State";
+
+        $(".select2, .select2-multiple").select2({
+            placeholder: placeholder,
+            width: null
+        });
+
+        $(".select2-allow-clear").select2({
+            allowClear: true,
+            placeholder: placeholder,
+            width: null
+        });
+
+        // @see https://select2.github.io/examples.html#data-ajax
+        function formatRepo(repo) {
+            if (repo.loading) return repo.text;
+
+            var markup = "<div class='select2-result-repository clearfix'>" +
+                "<div class='select2-result-repository__avatar'><img src='" + repo.owner.avatar_url + "' /></div>" +
+                "<div class='select2-result-repository__meta'>" +
+                "<div class='select2-result-repository__title'>" + repo.full_name + "</div>";
+
+            if (repo.description) {
+                markup += "<div class='select2-result-repository__description'>" + repo.description + "</div>";
+            }
+
+            markup += "<div class='select2-result-repository__statistics'>" +
+                "<div class='select2-result-repository__forks'><span class='glyphicon glyphicon-flash'></span> " + repo.forks_count + " Forks</div>" +
+                "<div class='select2-result-repository__stargazers'><span class='glyphicon glyphicon-star'></span> " + repo.stargazers_count + " Stars</div>" +
+                "<div class='select2-result-repository__watchers'><span class='glyphicon glyphicon-eye-open'></span> " + repo.watchers_count + " Watchers</div>" +
+                "</div>" +
+                "</div></div>";
+
+            return markup;
+        }
+
+        function formatRepoSelection(repo) {
+            return repo.full_name || repo.text;
+        }
+
+        $(".js-data-example-ajax").select2({
+            width: "off",
+            ajax: {
+                url: "https://api.github.com/search/repositories",
+                dataType: 'json',
+                delay: 250,
+                data: function(params) {
+                    return {
+                        q: params.term, // search term
+                        page: params.page
+                    };
+                },
+                processResults: function(data, page) {
+                    // parse the results into the format expected by Select2.
+                    // since we are using custom formatting functions we do not need to
+                    // alter the remote JSON data
+                    return {
+                        results: data.items
+                    };
+                },
+                cache: true
+            },
+            escapeMarkup: function(markup) {
+                return markup;
+            }, // let our custom formatter work
+            minimumInputLength: 1,
+            templateResult: formatRepo,
+            templateSelection: formatRepoSelection
+        });
+
+        $("button[data-select2-open]").click(function() {
+            $("#" + $(this).data("select2-open")).select2("open");
+        });
+
+        $(":checkbox").on("click", function() {
+            $(this).parent().nextAll("select").prop("disabled", !this.checked);
+        });
+
+        // copy Bootstrap validation states to Select2 dropdown
+        //
+        // add .has-waring, .has-error, .has-succes to the Select2 dropdown
+        // (was #select2-drop in Select2 v3.x, in Select2 v4 can be selected via
+        // body > .select2-container) if _any_ of the opened Select2's parents
+        // has one of these forementioned classes (YUCK! ;-))
+        $(".select2, .select2-multiple, .select2-allow-clear, .js-data-example-ajax").on("select2:open", function() {
+            if ($(this).parents("[class*='has-']").length) {
+                var classNames = $(this).parents("[class*='has-']")[0].className.split(/\s+/);
+
+                for (var i = 0; i < classNames.length; ++i) {
+                    if (classNames[i].match("has-")) {
+                        $("body > .select2-container").addClass(classNames[i]);
+                    }
+                }
+            }
+        });
+
+        $(".js-btn-set-scaling-classes").on("click", function() {
+            $("#select2-multiple-input-sm, #select2-single-input-sm").next(".select2-container--bootstrap").addClass("input-sm");
+            $("#select2-multiple-input-lg, #select2-single-input-lg").next(".select2-container--bootstrap").addClass("input-lg");
+            $(this).removeClass("btn-primary btn-outline").prop("disabled", true);
+        });
+    });
+</script>
+</body>
+
+</html>

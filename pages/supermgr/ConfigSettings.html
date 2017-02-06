@@ -1,0 +1,410 @@
+﻿
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>SuperMgr后台框架</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="../../content/ui/global/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link href="../../content/ui/global/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../content/adminlte/dist/css/AdminLTE.css">
+    <link rel="stylesheet" href="../../content/adminlte/dist/css/skins/_all-skins.min.css">
+    <link href="../../content/min/css/supershopui.common.min.css" rel="stylesheet" />
+    <link href="/content/supermgr/Base/css/common.css" rel="stylesheet" />
+
+
+    <link href="/content/plugins/wizard/wizard.css" rel="stylesheet" />
+    <link href="/content/plugins/wdtree/tree.css" rel="stylesheet" />
+
+    <link href="/Content/plugins/jqgrid/jqgrid.css" rel="stylesheet" />
+
+    <script src="/Content/plugins/datepicker/WdatePicker.js"></script>
+
+    <link rel="stylesheet" href="/content/plugins/iCheck/all.css">
+    <link href="../../content/ui/global/bootstrap-switch/css/bootstrap-switch.css" rel="stylesheet" />
+</head>
+<body>
+    <section class="content-header">
+        <h1>
+            插件配置管理
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active"><a href="#">插件配置管理</a></li>
+        </ol>
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#tab_1" data-toggle="tab">支付配置</a></li>
+                <li><a href="#tab_2" data-toggle="tab">第三方登录配置</a></li>
+                <li><a href="#tab_3" data-toggle="tab">快递单模板配置</a></li>
+               
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab_1">
+                    <form role="form">
+                        <div class="box-body">
+                         
+                            <div class="callout callout-success">
+                                <h4>支付配置提醒！</h4>
+                                <p>提示：第一次使用请先进行支付相关配置。</p>
+                            </div>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th align="center">支付方式</th>
+                                        <th> 状态</th>
+                                        <th> 操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            支付宝
+                                        </td>
+
+
+                                        <td>
+                                           <input class="make-switch" messagetype="1" pluginid="Himall.Plugin.Message.Email" type="checkbox" data-size="mini" data-on-text="开启" data-off-text="关闭" />
+                                        </td>
+                                    
+                                        <td>
+
+                                            <button type="button" class="btn btn-block btn-success btn-xs" style="max-width: 80px"><i class="fa fa-edit"></i>编辑</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            支付宝扫码支付
+                                        </td>
+
+
+                                        <td>
+                                            <input class="make-switch" messagetype="1" pluginid="Himall.Plugin.Message.Email" type="checkbox" data-size="mini" data-on-text="开启" data-off-text="关闭" />
+                                        </td>
+                                       
+                                        <td>
+
+                                            <button type="button" class="btn btn-block btn-success btn-xs" style="max-width: 80px"><i class="fa fa-edit"></i>编辑</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            支付宝手机支付
+                                        </td>
+
+
+                                        <td>
+                                            <input class="make-switch" messagetype="1" pluginid="Himall.Plugin.Message.Email" type="checkbox" data-size="mini" data-on-text="开启" data-off-text="关闭" />
+                                        </td>
+                                       
+                                        <td>
+
+                                            <button type="button" class="btn btn-block btn-success btn-xs" style="max-width: 80px"><i class="fa fa-edit"></i>编辑</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            银联支付
+                                        </td>
+
+
+                                        <td>
+                                            <input class="make-switch" messagetype="1" pluginid="Himall.Plugin.Message.Email" type="checkbox" data-size="mini" data-on-text="开启" data-off-text="关闭" />
+                                        </td>
+                                      
+                                        <td>
+
+                                            <button type="button" class="btn btn-block btn-success btn-xs" style="max-width: 80px"><i class="fa fa-edit"></i>编辑</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            微信支付
+                                        </td>
+
+
+                                        <td>
+                                            <input class="make-switch" messagetype="1" pluginid="Himall.Plugin.Message.Email" type="checkbox" data-size="mini" data-on-text="开启" data-off-text="关闭" />
+                                        </td>
+                                       
+                                        <td>
+
+                                            <button type="button" class="btn btn-block btn-success btn-xs" style="max-width: 80px"><i class="fa fa-edit"></i>编辑</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            微信扫码支付
+                                        </td>
+
+
+                                        <td>
+                                            <input class="make-switch" messagetype="1" pluginid="Himall.Plugin.Message.Email" type="checkbox" data-size="mini" data-on-text="开启" data-off-text="关闭" />
+                                        
+                                        </td>
+                                        <td>
+
+                                            <button type="button" class="btn btn-block btn-success btn-xs" style="max-width: 80px"><i class="fa fa-edit"></i>编辑</button>
+                                        </td>
+                                    </tr>
+                                  
+
+                                </tbody>
+                            </table>
+
+
+                        </div>
+
+                    </form>
+
+
+                </div>
+                <!-- /.tab-pane -->
+                <div class="tab-pane" id="tab_2">
+                    <form role="form">
+                        <div class="box-body">
+                            <div class="callout callout-success">
+                                <h4>第三方登录配置提醒！</h4>
+                                <p>提示：第一次使用请先进行登录配置相关配置。</p>
+                            </div>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th align="center">登录方式</th>
+                                        <th> 状态</th>
+                                        <th> 操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            QQ
+                                        </td>
+
+
+                                        <td>
+                                            <input class="make-switch" messagetype="1" pluginid="Himall.Plugin.Message.Email" type="checkbox" data-size="mini" data-on-text="开启" data-off-text="关闭" />
+                                        </td>
+
+                                        <td>
+
+                                            <button type="button" class="btn btn-block btn-success btn-xs" style="max-width: 80px"><i class="fa fa-edit"></i>编辑</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            新浪微博
+                                        </td>
+
+
+                                        <td>
+                                            <input class="make-switch" messagetype="1" pluginid="Himall.Plugin.Message.Email" type="checkbox" data-size="mini" data-on-text="开启" data-off-text="关闭" />
+                                        </td>
+
+                                        <td>
+
+                                            <button type="button" class="btn btn-block btn-success btn-xs" style="max-width: 80px"><i class="fa fa-edit"></i>编辑</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            微信
+                                        </td>
+
+
+                                        <td>
+                                            <input class="make-switch" messagetype="1" pluginid="Himall.Plugin.Message.Email" type="checkbox" data-size="mini" data-on-text="开启" data-off-text="关闭" />
+                                        </td>
+
+                                        <td>
+
+                                            <button type="button" class="btn btn-block btn-success btn-xs" style="max-width: 80px"><i class="fa fa-edit"></i>编辑</button>
+                                        </td>
+                                    </tr>
+                                  
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.box-body -->
+
+                    </form>
+                 
+
+                </div>
+                <!-- /.tab-pane -->
+                <div class="tab-pane" id="tab_3">
+                    <div class="box-body">
+                        <div class="callout callout-success">
+                            <h4>快递模板配置提醒！</h4>
+                            <p>提示：第一次使用请先进行快递模板相关配置。</p>
+                        </div>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th align="center">快递公司</th>
+                                    <th> 操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        顺丰快递
+                                    </td>
+
+
+                                    <td>
+
+                                        <button type="button" class="btn btn-block btn-success btn-xs" style="max-width: 80px"><i class="fa fa-edit"></i>编辑</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        邮政EMS
+                                    </td>
+
+
+                                    <td>
+
+                                        <button type="button" class="btn btn-block btn-success btn-xs" style="max-width: 80px"><i class="fa fa-edit"></i>编辑</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        申通快递
+                                    </td>
+
+
+
+                                    <td>
+
+                                        <button type="button" class="btn btn-block btn-success btn-xs" style="max-width: 80px"><i class="fa fa-edit"></i>编辑</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        天天快递
+                                    </td>
+
+
+
+                                    <td>
+
+                                        <button type="button" class="btn btn-block btn-success btn-xs" style="max-width: 80px"><i class="fa fa-edit"></i>编辑</button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        圆通速递
+                                    </td>
+
+
+
+                                    <td>
+
+                                        <button type="button" class="btn btn-block btn-success btn-xs" style="max-width: 80px"><i class="fa fa-edit"></i>编辑</button>
+                                    </td>
+                                </tr>
+                            <tr>
+                                <td>
+                                    韵达快递
+                                </td>
+
+
+
+                                <td>
+
+                                    <button type="button" class="btn btn-block btn-success btn-xs" style="max-width: 80px"><i class="fa fa-edit"></i>编辑</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    宅急送
+                                </td>
+
+
+                                <td>
+
+                                    <button type="button" class="btn btn-block btn-success btn-xs" style="max-width: 80px"><i class="fa fa-edit"></i>编辑</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    中通速递
+                                </td>
+
+
+                                <td>
+
+                                    <button type="button" class="btn btn-block btn-success btn-xs" style="max-width: 80px"><i class="fa fa-edit"></i>编辑</button>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td>
+                                        邮政平邮
+                                    </td>
+
+
+                                 
+                                    <td>
+
+                                        <button type="button" class="btn btn-block btn-success btn-xs" style="max-width: 80px"><i class="fa fa-edit"></i>编辑</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+           
+            </div>
+           
+            <!-- /.tab-content -->
+        </div>
+
+    
+
+    </section>
+</body>
+</html>
+
+
+<script src="/content/ui/global/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="/content/ui/global/bootstrap/js/bootstrap.min.js"></script>
+
+<script src="/content/min/js/supershopui.common.js"></script>
+
+<script src="/content/supermgr/Base/js/common.js"></script>
+<script src="/Content/plugins/jqgrid/grid.locale-cn.js"></script>
+<script src="/Content/plugins/jqgrid/jqgrid.js"></script>
+
+<script src="/content/plugins/wizard/wizard.js"></script>
+<script src="/Content/plugins/validator/validator.js"></script>
+
+<script src="/content/plugins/iCheck/icheck.min.js"></script>
+<script src="/content/plugins/wdtree/tree.js"></script>
+<script src="../../content/ui/global/bootstrap-switch/js/bootstrap-switch.js"></script>
+<script>
+    $(function() {
+       
+        App.init();
+    });
+</script>

@@ -1,6 +1,6 @@
-﻿$(function () {
-    window.onload = function () {
-    };
+﻿
+
+jQuery(document).ready(function () {
     $(".ui-filter-text").click(function () {
         if ($(this).next(".ui-filter-list").is(":hidden")) {
             $(this).css("border-bottom-color", "#fff");
@@ -24,6 +24,39 @@
         $(this).removeClass("hover");
     });
 });
+
+//获取layout内容页高度
+$.fn.getLayoutHeight = function () {
+    if ($(".content").length > 0) { //如果有.content元素，则从content元素开始计算
+        return $(window).height() - $(".content").offset().top;
+    } else {
+        return $(window).height();
+    }
+}
+//获取layout bottom底部距离
+$.fn.getLayoutBottomHeight=function() {
+    return 52;  //底部距离预设52
+}
+//获取layout中grid刨除顶部高度（包括上下内边距）
+$.fn.getGridTopHeight = function () {
+    if ($(".gridPanel").length > 0) {
+        return $(".gridPanel").offset().top;
+    } else {
+        return 0;
+    }
+}
+//获取layout内容区域高度
+$.fn.getLayoutContentHeight=function() {
+    return $.fn.getLayoutHeight() - $.fn.getLayoutBottomHeight();
+}
+//获取列表grid自适应高度
+$.fn.getGridHeight = function (hasPage) {
+    var pageHeight = -18;//一种奇怪的bug，临时解决方案-18px
+    if (hasPage) {
+        pageHeight = 28;//28代表分页高度
+    }
+    return $(window).height() - $.fn.getGridTopHeight() - $.fn.getLayoutBottomHeight() - pageHeight;
+}
 $.loading = function (bool, text) {
     if (bool) {
         App.blockUI({

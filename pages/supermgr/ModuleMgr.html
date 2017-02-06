@@ -1,0 +1,125 @@
+﻿
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8"/>
+    <title>SuperMgr后台框架</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="" name="description"/>
+    <meta content="" name="author"/>
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="../../content/ui/global/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link href="../../content/ui/global/font-awesome/css/font-awesome.css" rel="stylesheet"/>
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../content/adminlte/dist/css/AdminLTE.css">
+    <link rel="stylesheet" href="../../content/adminlte/dist/css/skins/_all-skins.min.css">
+    <link href="../../content/min/css/supershopui.common.min.css" rel="stylesheet"/>
+
+    <link href="/content/supermgr/Base/css/common.css" rel="stylesheet"/>
+    <link href="/Content/plugins/jqgrid/jqgrid.css" rel="stylesheet"/>
+
+
+    <script src="/Content/plugins/datepicker/WdatePicker.js"></script>
+
+    <link href="/content/plugins/wdtree/tree.css" rel="stylesheet"/>
+    <style>
+        html,body {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<section class="content-header">
+    <h1>
+        系统模块管理
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active"><a href="#">系统模块管理</a></li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content">
+    <div class="ui-layout" id="layout" style="height: 100%; width: 100%;">
+        <div class="ui-layout-west">
+            <div class="west-Panel">
+                <div class="panel-Title">功能目录</div>
+                <div id="itemTree"></div>
+            </div>
+        </div>
+        <div class="ui-layout-center">
+            <div class="center-Panel">
+                <div class="panel-Title">功能信息</div>
+                <div class="titlePanel">
+                    <div class="title-search">
+                        <table>
+                            <tr>
+                                <td>
+                                    <div id="queryCondition" class="btn-group">
+                                        <a class="btn btn-default dropdown-text" data-toggle="dropdown">选择条件</a>
+                                        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a data-value="EnCode">编号</a></li>
+                                            <li><a data-value="FullName">名称</a></li>
+                                            <li><a data-value="UrlAddress">地址</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td style="padding-left: 2px;">
+                                    <input id="txt_Keyword" type="text" class="form-control" placeholder="请输入要查询关键字" style="width: 200px;"/>
+                                </td>
+                                <td style="padding-left: 5px;">
+                                    <a id="btn_Search" class="btn btn-primary"><i class="fa fa-search lr-search"></i>&nbsp;查询</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="toolbar moduletoolbar">
+                        <div class="btn-group">
+                            <a class="btn btn-default lr-replace"><i class="fa fa-refresh"></i>&nbsp;刷新</a>
+                            <a class="btn btn-default lr-add"><i class="fa fa-plus"></i>&nbsp;新增</a>
+                            <a class="btn btn-default lr-edit"><i class="fa fa-pencil-square-o"></i>&nbsp;编辑</a>
+                            <a class="btn btn-default lr-delete"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+                        </div>
+                        <script></script>
+                    </div>
+                </div>
+                <div class="gridPanel">
+                    <table id="gridTable"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+</body>
+</html>
+
+<script src="/content/ui/global/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="/content/ui/global/bootstrap/js/bootstrap.min.js"></script>
+<script src="/content/min/js/supershopui.common.js"></script>
+<script src="/Content/plugins/jqgrid/grid.locale-cn.js"></script>
+<script src="/Content/plugins/jqgrid/jqgrid.js"></script>
+<script src="/content/supermgr/Base/js/common.js"></script>
+
+<script src="/Content/plugins/validator/validator.js"></script>
+<script src="/Content/plugins/layout/jquery.layout.js"></script>
+
+<script src="/content/plugins/wdtree/tree.js"></script>
+<script src="/Content/supermgr/Module/ModuleMgr/ModuleMgr.js"></script>
+<script type="text/javascript">
+            var module = new ModuleMgr();
+            module.initGridPage();
+            module.loadTree();
+            module.loadGrid();
+            $(window).resize();
+</script>

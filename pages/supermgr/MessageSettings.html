@@ -1,0 +1,298 @@
+﻿
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>SuperMgr后台框架</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="../../content/ui/global/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link href="../../content/ui/global/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../content/adminlte/dist/css/AdminLTE.css">
+    <link rel="stylesheet" href="../../content/adminlte/dist/css/skins/_all-skins.min.css">
+    <link href="../../content/min/css/supershopui.common.min.css" rel="stylesheet" />
+    <link href="/content/supermgr/Base/css/common.css" rel="stylesheet" />
+
+
+    <link href="/content/plugins/wizard/wizard.css" rel="stylesheet" />
+    <link href="/content/plugins/wdtree/tree.css" rel="stylesheet" />
+
+    <link href="/Content/plugins/jqgrid/jqgrid.css" rel="stylesheet" />
+
+    <script src="/Content/plugins/datepicker/WdatePicker.js"></script>
+
+    <link rel="stylesheet" href="/content/plugins/iCheck/all.css">
+    <link href="../../content/ui/global/bootstrap-switch/css/bootstrap-switch.css" rel="stylesheet" />
+</head>
+<body>
+    <section class="content-header">
+        <h1>
+            消息设置
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active"><a href="#">消息设置</a></li>
+        </ol>
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#tab_1" data-toggle="tab">消息管理</a></li>
+                <li><a href="#tab_2" data-toggle="tab">邮箱通知配置</a></li>
+                <li><a href="#tab_3" data-toggle="tab">手机短信配置</a></li>
+               
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab_1">
+                    <form role="form">
+                        <div class="box-body">
+                         
+                            <div class="callout callout-success">
+                                <h4>短信提醒！</h4>
+                                <p>提示：第一次使用消息提示请先进行相关配置。</p>
+                            </div>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th align="center">消息类型</th>
+                                        <th> 邮件通知</th>
+                                        <th> 手机短信</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            订单创建时
+                                        </td>
+
+
+                                        <td>
+                                           <input class="make-switch" messagetype="1" pluginid="Himall.Plugin.Message.Email" type="checkbox" data-size="mini" data-on-text="开启" data-off-text="关闭" />
+                                        </td>
+                                        <td>
+                                            <input class="make-switch" messagetype="1" pluginid="Himall.Plugin.Message.Email" type="checkbox" data-size="mini" data-on-text="开启" data-off-text="关闭" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            订单付款时
+                                        </td>
+
+
+                                        <td>
+                                            <input class="make-switch" messagetype="1" pluginid="Himall.Plugin.Message.Email" type="checkbox" data-size="mini" data-on-text="开启" data-off-text="关闭" />
+                                        </td>
+                                        <td>
+                                            <input class="make-switch" messagetype="1" pluginid="Himall.Plugin.Message.Email" type="checkbox" data-size="mini" data-on-text="开启" data-off-text="关闭" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            订单发货
+                                        </td>
+
+
+                                        <td>
+                                            <input class="make-switch" messagetype="1" pluginid="Himall.Plugin.Message.Email" type="checkbox" data-size="mini" data-on-text="开启" data-off-text="关闭" />
+                                        </td>
+                                        <td>
+                                            <input class="make-switch" messagetype="1" pluginid="Himall.Plugin.Message.Email" type="checkbox" data-size="mini" data-on-text="开启" data-off-text="关闭" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            订单退款
+                                        </td>
+
+
+                                        <td>
+                                            <input class="make-switch" messagetype="1" pluginid="Himall.Plugin.Message.Email" type="checkbox" data-size="mini" data-on-text="开启" data-off-text="关闭" />
+                                        </td>
+                                        <td>
+                                            <input class="make-switch" messagetype="1" pluginid="Himall.Plugin.Message.Email" type="checkbox" data-size="mini" data-on-text="开启" data-off-text="关闭" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            找回密码
+                                        </td>
+
+
+                                        <td>
+                                            <input class="make-switch" messagetype="1" pluginid="Himall.Plugin.Message.Email" type="checkbox" data-size="mini" data-on-text="开启" data-off-text="关闭" />
+                                        </td>
+                                        <td>
+                                            <input class="make-switch" messagetype="1" pluginid="Himall.Plugin.Message.Email" type="checkbox" data-size="mini" data-on-text="开启" data-off-text="关闭" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            店铺审核
+                                        </td>
+
+
+                                        <td>
+                                            <input class="make-switch" messagetype="1" pluginid="Himall.Plugin.Message.Email" type="checkbox" data-size="mini" data-on-text="开启" data-off-text="关闭" />
+                                        </td>
+                                        <td>
+                                            <input class="make-switch" messagetype="1" pluginid="Himall.Plugin.Message.Email" type="checkbox" data-size="mini" data-on-text="开启" data-off-text="关闭" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            开店成功
+                                        </td>
+
+
+                                        <td>
+                                            <input class="make-switch" messagetype="1" pluginid="Himall.Plugin.Message.Email" type="checkbox" data-size="mini" data-on-text="开启" data-off-text="关闭" />
+                                        </td>
+                                        <td>
+                                            <input class="make-switch" messagetype="1" pluginid="Himall.Plugin.Message.Email" type="checkbox" data-size="mini" data-on-text="开启" data-off-text="关闭" />
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+
+                        </div>
+
+                    </form>
+
+
+                </div>
+                <!-- /.tab-pane -->
+                <div class="tab-pane" id="tab_2">
+                    <form role="form">
+                        <div class="box-body">
+                            <table class="form">
+                                <tr>
+                                    <th class="formTitle">SMTP服务器：<font face="宋体"></font></th>
+                                    <td class="formValue">
+                                        <input type="text" class="form-control" placeholder="" value="smtp.qq.com" isvalid="yes" checkexpession="NotNull" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="formTitle">SMTP服务器端口:</th>
+                                    <td class="formValue">
+
+                                        <input type="text" class="form-control" placeholder="" value="25" isvalid="yes" checkexpession="NotNull" />
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th class="formTitle">SMTP用户名:</th>
+                                    <td class="formValue">
+
+                                        <input type="text" class="form-control" placeholder="" value="123" isvalid="yes" checkexpession="NotNull"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="formTitle">SMTP用户密码:</th>
+                                    <td class="formValue">
+
+                                        <input type="password" class="form-control" placeholder="" value="******" isvalid="yes" checkexpession="NotNull"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="formTitle">SMTP邮箱:</th>
+                                    <td class="formValue">
+
+                                        <input type="text" class="form-control" placeholder="" value="123@123.com" isvalid="yes" checkexpession="NotNull"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="formTitle">显示名称:</th>
+                                    <td class="formValue">
+
+                                        <input type="text" class="form-control" placeholder="" value="小苹果" isvalid="yes" checkexpession="NotNull"/>
+                                    </td>
+                                </tr>
+                               
+                            </table>
+
+
+                        </div>
+                        <!-- /.box-body -->
+
+                    </form>
+                 
+
+                </div>
+                <!-- /.tab-pane -->
+                <div class="tab-pane" id="tab_3">
+                    <div class="box-body">
+                        <div class="callout callout-warning">
+                            <h4>短信提醒！</h4>
+                            <p>首次使用需要注册短信平台（阿里云短信），并获取短信接口的Appkey和Appsecret。<a target="_blank" href="https://www.aliyun.com">点击此处</a></p>
+                        </div>
+                        <table class="form">
+                            <tr>
+                                <th class="formTitle">AppKey：<font face="宋体"></font></th>
+                                <td class="formValue">
+                                    <input type="text" class="form-control" placeholder="" value="smtp.qq.com" isvalid="yes" checkexpession="NotNull"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="formTitle">AppSecret:</th>
+                                <td class="formValue">
+
+                                    <input type="text" class="form-control" placeholder="" value="25" isvalid="yes" checkexpession="NotNull"/>
+                                </td>
+                            </tr>
+
+
+                        </table>
+
+
+                    </div>
+                </div>
+           
+            </div>
+            <div class="box-footer">
+                <button type="submit" class="btn btn-success">保存</button>
+            </div>
+            <!-- /.tab-content -->
+        </div>
+
+    
+
+    </section>
+</body>
+</html>
+
+
+<script src="/content/ui/global/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="/content/ui/global/bootstrap/js/bootstrap.min.js"></script>
+
+<script src="/content/min/js/supershopui.common.js"></script>
+
+<script src="/content/supermgr/Base/js/common.js"></script>
+<script src="/Content/plugins/jqgrid/grid.locale-cn.js"></script>
+<script src="/Content/plugins/jqgrid/jqgrid.js"></script>
+
+<script src="/content/plugins/wizard/wizard.js"></script>
+<script src="/Content/plugins/validator/validator.js"></script>
+
+<script src="/content/plugins/iCheck/icheck.min.js"></script>
+<script src="/content/plugins/wdtree/tree.js"></script>
+<script src="../../content/ui/global/bootstrap-switch/js/bootstrap-switch.js"></script>
+<script>
+    $(function() {
+       
+        App.init();
+    });
+</script>

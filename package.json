@@ -1,7 +1,7 @@
 {
   "name": "superui",
   "version": "1.0.0",
-  "description": "superui",
+  "description": "supershopui",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

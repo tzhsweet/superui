@@ -1,38 +1,99 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Paper Stack</title>
-    <link href="content/superui/pages/layouts/css/login.css" rel="stylesheet"/>
-    <link rel="icon" href="content/superui/global/img/favicon.ico" type="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <title>superui框架</title>
+    <meta name="keywords" content="superui框架" />
+    <meta name="description" content="superui框架" />
+    <link href="content/ui/css/layout.css" rel="stylesheet" />
+    <link href="content/ui/css/login.css" rel="stylesheet"/>
+    <style>
+        .ibar {
+            display: none;
+        }
+    </style>
 </head>
-<body style="background:#3f4553;background-image: -webkit-gradient(radial,50% 100%,10,50% 50%,1000,from(#3f4553),to(#1f2126));background-image:-moz-radial-gradient(center 80px 45deg, circle farthest-corner, #3f4553 0%, #1f2126 100%);">
-    <div class="container">
-        <section id="content">
-            <form action="admin/index_iframe.html">
-                <h1>SuperUI</h1>
-                <div>
-                    <input type="text" placeholder="邮箱" required="" id="username" />
+
+<body class="login-bg">
+    <div class="main ">
+        <!--登录-->
+        <div class="login-dom login-max">
+            <div class="logo text-center">
+                <a href="#">
+                    <img src="content/ui/img/logo.png" width="180px" height="180px" />
+                </a>
+            </div>
+            <div class="login container " id="login">
+                <p class="text-big text-center logo-color">
+                    同一个账号，连接一切
+                </p>
+
+                <p class="text-center margin-small-top logo-color text-small">
+                  SuperUI框架
+                </p>
+                <form class="login-form" action="/admin/index_iframe.html" method="get" autocomplete="off">
+                    <div class="login-box border text-small" id="box">
+                        <div class="name border-bottom">
+                            <input type="text" placeholder="手机/邮箱/账号" id="username" name="username" datatype="*" nullmsg="请填写帐号信息" />
+                        </div>
+                        <div class="pwd">
+                            <input type="password" placeholder="密码" datatype="*" id="password" name="password" nullmsg="请填写帐号密码" />
+                        </div>
+                    </div>
+                    <input type="submit" class="btn text-center login-btn" value="立即登录" />
+                </form>
+                <div class="forget">
+                   
+                    <a href="#" class="forget-pwd text-small fl"> 忘记登录密码？</a><a href="#" class="forget-new text-small fr" id="forget-new">注册账号</a>
                 </div>
-                <div>
-                    <input type="password" placeholder="密码" required="" id="password" />
-                </div>
-                <div class="">
-                    <span class="help-block u-errormessage" id="js-server-helpinfo">&nbsp;</span>
-                </div>
-                <div>
-                    <!-- <input type="submit" value="Log in" /> -->
-                    <input type="submit" value="登录" class="btn btn-primary" id="js-btn-login" />
-                 
-                 
-                </div>
-            </form><!-- form -->
-            <div class="button">
-                <span class="help-block u-errormessage" id="js-server-helpinfo">&nbsp;</span>
-                <a href="http://www.supermgr.cn">SuperUI前端开发框架 </a>
-            </div> <!-- button -->
-        </section><!-- content -->
+            </div>
+        </div>
+        <div class="footer text-center text-small ie">
+            Copyright 2013-2016 版权所有 ©tzhsweet 2015-2018      <a href="#" target="_blank">粤ICP备16024545号-1</a>
+            <span class="margin-left margin-right">|</span>
+            <script src="#" language="JavaScript"></script>
+        </div>
+        <div class="popupDom">
+            <div class="popup text-default">
+            </div>
+        </div>
     </div>
-    <!-- container -->
 </body>
+
+<script src="/content/ui/global/jQuery/jquery.min.js"></script>
+<script type="text/javascript">
+    function popup_msg(msg) {
+        $(".popup").html("" + msg + "");
+        $(".popupDom").animate({
+            "top": "0px"
+        }, 400);
+        setTimeout(function () {
+            $(".popupDom").animate({
+                "top": "-40px"
+            }, 400);
+        }, 2000);
+    }
+
+    /*动画（注册）*/
+    $(document).ready(function (e) {
+        // $("input[name=username]").focus();
+        // $('.login-form').Validform({
+        // 	ajaxPost: true,
+        // 	tiptype: function(msg) {
+        // 		if (msg) popup_msg('' + msg + '');
+        // 	},
+        // 	callback: function(ret) {
+        // 		popup_msg('' + ret.info + '');
+        // 		if (ret.status == 1) {
+        // 			if (ret.uc_user_synlogin) {
+        // 				$("body").append(ret.uc_user_synlogin);
+        // 			}
+        // 			setTimeout("window.location='" + ret.url + "'", 2000);
+        // 		}
+        // 	}
+        // })
+
+    });
+</script>
 </html>

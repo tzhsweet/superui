@@ -1,0 +1,237 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+    <!--<![endif]-->
+
+    <head>
+        <meta charset="utf-8" />
+        <title>SuperUI前端框架</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <link rel="stylesheet" href="../content/ui/global/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link href="../content/ui/global/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../content/adminlte/dist/css/AdminLTE.css">
+        <link rel="stylesheet" href="../content/adminlte/dist/css/skins/_all-skins.min.css">
+        <link href="../content/min/css/supershopui.common.min.css" rel="stylesheet"/>
+
+        <link href="../content/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <style type="text/css">
+            .margin-top-10 {
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+    <!-- END HEAD -->
+
+<body>
+    <section class="content-header">
+        <h1>
+            Bootstrap Tags Input组件
+            <small>控件面板<a href="http://timschlechter.github.io/bootstrap-tagsinput/examples/" target="_blank">官方文档</a></small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">UI</a></li>
+            <li class="active">Bootstrap Tags Input</li>
+        </ol>
+    </section>
+    <!-- Main content -->
+<section class="content">
+  <!-- BEGIN box-->
+    <div class="box  bordered">
+        <div class="box-body form">
+            <!-- BEGIN FORM-->
+            <form action="#" class="form-horizontal form-bordered ">
+                <div class="form-body">
+                    <div class="form-group">
+                        <label class="control-label col-md-3">基本样式</label>
+                        <div class="col-md-9">
+                            <input type="text" value="Amsterdam,Washington,Sydney,Beijing,Cairo" data-role="tagsinput">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">多值</label>
+                        <div class="col-md-9">
+                            <select multiple data-role="tagsinput">
+                                <option value="虎哥">虎哥</option>
+                                <option value="龙哥">龙哥</option>
+                                <option value="豹哥">豹哥</option>
+                                <option value="威哥">威哥</option>
+                                <option value="田哥">田哥</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">标记</label>
+                        <div class="col-md-9">
+                            <input type="text" value="" id="object_tagsinput">
+                            <div class="margin-top-10">
+                                <input type="text" class="form-control input-large" placeholder="Tag value" id="object_tagsinput_value">
+                            </div>
+                            <div class="margin-top-10">
+                                <select class="form-control input-large" id="object_tagsinput_continent">
+                                    <option value="美国">美国</option>
+                                    <option value="英国">英国</option>
+                                    <option value="德国">德国</option>
+                                    <option value="澳大利亚">澳大利亚</option>
+                                    <option value="非洲">非洲</option>
+                                    <option value="亚洲">亚洲</option>
+                                </select>
+                            </div>
+                            <div class="margin-top-10">
+                                <input type="text" class="form-control input-large" placeholder="国家" id="object_tagsinput_city">
+                            </div>
+                            <div class="margin-top-10">
+                                <button type="button" class="btn btn-danger" id="object_tagsinput_add">
+                                    添加标记
+                                </button>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group last">
+                        <label class="control-label col-md-3">国家</label>
+                        <div class="col-md-9">
+                            <input type="text" value="" id="state_tagsinput">
+                            <div class="margin-top-10">
+                                <input type="text" class="form-control input-large" placeholder="标记内容" id="state_tagsinput_value">
+                            </div>
+                            <div class="margin-top-10">
+                                <select class="form-control input-large" id="state_tagsinput_continent">
+                                    <option value="美国">美国</option>
+                                    <option value="英国">英国</option>
+                                    <option value="德国">德国</option>
+                                    <option value="澳大利亚">澳大利亚</option>
+                                    <option value="非洲">非洲</option>
+                                    <option value="亚洲">亚洲</option>
+                                </select>
+                            </div>
+                            <div class="margin-top-10">
+                                <input type="text" class="form-control input-large" placeholder="City" id="state_tagsinput_city">
+                            </div>
+                            <div class="margin-top-10">
+                                <button type="button" class="btn btn-danger" id="state_tagsinput_add">
+                                    添加标记
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <div class="row">
+                        <div class="col-md-offset-3 col-md-9">
+                            <button type="button" class="btn btn-success">
+                                <i class="fa fa-check"></i> 确定
+                            </button>
+                            <button type="button" class="btn default">取消</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!-- END FORM-->
+        </div>
+    </div>
+</section>
+     
+        <script src="../content/ui/global/jQuery/jquery.min.js"></script>
+        <!-- Bootstrap 3.3.6 -->
+        <script src="../content/ui/global/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../content/min/js/supershopui.common.js"></script>
+
+        <script src="../content/plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+
+        <script type="text/javascript">
+            $(function () {
+                handleDemo1();
+                handleDemo2();
+            });
+            var handleDemo1 = function () {
+                var elt = $('#object_tagsinput');
+
+                elt.tagsinput({
+                    itemValue: 'value',
+                    itemText: 'text'
+                });
+
+                $('#object_tagsinput_add').on('click', function () {
+                    elt.tagsinput('add', {
+                        "value": $('#object_tagsinput_value').val(),
+                        "text": $('#object_tagsinput_city').val(),
+                        "continent": $('#object_tagsinput_continent').val()
+                    });
+                });
+
+                elt.tagsinput('add', { "value": 1, "text": "Amsterdam", "continent": "Europe" });
+                elt.tagsinput('add', { "value": 4, "text": "Washington", "continent": "America" });
+                elt.tagsinput('add', { "value": 7, "text": "Sydney", "continent": "Australia" });
+                elt.tagsinput('add', { "value": 10, "text": "Beijing", "continent": "Asia" });
+                elt.tagsinput('add', { "value": 13, "text": "Cairo", "continent": "Africa" });
+            }
+
+            var handleDemo2 = function () {
+
+                var elt = $('#state_tagsinput');
+
+                elt.tagsinput({
+                    tagClass: function (item) {
+                        switch (item.continent) {
+                            case 'Europe':
+                                return 'label label-primary';
+                            case 'America':
+                                return 'label label-danger label-important';
+                            case 'Australia':
+                                return 'label label-success';
+                            case 'Africa':
+                                return 'label label-default';
+                            case 'Asia':
+                                return 'label label-warning';
+                        }
+                    },
+                    itemValue: 'value',
+                    itemText: 'text'
+                });
+
+                $('#state_tagsinput_add').on('click', function () {
+                    elt.tagsinput('add', {
+                        "value": $('#state_tagsinput_value').val(),
+                        "text": $('#state_tagsinput_city').val(),
+                        "continent": $('#state_tagsinput_continent').val()
+                    });
+                });
+
+                elt.tagsinput('add', {
+                    "value": 1,
+                    "text": "Amsterdam",
+                    "continent": "Europe"
+                });
+                elt.tagsinput('add', {
+                    "value": 4,
+                    "text": "Washington",
+                    "continent": "America"
+                });
+                elt.tagsinput('add', {
+                    "value": 7,
+                    "text": "Sydney",
+                    "continent": "Australia"
+                });
+                elt.tagsinput('add', {
+                    "value": 10,
+                    "text": "Beijing",
+                    "continent": "Asia"
+                });
+                elt.tagsinput('add', {
+                    "value": 13,
+                    "text": "Cairo",
+                    "continent": "Africa"
+                });
+            }
+        </script>
+</body>
+
+</html>

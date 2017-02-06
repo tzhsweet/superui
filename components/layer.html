@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+    <!--<![endif]-->
+    <!-- BEGIN HEAD -->
+
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <link rel="stylesheet" href="../content/ui/global/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link href="../content/ui/global/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../content/adminlte/dist/css/AdminLTE.css">
+        <link rel="stylesheet" href="../content/adminlte/dist/css/skins/_all-skins.min.css">
+        <link href="../content/min/css/supershopui.common.min.css" rel="stylesheet" />
+    </head>
+
+<body>
+    <section class="content-header">
+        <h1>
+            layer弹出层
+            <small>非常实用的弹出层组件</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">UI</a></li>
+            <li class="active">layer</li>
+        </ol>
+    </section>
+    <!-- Main content -->
+<section class="content">
+    <div class="box box-success bordered">
+        <div class="box-header">
+           
+                <i class="icon-bubble font-green-sharp"></i>
+                <h3 class="box-title">layer弹出层</h3>
+            
+        </div>
+        <div class="box-body">
+            <table class="table table-hover table-striped table-bordered">
+                <tr>
+                    <td> 弹出iframe </td>
+                    <td>
+                        <button class="btn btn-primary" onclick="modalOpen()"> 弹出iframe </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>确认框 </td>
+                    <td>
+                        <button class="btn  btn-primary" onclick="modalConfirm()"> 确认框 </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td> alert消息框 </td>
+                    <td>
+                        <button class="btn btn-success" onclick="modalAlert(1)"> success </button>
+                        <button class="btn btn-danger" onclick="modalAlert(2)"> error </button>
+                        <button class="btn btn-warning" onclick="modalAlert(3)"> warning </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>消息提示框 </td>
+                    <td>
+                        <button class="btn btn-success" onclick="modalMsg(1)"> success </button>
+                        <button class="btn btn-danger" onclick="modalMsg(2)"> error </button>
+                        <button class="btn btn-warning" onclick="modalMsg(3)"> warning </button>
+                    </td>
+                </tr>
+
+            </table>
+
+
+
+        </div>
+    </div>
+</section>
+
+
+<script src="../content/ui/global/jQuery/jquery.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+
+<script src="../content/ui/global/bootstrap/js/bootstrap.min.js"></script>
+<script src="../content/min/js/supershopui.common.js"></script>
+
+</body>
+<script>
+    //layer.config({
+    //    extend: '../content/plugins/layer/skin/default/layer.css', //加载新皮肤
+    //    skin: 'layer-ext-moon' //一旦设定，所有弹层风格都采用此主题。
+    //});
+        //新增
+        function modalOpen() {
+            $.fn.modalOpen({
+                id: "Form",
+                title: '打开页面',
+                url: 'widgets.html',
+                width: "750px",
+                height: "550px",
+                callBack: function (iframeId) {
+                    top.frames[iframeId].AcceptClick();
+                }
+            });
+        };
+    function modalConfirm() {
+        $.fn.modalConfirm("确认要提交么？", function(status) {
+            alert("您选择的是" + status);
+        });
+    }
+    function modalAlert(type) {
+        switch(type) {
+            case 1:
+                $.fn.modalAlert("提交成功", "success");
+                return;
+            case 2:
+                $.fn.modalAlert("错误", "error");
+                return;
+            case 3:
+                $.fn.modalAlert("警告", "warning");
+                return;
+        }
+       
+    }
+    function modalMsg(type) {
+        switch (type) {
+            case 1:
+                $.fn.modalMsg("提交成功", "success");
+                return;
+            case 2:
+                $.fn.modalMsg("错误", "error");
+                return;
+            case 3:
+                $.fn.modalMsg("警告", "warning");
+                return;
+        }
+    }
+   
+    $.fn.modalOpen = function (options) {
+        var defaults = {
+            id: null,
+            title: '系统窗口',
+            width: "100px",
+            height: "100px",
+            url: '',
+            shade: 0.3,
+            btn: ['确认', '关闭'],
+            btnclass: ['btn btn-primary', 'btn btn-danger'],
+            callBack: null
+        };
+        var options = $.extend(defaults, options);
+        var _width = top.$(window).width() > parseInt(options.width.replace('px', '')) ? options.width : top.$(window).width() + 'px';
+        var _height = top.$(window).height() > parseInt(options.height.replace('px', '')) ? options.height : top.$(window).height() + 'px';
+        layer.open({
+            id: options.id,
+            type: 2,
+            shade: options.shade,
+            title: options.title,
+            fix: false,
+            area: [_width, _height],
+            content: options.url,
+            btn: options.btn,
+            btnclass: options.btnclass,
+            yes: function () {
+                options.callBack(options.id)
+            }, cancel: function () {
+                return true;
+            }
+        });
+    }
+    $.fn.modalConfirm = function (content, callBack) {
+        layer.confirm(content, {
+            icon: "fa-exclamation-circle",
+            title: "系统提示",
+            btn: ['确认', '取消'],
+            btnclass: ['btn btn-primary', 'btn btn-danger'],
+        }, function () {
+            callBack(true);
+        }, function () {
+            callBack(false)
+        });
+    }
+    $.fn.modalAlert = function (content, type) {
+        var icon = "";
+        var iconType = 0;
+        if (type == 'success') {
+            icon = "fa-check-circle";
+            iconType = 1;
+        }
+        if (type == 'error') {
+            icon = "fa-times-circle";
+            iconType = 2;
+        }
+        if (type == 'warning') {
+            icon = "fa-exclamation-circle";
+            iconType = 3;
+        }
+        top.layer.alert(content, {
+            icon: iconType,
+            title: "系统提示",
+            btn: ['确认'],
+            btnclass: ['btn btn-primary'],
+        });
+    }
+    $.fn.modalMsg = function (content, type) {
+        var iconType = 0;
+        if (type != undefined) {
+            var icon = "";
+            if (type == 'success') {
+                icon = "fa-check-circle";
+                iconType = 1;
+            }
+            if (type == 'error') {
+                icon = "fa-times-circle";
+                iconType = 2;
+            }
+            if (type == 'warning') {
+                icon = "fa-exclamation-circle";
+                iconType = 3;
+            }
+            top.layer.msg(content, { icon: iconType, time: 4000, shift: 5 });
+            top.$(".layui-layer-msg").find('i.' + iconType).parents('.layui-layer-msg').addClass('layui-layer-msg-' + type);
+        } else {
+            top.layer.msg(content);
+        }
+    }
+    $.fn.modalClose = function () {
+        var index = layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+        var $IsdialogClose = top.$("#layui-layer" + index).find('.layui-layer-btn').find("#IsdialogClose");
+        var IsClose = $IsdialogClose.is(":checked");
+        if ($IsdialogClose.length == 0) {
+            IsClose = true;
+        }
+        if (IsClose) {
+            layer.close(index);
+        } else {
+            location.reload();
+        }
+    }
+   
+
+    
+</script>
+</html>

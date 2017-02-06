@@ -1,0 +1,161 @@
+﻿
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>SuperMgr后台框架</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="../../content/ui/global/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link href="../../content/ui/global/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../content/adminlte/dist/css/AdminLTE.css">
+    <link rel="stylesheet" href="../../content/adminlte/dist/css/skins/_all-skins.min.css">
+    <link href="../../content/min/css/supershopui.common.min.css" rel="stylesheet" />
+    <link href="/content/supermgr/Base/css/common.css" rel="stylesheet" />
+
+
+    <link href="/content/plugins/wizard/wizard.css" rel="stylesheet" />
+    <link href="/content/plugins/wdtree/tree.css" rel="stylesheet" />
+
+    <link href="/Content/plugins/jqgrid/jqgrid.css" rel="stylesheet" />
+
+    <script src="/Content/plugins/datepicker/WdatePicker.js"></script>
+
+    <link rel="stylesheet" href="/content/plugins/iCheck/all.css">
+    <link href="../../content/ui/global/bootstrap-switch/css/bootstrap-switch.css" rel="stylesheet" />
+</head>
+<body>
+    <section class="content-header">
+        <h1>
+            订单设置
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active"><a href="#">订单设置</a></li>
+        </ol>
+    </section>
+    <!-- Main content -->
+<section class="content">
+    <div class="box box-primary">
+        <div class="box-header with-border">
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form role="form">
+            <div class="box-body">
+                <div class="callout callout-success">
+                    <h4>订单设置！</h4>
+                    <p>提示：第一次使用请先进行订单相关配置。</p>
+                </div>
+                <table class="form">
+                    <tr>
+                        <th class="formTitle">限时抢购<font face="宋体">*</font></th>
+                        <td class="formValue input-group">
+                            <input id="EnCode" type="text" class="form-control" placeholder="限时抢购超过__分钟未付款，订单自动关闭" isvalid="yes" checkexpession="NotNull"/>
+                            <div class="input-group-addon">
+                                <i class="fa fa-clock-o"></i> 分
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="formTitle">下单</th>
+                        <td class="formValue input-group">
+                            <input id="Icon" type="text" class="form-control" placeholder="下单超过__天未付款，订单自动关闭" isvalid="yes" checkexpession="NotNull"/>
+                            <div class="input-group-addon">
+                                <i class="fa fa-clock-o"></i> 天
+                            </div>
+
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="formTitle">发货<font face="宋体">*</font></th>
+                        <td class="formValue input-group">
+                            <input id="Icon" type="text" class="form-control" placeholder="发货超过__天未收货，订单自动完成" isvalid="yes" checkexpession="NotNull" />
+                            <div class="input-group-addon">
+                                <i class="fa fa-clock-o"></i> 天
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="formTitle">订单完成<font face="宋体">*</font></th>
+                        <td class="formValue input-group">
+                            <input id="Icon" type="text" class="form-control" placeholder="订单完成超过__天自动结束交易，不能申请售后" isvalid="yes" checkexpession="NotNull" />
+                            <div class="input-group-addon">
+                                <i class="fa fa-clock-o"></i> 天
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th class="formTitle">订单短信通知<font face="宋体">*</font></th>
+                        <td class="formValue input-group">
+                            是
+                            <input type="radio" name="r1" class="minimal" checked>
+
+                            否
+                            <input type="radio" name="r1" class="minimal">
+                            (订单支付后系统发短信通知发货人)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th class="formTitle">订单发票税率<font face="宋体">*</font></th>
+                        <td class="formValue input-group">
+                            <input id="Icon" type="text" class="form-control" placeholder="0" isvalid="yes" checkexpession="NotNull" />
+                            <div class="input-group-addon">
+                                <i class="fa fa-clock-o"></i>%
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+                <button type="submit" class="btn btn-success">保存</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- /.tab-content -->
+
+
+
+</section>
+</body>
+</html>
+
+
+<script src="/content/ui/global/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="/content/ui/global/bootstrap/js/bootstrap.min.js"></script>
+
+<script src="/content/min/js/supershopui.common.js"></script>
+
+<script src="/content/supermgr/Base/js/common.js"></script>
+<script src="/Content/plugins/jqgrid/grid.locale-cn.js"></script>
+<script src="/Content/plugins/jqgrid/jqgrid.js"></script>
+
+<script src="/content/plugins/wizard/wizard.js"></script>
+<script src="/Content/plugins/validator/validator.js"></script>
+
+<script src="/content/plugins/iCheck/icheck.min.js"></script>
+<script src="/content/plugins/wdtree/tree.js"></script>
+<script src="../../content/ui/global/bootstrap-switch/js/bootstrap-switch.js"></script>
+<script>
+    $(function() {
+       
+        App.init();
+    });
+</script>

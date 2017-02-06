@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+    <!--<![endif]-->
+    <!-- BEGIN HEAD -->
+
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <link rel="stylesheet" href="../content/ui/global/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link href="../content/ui/global/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../content/adminlte/dist/css/AdminLTE.css">
+        <link rel="stylesheet" href="../content/adminlte/dist/css/skins/_all-skins.min.css">
+        <link href="../content/min/css/supershopui.common.min.css" rel="stylesheet"/>
+
+        <link href="../content/ui/global/bootstrap-switch/css/bootstrap-switch.css" rel="stylesheet" />
+        </head>
+<body>
+<section class="content-header">
+    <h1>
+        Bootstrap Switch组件
+        <small>bootstrap switch组件<a href="http://www.bootstrap-switch.org/" target="_blank">官方文档</a>.</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">UI</a></li>
+        <li class="active">Buttons</li>
+    </ol>
+
+</section>
+    <section class="content">
+      
+        <div class="row">
+            <div class="col-md-12">
+                <!-- BEGIN box-->
+                <div class="box bordered">
+                    <div class="box-title">
+                      
+                     
+                    </div>
+                    <div class="box-body form">
+                        <!-- BEGIN FORM-->
+                        <form action="#" class="form-horizontal form-bordered">
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">默认尺寸</label>
+                                    <div class="col-md-9">
+                                        <input type="checkbox" checked class="make-switch" data-size="small">
+                                        <input type="checkbox" checked class="make-switch" data-size="normal">
+                                        <input type="checkbox" checked class="make-switch" data-size="large">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">颜色</label>
+                                    <div class="col-md-9">
+                                        <input type="checkbox" class="make-switch" checked data-on-color="primary" data-off-color="info">
+                                        <input type="checkbox" class="make-switch" checked data-on-color="info" data-off-color="success">
+                                        <input type="checkbox" class="make-switch" checked data-on-color="success" data-off-color="warning">
+                                        <input type="checkbox" class="make-switch" checked data-on-color="warning" data-off-color="danger">
+                                        <input type="checkbox" class="make-switch" checked data-on-color="danger" data-off-color="default">
+                                        <input type="checkbox" class="make-switch" checked data-on-color="default" data-off-color="primary">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">禁用 / 只读</label>
+                                    <div class="col-md-9">
+                                        <input type="checkbox" checked disabled class="make-switch" />
+                                        <input type="checkbox" checked readonly class="make-switch" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">文本</label>
+                                    <div class="col-md-9">
+                                        <input type="checkbox" class="make-switch" data-on-text="Yes" data-off-text="No">
+                                        <input type="checkbox" class="make-switch" data-on-text="1" data-off-text="0">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">长文本</label>
+                                    <div class="col-md-9">
+                                        <input type="checkbox" class="make-switch" data-on-text="&nbsp;开启&nbsp;" data-off-text="&nbsp;关闭&nbsp;">
+                                        <input type="checkbox" class="make-switch" data-on-text="&nbsp;启用&nbsp;&nbsp;" data-off-text="&nbsp;禁用&nbsp;">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">标题</label>
+                                    <div class="col-md-9">
+                                        <input type="checkbox" class="make-switch" checked data-on-text="TV">
+                                        <input type="checkbox" class="make-switch" checked data-off-text="Signal">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">HTML内容</label>
+                                    <div class="col-md-9">
+                                        <input type="checkbox" class="make-switch" checked data-on-text="<i class='fa fa-check'></i>" data-off-text="<i class='fa fa-times'></i>">
+                                        <input type="checkbox" class="make-switch" checked data-on-text="<i class='fa fa-user'></i>" data-off-text="<i class='fa fa-trash-o'></i>">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">带图标的html标题</label>
+                                    <div class="col-md-9">
+                                        <input type="checkbox" checked class="make-switch switch-large" data-label-icon="fa fa-fullscreen" data-on-text="<i class='fa fa-check'></i>" data-off-text="<i class='fa fa-times'></i>">
+                                        <input type="checkbox" checked class="make-switch switch-large" data-label-icon="fa fa-youtube" data-on-text="<i class='fa fa-thumbs-up'></i>" data-off-text="<i class='fa fa-thumbs-down'></i>">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">单选框组</label>
+                                    <div class="col-md-9">
+                                        <div class="margin-bottom-10">
+                                            <label for="option1">选项 1</label>
+                                            <input id="option1" type="radio" name="radio1" value="option1" class="make-switch switch-radio1">
+                                        </div>
+                                        <div class="margin-bottom-10">
+                                            <label for="option2">选项 2</label>
+                                            <input id="option2" type="radio" name="radio1" value="option2" class="make-switch switch-radio1">
+                                        </div>
+                                        <div class="margin-bottom-10">
+                                            <label for="option3">选项 3</label>
+                                            <input id="option3" type="radio" name="radio1" value="option3" class="make-switch switch-radio1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">模态窗体</label>
+                                    <div class="col-md-9">
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal" >打开</button>
+
+</div>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <div class="row">
+                                    <div class="col-md-offset-3 col-md-9">
+
+                                        <button type="button" class="btn btn-success">确定</button>
+                                        <button type="button" class="btn btn-primary">取消</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div id="myModal" class="modal fade" role="dialog" aria-hidden="true" tabindex="-1">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                        <h4 class="modal-title">Bootstrap switches组件</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="#" class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">默认尺寸</label>
+                                                <div class="col-md-9">
+                                                    <input type="checkbox" checked class="make-switch" data-size="small">
+                                                    <input type="checkbox" checked class="make-switch" data-size="normal">
+                                                    <input type="checkbox" checked class="make-switch" data-size="large">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">颜色</label>
+                                                <div class="col-md-9">
+                                                    <input type="checkbox" class="make-switch" checked data-on-color="primary" data-off-color="info">
+                                                    <input type="checkbox" class="make-switch" checked data-on-color="success" data-off-color="warning">
+                                                    <input type="checkbox" class="make-switch" checked data-on-color="warning" data-off-color="danger">
+                                                </div>
+                                            </div>
+                                            <div class="form-group last">
+                                                <label class="control-label col-md-3">禁用 / 只读</label>
+                                                <div class="col-md-9">
+                                                    <input type="checkbox" checked disabled class="make-switch" />
+                                                    <input type="checkbox" checked readonly class="make-switch" />
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                        <button type="button" class="btn btn-primary">提交更改</button>
+                                      
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END FORM-->
+                    </div>
+                </div>
+                <!-- END box-->
+            </div>
+        </div>
+
+    </section>
+
+<script src="../content/ui/global/jQuery/jquery.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+
+<script src="../content/ui/global/bootstrap/js/bootstrap.min.js"></script>
+<script src="../content/min/js/supershopui.common.js"></script>
+    <script src="../content/ui/global/bootstrap-switch/js/bootstrap-switch.js"></script>
+<script type="text/javascript">
+   $(function() {
+     
+       $('.switch-radio1').on('switch-change', function () {
+           $('.switch-radio1').bootstrapSwitch('toggleRadioState');
+       });
+
+       // or
+       $('.switch-radio1').on('switch-change', function () {
+           $('.switch-radio1').bootstrapSwitch('toggleRadioStateAllowUncheck');
+       });
+
+       // or
+       $('.switch-radio1').on('switch-change', function () {
+           $('.switch-radio1').bootstrapSwitch('toggleRadioStateAllowUncheck', false);
+       });
+   })
+  
+</script>
+</body>
+
+</html>

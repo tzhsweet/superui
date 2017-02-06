@@ -1,0 +1,116 @@
+﻿
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>SuperMgr后台框架</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="../../content/ui/global/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link href="../../content/ui/global/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../content/adminlte/dist/css/AdminLTE.css">
+    <link rel="stylesheet" href="../../content/adminlte/dist/css/skins/_all-skins.min.css">
+    <link href="../../content/min/css/supershopui.common.min.css" rel="stylesheet" />
+    <link href="/content/supermgr/Base/css/common.css" rel="stylesheet"/>
+
+
+    <link href="/content/plugins/wizard/wizard.css" rel="stylesheet" />
+    <link href="/content/plugins/wdtree/tree.css" rel="stylesheet" />
+
+    <link href="/Content/plugins/jqgrid/jqgrid.css" rel="stylesheet" />
+
+    <script src="/Content/plugins/datepicker/WdatePicker.js"></script>
+
+
+</head>
+<body>
+    <div class="page-container" style="background-color: white;">
+        <div class="page-content" style="background-color: white; padding: 15px;">
+            <div class="widget-body">
+                <div class="center-Panel" style="overflow-x:hidden">
+                    <div class="titlePanel">
+                        <div class="title-search">
+                            <table>
+                                <tr>
+                                    <td>任务状态</td>
+                                    <td style="padding-left: 10px;">
+                                        <div id="queryCondition" class="btn-group ">
+                                            <a class="btn btn-default dropdown-text" data-toggle="dropdown" data-value="" aria-expanded="false">请选择</a>
+                                            <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><span class="caret"></span></a>
+
+                                            <ul class="dropdown-menu " role="menu">
+                                                <li><a data-value="1">成功</a></li>
+                                                <li><a data-value="2">失败</a></li>
+                                                <li><a data-value="3">已中断</a></li>
+                                            </ul>
+                                        </div>
+
+                                    </td>
+
+                                    <th class="formTitle" style="padding-left: 20px;">启动时间：</th>
+                                    <td class="formValue">
+                                        <div style="float: left; width: 45%;">
+                                            <input id="StartTime" readonly="" type="text" value="2016-11-01" class="form-control input-wdatepicker" onfocus="WdatePicker()">
+                                        </div>
+                                        <div style="float: left; width: 45%; margin-left: 10px">
+                                            <input id="EndTime" readonly="" type="text" value="2016-11-08" class="form-control input-wdatepicker" onfocus="WdatePicker()">
+                                        </div>
+                                    </td>
+
+                                    <td style="padding-left: 20px;">
+                                        <a id="btn_Search" class="btn btn-primary lr-search"><i class="fa fa-search "></i>&nbsp;查询</a>
+
+                                        <a id="btn_View" class="btn btn-default lr-view">&nbsp;查看</a>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+
+                    </div>
+                    <div class="gridPanel">
+                        <table id="gridTable"></table>
+                        <div id="gridPager"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+   
+</body>
+</html>
+
+
+<script src="/content/ui/global/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="/content/ui/global/bootstrap/js/bootstrap.min.js"></script>
+<script src="/content/min/js/supershopui.common.js"></script>
+
+<script src="/content/supermgr/Base/js/common.js"></script>
+<script src="/Content/plugins/jqgrid/grid.locale-cn.js"></script>
+<script src="/Content/plugins/jqgrid/jqgrid.js"></script>
+
+<script src="/content/plugins/wizard/wizard.js"></script>
+<script src="/Content/plugins/validator/validator.js"></script>
+
+<script src="/content/plugins/wdtree/tree.js"></script>
+
+
+<script src="/content/supermgr/Module/SchedulerMgr/SchedulerLogMgr.js"></script>
+<script type="text/javascript">
+        var schedulerMgr = new SchedulerLogMgr();
+        schedulerMgr.initGridPage();
+        schedulerMgr.loadGrid();
+</script>

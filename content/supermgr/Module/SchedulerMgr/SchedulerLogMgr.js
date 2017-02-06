@@ -4,21 +4,19 @@
     exports.options.JobId = $.fn.request('keyValue');
     //任务类型
      exports.options.JobStates= {
-         1: "badge badge-success",
-         2: "badge badge-danger",
-         3: "badge badge-warning"
+         1: "label label-success",
+         2: "label label-danger",
+         3: "label label-warning"
     }
     //初始化数据
     exports.initGridPage = function () {
-        var height = App.getIframeLayoutHeight();
       
         //初始化
         $(window).resize(function (e) {
             window.setTimeout(function () {
-                var height = App.getIframeLayoutHeight();
              
                 $('#gridTable').setGridWidth(($('.gridPanel').width()));
-                $("#gridTable").setGridHeight($(window).height() - 137);
+                $("#gridTable").setGridHeight($.fn.getGridHeight());
             
             }, 100);
             e.stopPropagation();
@@ -77,7 +75,7 @@
         exports.options.$gridTable.jqGrid({
             datatype: "json",
             url: "/content/supermgr/json/JobLog.json?JobId=" + exports.options.JobId,
-            height: $(window).height() - 137,
+            height: $.fn.getGridHeight(),
             autowidth: true,
             colModel: [
                 { label: "主键", name: "Id", hidden: true },
@@ -88,7 +86,7 @@
                     formatter: function (cellvalue, options, rowObject) {
                         var index = rowObject["TaskState"];
                         var className = exports.options.JobStates[index];
-                        return '<span class="badge ' + className + '">' + cellvalue + '</span>';
+                        return '<span class="label ' + className + '">' + cellvalue + '</span>';
                         }
                 },
                 { label: "耗费时间", name: "TaskCostTime", index: "TaskCostTime", width: 100, align: "left" },

@@ -5,23 +5,21 @@
  
     //初始化数据
     exports.initGridPage = function () {
-        var height = App.getIframeLayoutHeight();
         //layout布局
         $('#layout').layout({
-            applyDemoStyles: true,
+            applyDemoStyles: false,
             onresize: function () {
                 $(window).resize();
             },
-            height: height
+            height: $.fn.getLayoutHeight()
         });
         //初始化
         $(window).resize(function (e) {
             window.setTimeout(function () {
-                var height = App.getIframeLayoutHeight();
-                $("#layout").css({ "height": height });
+                $("#layout").css({ "height": $.fn.getLayoutHeight() });
                 $('#gridTable').setGridWidth(($('.gridPanel').width()));
-                $("#gridTable").setGridHeight($(window).height() - 141);
-                $("#itemTree").setTreeHeight($(window).height() - 52);
+                $("#gridTable").setGridHeight($.fn.getGridHeight());
+                $("#itemTree").setTreeHeight($.fn.getLayoutContentHeight());
             }, 100);
             e.stopPropagation();
         });
@@ -63,7 +61,7 @@
     exports.loadTree = function () {
        
         var item = {
-            height: $(window).height() - 52,
+            height: $.fn.getLayoutContentHeight(),
             url: "/content/supermgr/json/ModuleTree.json",
             onnodeclick: function (item) {
                 exports.options.ParentId = item.id;
@@ -81,8 +79,7 @@
         exports.options.$gridTable.jqGrid({
             datatype: "json",
             url: "/content/supermgr/json/ModuleGrid.json",
-
-            height: $(window).height() - 141,
+            height: $.fn.getGridHeight(),
             autowidth: true,
             colModel: [
                 { label: "主键", name: "Id", index: "Id", hidden: true },
@@ -166,7 +163,7 @@
             $.fn.modalOpen({
                 id: "Form",
                 title: '编辑功能',
-                url: '/supermgr/ModuleForm.html?keyValue=' + keyValue,
+                url: '/pages/supermgr/ModuleForm.html?keyValue=' + keyValue,
                 width: "700px",
                 height: "430px",
                 btn: null
@@ -183,7 +180,7 @@
         $.fn.modalOpen({
             id: "Form",
             title: '添加功能',
-            url: '/supermgr/ModuleForm.html?parentId=' + exports.options.ParentId,
+            url: '/pages/supermgr/ModuleForm.html?parentId=' + exports.options.ParentId,
             btn: null,
             width: "700px",
             height: "430px"
@@ -336,6 +333,7 @@
             exports.acceptClick();
         });
     }
+
     /**
      * 获取按钮列表
      * @returns {} 
@@ -356,7 +354,7 @@
             unwritten: false,
             url: "/content/supermgr/json/ModuleButtonTree.json?moduleId=" + escape(moduleId),
             datatype: "json",
-            height: $(window).height() - 165,
+            height: $(window).height() - 121,
             width: $(window).width() - 11,
             colModel: [
                 { label: "主键", name: "Id", hidden: true },
@@ -370,6 +368,9 @@
             rowNum: "all",
             rownumbers: true
         });
+
+      
+
 
     }
     /**

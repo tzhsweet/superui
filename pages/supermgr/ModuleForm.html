@@ -1,0 +1,180 @@
+﻿
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>SuperMgr后台框架</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="../../content/ui/global/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link href="../../content/ui/global/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../content/adminlte/dist/css/AdminLTE.css">
+    <link rel="stylesheet" href="../../content/adminlte/dist/css/skins/_all-skins.min.css">
+    <link href="../../content/min/css/supershopui.common.min.css" rel="stylesheet" />
+    <link href="/content/supermgr/Base/css/common.css" rel="stylesheet" />
+
+    <link href="/Content/plugins/jqgrid/jqgrid.css" rel="stylesheet" />
+    <link href="/content/plugins/wizard/wizard.css" rel="stylesheet" />
+    <link href="/content/plugins/wdtree/tree.css" rel="stylesheet" />
+
+
+    <script src="/Content/plugins/datepicker/WdatePicker.js"></script>
+    <style type="text/css">
+        .step-content {
+            min-height: 320px !important;
+        }
+    </style>
+</head>
+<body >
+    <form id="form1">
+
+        <div class="formDiv">
+            <div class="widget-body">
+                <div id="wizard" class="wizard" data-target="#wizard-steps" style="border-left: none; border-top: none; border-right: none;">
+                    <ul class="steps">
+                        <li data-target="#step-1" class="active"><span class="step">1</span>系统功能<span class="chevron"></span></li>
+                        <li data-target="#step-2"><span class="step">2</span>系统按钮<span class="chevron"></span></li>
+
+                    </ul>
+                </div>
+                <div class="step-content" id="wizard-steps" style="border-left: none; border-bottom: none; border-right: none;">
+                    <div class="step-pane active" id="step-1" style="margin-left: 0px; margin-top: 15px; margin-right: 30px;">
+                        <input id="Id" type="hidden" value="@ViewBag.ModuleId" />
+                        <table class="form">
+                            <tr>
+                                <th class="formTitle">编号<font face="宋体">*</font></th>
+                                <td class="formValue">
+                                    <input id="EnCode" type="text" class="form-control" placeholder="请输入编号" isvalid="yes" checkexpession="NotNull" />
+                                </td>
+                                <th class="formTitle">名称<font face="宋体">*</font></th>
+                                <td class="formValue">
+                                    <input id="FullName" type="text" class="form-control" placeholder="请输入名称" isvalid="yes" checkexpession="NotNull" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="formTitle">上级</th>
+                                <td class="formValue">
+                                    <div id="ParentId" type="selectTree" class="ui-select">
+                                    </div>
+                                </td>
+                                <th class="formTitle">图标</th>
+                                <td class="formValue">
+                                    <input id="Icon" type="text" class="form-control" />
+                                    <span class="input-button selectmoduleicon" title="选取图标">...</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="formTitle">目标<font face="宋体">*</font></th>
+                                <td class="formValue">
+                                    <div id="Target" type="select" class="ui-select" isvalid="yes" checkexpession="NotNull">
+                                        <ul>
+                                            <li data-value="1">标签页(iframe-tab)</li>
+                                            <li data-value="2">新窗口(blank)</li>
+                                            <li data-value="3">ajax请求（Ajax）</li>
+                                            <li data-value="4">可展开（expand)（Ajax）</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <th class="formTitle">排序<font face="宋体">*</font></th>
+                                <td class="formValue">
+                                    <input id="SortCode" type="text" class="form-control" isvalid="yes" checkexpession="Num" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="formTitle">地址</th>
+                                <td class="formValue" colspan="3">
+                                    <input id="UrlAddress" type="text" class="form-control" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="formTitle" style="height: 37px;">选项</th>
+                                <td class="formValue">
+                                    <div class="checkbox user-select">
+                                        <label>
+                                            <input id="IsMenu" type="checkbox" />
+                                            菜单
+                                        </label>
+                                        <label>
+                                            <input id="IsPublic" type="checkbox" />
+                                            公共
+                                        </label>
+                                        <label>
+                                            <input id="AllowExpand" type="checkbox" />
+                                            展开
+                                        </label>
+                                        <label>
+                                            <input id="EnabledMark" type="checkbox" checked="checked" />
+                                            有效
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="formTitle" valign="top" style="padding-top: 4px;">
+                                    描述
+                                </th>
+                                <td class="formValue" colspan="3">
+                                    <textarea id="Description" class="form-control" style="height: 70px;"></textarea>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="step-pane modulebtn" id="step-2">
+                        <div style="height: 40px; line-height: 33px; text-align: right;">
+                            <div class="btn-group">
+                                <a class="btn btn-default lr-add-button"><i class="fa fa-plus"></i>&nbsp;新增</a>
+                                <a class="btn btn-default lr-edit-button"><i class="fa fa-pencil-square-o"></i>&nbsp;编辑</a>
+                                <a class="btn btn-default lr-delete-button"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+                            </div>
+
+                        </div>
+                        <table id="gridTable-button"></table>
+                    </div>
+
+                </div>
+            </div>
+            <div class="form-button" id="wizard-actions">
+                <a id="btn_last" disabled class="btn btn-default btn-prev">上一步</a>
+                <a id="btn_next" class="btn btn-default btn-next">下一步</a>
+                <a id="btn_finish" disabled class="btn btn-success">完成</a>
+            </div>
+
+
+        </div>
+
+    </form>
+ 
+</body>
+</html>
+
+
+<script src="/content/ui/global/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="/content/ui/global/bootstrap/js/bootstrap.min.js"></script>
+<script src="/content/min/js/supershopui.common.js"></script>
+
+<script src="/content/supermgr/Base/js/common.js"></script>
+
+<script src="/content/plugins/wizard/wizard.js"></script>
+<script src="/Content/plugins/validator/validator.js"></script>
+
+<script src="/Content/plugins/jqgrid/grid.locale-cn.js"></script>
+<script src="/Content/plugins/jqgrid/jqgrid.js"></script>
+
+<script src="/content/plugins/wdtree/tree.js"></script>
+<script src="/Content/supermgr/Module/ModuleMgr/ModuleMgr.js"></script>
+<script type="text/javascript">
+            var module = new ModuleMgr();
+            module.loadForm();
+            window.AcceptClick = module.AcceptClick;//用于回调触发
+</script>

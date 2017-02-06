@@ -1,0 +1,242 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+    <!--<![endif]-->
+    <!-- BEGIN HEAD -->
+
+    <head>
+        <meta charset="utf-8" />
+        <title>SuperUI前端框架</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <link rel="stylesheet" href="../content/ui/global/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link href="../content/ui/global/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../content/adminlte/dist/css/AdminLTE.css">
+        <link rel="stylesheet" href="../content/adminlte/dist/css/skins/_all-skins.min.css">
+        <link href="../content/min/css/supershopui.common.min.css" rel="stylesheet"/>
+
+
+        <link href="../content/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css" />
+        </head>
+<body>
+    <section class="content-header">
+        <h1>
+            Date & Time Pickers控件
+            <small>date，datetime，以及时间范围控件</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">UI</a></li>
+            <li class="active">Buttons</li>
+        </ol>
+    </section>
+    <!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- BEGIN box-->
+            <div class="box light form-fit bordered">
+                <div class="box-body form">
+                    <!-- BEGIN FORM-->
+                    <form action="#" class="form-horizontal form-bordered">
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label class="control-label col-md-3">默认Datetimepicker控件</label>
+                                <div class="col-md-4">
+                                    <div class="input-group date form_datetime">
+                                        <input type="text" size="16" readonly class="form-control">
+                                        <span class="input-group-btn">
+                                            <button class="btn default date-set" type="button">
+                                                <i class="fa fa-calendar"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">高级Datetimepicker示例</label>
+                                <div class="col-md-4">
+                                    <div class="input-group date form_datetime" data-date="2012-12-21T15:25:00Z">
+                                        <input type="text" size="16" readonly class="form-control">
+                                        <span class="input-group-btn">
+                                            <button class="btn default date-reset" type="button">
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                            <button class="btn default date-set" type="button">
+                                                <i class="fa fa-calendar"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Meridian格式时间</label>
+                                <div class="col-md-4">
+                                    <div class="input-group date form_meridian_datetime" data-date="2012-12-21T15:25:00Z">
+                                        <input type="text" size="16" class="form-control">
+                                        <span class="input-group-btn">
+                                            <button class="btn default date-reset" type="button">
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                            <button class="btn default date-set" type="button">
+                                                <i class="fa fa-calendar"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">页面中显示</label>
+                                <div class="col-md-4">
+                                    <div class="form_datetime" data-date="2012-12-21T15:25:00Z"> </div>
+                                </div>
+                            </div>
+                            <div class="form-group last">
+                                <label class="control-label col-md-3"></label>
+                                <div class="col-md-4">
+                                    <a class="btn btn-outline red" href="#form_modal1" data-toggle="modal">
+                                        在模态窗体中显示Datetimepicker
+                                        <i class="fa fa-share"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-md-offset-3 col-md-9">
+                                    <button type="submit" class="btn btn-success">
+                                        <i class="fa fa-check"></i> 确定
+                                    </button>
+                                    <button type="button" class="btn green">取消</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="form_modal1" class="modal fade" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                    <h4 class="modal-title">Datetimepicker组件</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="#" class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-4">默认时间选择控件</label>
+                                            <div class="col-md-8">
+                                                <div class="input-group date form_datetime input-large">
+                                                    <input type="text" size="16" readonly class="form-control">
+                                                    <span class="input-group-btn">
+                                                        <button class="btn default date-set" type="button">
+                                                            <i class="fa fa-calendar"></i>
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                                <!-- /input-group -->
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-4">高级Datetimepicker示例</label>
+                                            <div class="col-md-8">
+                                                <div class="input-group date form_datetime input-large" data-date="2012-12-21T15:25:00Z">
+                                                    <input type="text" size="16" readonly class="form-control">
+                                                    <span class="input-group-btn">
+                                                        <button class="btn default date-reset" type="button">
+                                                            <i class="fa fa-times"></i>
+                                                        </button>
+                                                        <button class="btn default date-set" type="button">
+                                                            <i class="fa fa-calendar"></i>
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                                <!-- /input-group -->
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-4">Meridian格式时间</label>
+                                            <div class="col-md-8">
+                                                <div class="input-group date form_meridian_datetime input-large" data-date="2012-12-21T15:25:00Z">
+                                                    <input type="text" size="16" class="form-control">
+                                                    <span class="input-group-btn">
+                                                        <button class="btn default date-reset" type="button">
+                                                            <i class="fa fa-times"></i>
+                                                        </button>
+                                                        <button class="btn default date-set" type="button">
+                                                            <i class="fa fa-calendar"></i>
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                                <!-- /input-group -->
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn grey-salsa btn-outline" data-dismiss="modal" aria-hidden="true">关闭</button>
+                                    <button class="btn green btn-primary" data-dismiss="modal">保存</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END FORM-->
+                </div>
+            </div>
+            <!-- END box-->
+        </div>
+    </div>
+</section>
+
+<script src="../content/ui/global/jQuery/jquery.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="../content/ui/global/bootstrap/js/bootstrap.min.js"></script>
+<script src="../content/min/js/supershopui.common.js"></script>
+
+<script src="../content/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+
+<script src="../content/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript">
+    $(function() {
+        if (!jQuery().datetimepicker) {
+            return;
+        }
+
+        $(".form_datetime").datetimepicker({
+            language: 'zh-CN',
+            autoclose: true,
+            minView: "month", //选择日期后，不会再跳转去选择时分秒
+            format: "yyyy-mm-dd", //选择日期后，文本框显示的日期格式
+            pickerPosition: ("bottom-left")
+        });
+
+        $(".form_advance_datetime").datetimepicker({
+            language: 'zh-CN',
+            format: "dd MM yyyy - hh:ii",
+            autoclose: true,
+            todayBtn: true,
+            startDate: "2013-02-14 10:00",
+            pickerPosition: ("bottom-left"),
+            minuteStep: 10
+        });
+
+        $(".form_meridian_datetime").datetimepicker({
+            language: 'zh-CN',
+            format: "dd MM yyyy - HH:ii P",
+            showMeridian: true,
+            autoclose: true,
+            pickerPosition: ("bottom-left"),
+            todayBtn: true
+        });
+
+        $('body').removeClass("modal-open"); // fix bug when inline picker is used in modal
+    });
+</script>
+</body>
+
+
+</html>

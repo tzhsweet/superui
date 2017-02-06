@@ -5,35 +5,32 @@
     exports.options.ItemName = "";
     //任务状态
     exports.options.TaskStatusTypes = {
-        0: "badge badge-default",
-        1: "badge badge-info",
-        2: "badge badge-warning",
-        3: "badge badge-danger",
-        4: "badge badge-success"
+        0: "label label-default",
+        1: "label label-info",
+        2: "label label-warning",
+        3: "label label-danger",
+        4: "label label-success"
     };
     //任务类型
     exports.options.JobTypes= {
-        0: "badge badge-success",
-        1: "badge badge-info"
+        0: "label label-success",
+        1: "label label-info"
     }
     //初始化数据
     exports.initGridPage = function () {
-        var height = App.getIframeLayoutHeight();
-      
+       
         //初始化
         $(window).resize(function (e) {
             window.setTimeout(function () {
-                var height = App.getIframeLayoutHeight();
-             
+               
                 $('#gridTable').setGridWidth(($('.gridPanel').width()));
-                $("#gridTable").setGridHeight($(window).height() - 137);
+                $("#gridTable").setGridHeight($.fn.getGridHeight(true));
             
             }, 100);
             e.stopPropagation();
         });
       
         //查询条件
-
         $("#taskStatusCondition .dropdown-menu li").click(function () {
             var text = $(this).find('a').html();
             var value = $(this).find('a').attr('data-value');
@@ -95,7 +92,7 @@
             $.fn.modalOpen({
                 id: "jobDetailForm",
                 title: '编辑【'+taskName+'】任务',
-                url: '/supermgr/JobDetailForm.html?keyValue=' + keyValue,
+                url: '/pages/supermgr/JobDetailForm.html?keyValue=' + keyValue,
                 width: "750px",
                 height: "550px",
                 callBack: function (iframeId) {
@@ -109,7 +106,7 @@
         $.fn.modalOpen({
             id: "jobDetailForm",
             title: '添加任务',
-            url: '/supermgr/JobDetailForm.html',
+            url: '/pages/supermgr/JobDetailForm.html',
             width: "750px",
             height: "550px",
             callBack: function (iframeId) {
@@ -126,7 +123,7 @@
             $.fn.modalOpen({
                 id: "Form",
                 title: '查看【'+jobName+'】任务日志',
-                url: '/supermgr/ViewJobLog.html?keyValue=' + keyValue,
+                url: '/pages/supermgr/ViewJobLog.html?keyValue=' + keyValue,
                 width: "900px",
                 height: "650px",
                 callBack: function (iframeId) {
@@ -143,7 +140,7 @@
         exports.options.$gridTable.jqGrid({
             datatype: "json",
             url: "/content/supermgr/json/JobDetailGrid.json",
-            height: $(window).height() - 137,
+            height: $.fn.getGridHeight(true),
             autowidth: true,
             colModel: [
                 { label: "主键", name: "Id", hidden: true },
@@ -156,10 +153,9 @@
                     formatter: function (cellvalue, options, rowObject) {
                         var index = rowObject["TaskStatus"];
                         var className = exports.options.TaskStatusTypes[index];
-                        return '<span class="badge ' + className + '">' + cellvalue + '</span>';
+                        return '<span class="label ' + className + '">' + cellvalue + '</span>';
                         }
                 },
-
                 { label: "执行频率", name: "CronDescriptor", index: "CronDescriptor", width: 200, align: "left" },
                 { label: "程序集", name: "AssemblyDll", index: "AssemblyDll", width: 150, align: "left" },
                 { label: "类名", name: "Class", index: "Class", width: 250, align: "center" },

@@ -1,0 +1,298 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+    <!--<![endif]-->
+    <!-- BEGIN HEAD -->
+
+    <head>
+        <meta charset="utf-8" />
+        <title>SuperUI前端框架</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <!-- Bootstrap 3.3.6 -->
+        <link rel="stylesheet" href="../content/ui/global/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link href="../content/ui/global/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../content/adminlte/dist/css/AdminLTE.css">
+        <link rel="stylesheet" href="../content/adminlte/dist/css/skins/_all-skins.min.css">
+        <link href="../content/min/css/supershopui.common.min.css" rel="stylesheet"/>
+
+
+        <link href="../content/plugins/jstree/dist/themes/default/style.min.css" rel="stylesheet" />
+
+        </head>
+<body>
+    <section class="content-header">
+        <h1>
+            jstree树控件
+            <small>jstree树</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">UI</a></li>
+            <li class="active">jstree</li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-success bordered">
+                <div class="box-header">
+                        <i class="icon-social-dribbble font-blue-sharp"></i>
+                        <h3 class="box-title font-blue-sharp bold uppercase">树（默认）</h3>
+                  
+                </div>
+                <div class="box-body">
+                    <div id="tree_1" class="tree-demo">
+                        <ul>
+                            <li>
+                                根节点
+                                <ul>
+                                    <li data-jstree='{ "selected" : true }'>
+                                        <a href="javascript:;"> 初始选择 </a>
+                                    </li>
+                                    <li data-jstree='{ "icon" : "fa fa-briefcase icon-state-success " }'> 用Uzi定义图标 </li>
+                                    <li data-jstree='{ "opened" : true }'>
+                                        初始展开效果
+                                        <ul>
+                                            <li data-jstree='{ "disabled" : true }'> 禁用某个节点 </li>
+                                            <li data-jstree='{ "type" : "file" }'> 其他节点 </li>
+                                        </ul>
+                                    </li>
+                                    <li data-jstree='{ "icon" : "fa fa-warning icon-state-danger" }'> 用户自定义图标（bootstrap风格）</li>
+                                </ul>
+                            </li>
+                            <li data-jstree='{ "type" : "file" }'>
+                                <a href="http://www.jstree.com">可点击节点 </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-danger bordered">
+                <div class="box-header">
+                    <div class="caption">
+                        <i class="icon-bubble font-green-sharp"></i>
+                        <h3 class="box-title font-green-sharp bold uppercase">（可选择）树</h3>
+                    </div>
+                
+                </div>
+                <div class="box-body">
+                    <div id="tree_2" class="tree-demo"> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-warning">
+                <div class="box-header">
+                   
+                        <i class="fa fa-cogs"></i>
+                    <h3 class="box-title">可拖拽右键菜单</h3>
+                  
+                </div>
+                <div class="box-body">
+                    <div id="tree_3" class="tree-demo"> </div>
+                    <div class="alert alert-success no-margin margin-top-10">注意：打开和选定的节点将保存在用户的浏览器中，所以当返回到同一树时，将恢复以前的状态。 </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-success">
+                <div class="box-header">
+                  
+                        <i class="fa fa-cogs"></i>
+                    
+                    <h3 class="box-title">可拖拽Ajax树形</h3>
+                </div>
+                <div class="box-body">
+                    <div id="tree_4" class="tree-demo"> </div>
+                    <div class="alert alert-info no-margin margin-top-10"> 注意：树形Ajax加载后台数据，需要后台返回json格式数据. </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- jQuery 2.2.3 -->
+<script src="../content/ui/global/jQuery/jquery.min.js"></script>
+<script src="../content/ui/global/bootstrap/js/bootstrap.min.js"></script>
+<script src="../content/min/js/supershopui.common.js"></script>
+<script src="../content/plugins/jstree/dist/jstree.min.js"></script>
+</body>
+<script>
+    $(function() {
+        $('#tree_1').jstree({
+            "core": {
+                "themes": {
+                    "responsive": false
+                }
+            },
+            "types": {
+                "default": {
+                    "icon": "fa fa-folder icon-state-warning icon-lg"
+                },
+                "file": {
+                    "icon": "fa fa-file icon-state-warning icon-lg"
+                }
+            },
+            "plugins": ["types"]
+        });
+
+        // handle link clicks in tree nodes(support target="_blank" as well)
+        $('#tree_1').on('select_node.jstree', function (e, data) {
+            var link = $('#' + data.selected).find('a');
+            if (link.attr("href") != "#" && link.attr("href") != "javascript:;" && link.attr("href") != "") {
+                if (link.attr("target") == "_blank") {
+                    link.attr("href").target = "_blank";
+                }
+                document.location.href = link.attr("href");
+                return false;
+            }
+        });
+        $('#tree_2').jstree({
+            'plugins': ["wholerow", "checkbox", "types"],
+            'core': {
+                "themes": {
+                    "responsive": false
+                },
+                'data': [{
+                    "text": "Same but with checkboxes",
+                    "children": [{
+                        "text": "initially selected",
+                        "state": {
+                            "selected": true
+                        }
+                    }, {
+                        "text": "custom icon",
+                        "icon": "fa fa-warning icon-state-danger"
+                    }, {
+                        "text": "initially open",
+                        "icon": "fa fa-folder icon-state-default",
+                        "state": {
+                            "opened": true
+                        },
+                        "children": ["Another node"]
+                    }, {
+                        "text": "custom icon",
+                        "icon": "fa fa-warning icon-state-warning"
+                    }, {
+                        "text": "disabled node",
+                        "icon": "fa fa-check icon-state-success",
+                        "state": {
+                            "disabled": true
+                        }
+                    }]
+                },
+                    "And wholerow selection"
+                ]
+            },
+            "types": {
+                "default": {
+                    "icon": "fa fa-folder icon-state-warning icon-lg"
+                },
+                "file": {
+                    "icon": "fa fa-file icon-state-warning icon-lg"
+                }
+            }
+        });
+        $("#tree_3").jstree({
+            "core": {
+                "themes": {
+                    "responsive": false
+                },
+                // so that create works
+                "check_callback": true,
+                'data': [{
+                    "text": "Parent Node",
+                    "children": [{
+                        "text": "Initially selected",
+                        "state": {
+                            "selected": true
+                        }
+                    }, {
+                        "text": "Custom Icon",
+                        "icon": "fa fa-warning icon-state-danger"
+                    }, {
+                        "text": "Initially open",
+                        "icon": "fa fa-folder icon-state-success",
+                        "state": {
+                            "opened": true
+                        },
+                        "children": [
+                            { "text": "Another node", "icon": "fa fa-file icon-state-warning" }
+                        ]
+                    }, {
+                        "text": "Another Custom Icon",
+                        "icon": "fa fa-warning icon-state-warning"
+                    }, {
+                        "text": "Disabled Node",
+                        "icon": "fa fa-check icon-state-success",
+                        "state": {
+                            "disabled": true
+                        }
+                    }, {
+                        "text": "Sub Nodes",
+                        "icon": "fa fa-folder icon-state-danger",
+                        "children": [
+                            { "text": "Item 1", "icon": "fa fa-file icon-state-warning" },
+                            { "text": "Item 2", "icon": "fa fa-file icon-state-success" },
+                            { "text": "Item 3", "icon": "fa fa-file icon-state-default" },
+                            { "text": "Item 4", "icon": "fa fa-file icon-state-danger" },
+                            { "text": "Item 5", "icon": "fa fa-file icon-state-info" }
+                        ]
+                    }]
+                },
+                    "Another Node"
+                ]
+            },
+            "types": {
+                "default": {
+                    "icon": "fa fa-folder icon-state-warning icon-lg"
+                },
+                "file": {
+                    "icon": "fa fa-file icon-state-warning icon-lg"
+                }
+            },
+            "state": { "key": "demo2" },
+            "plugins": ["contextmenu", "dnd", "state", "types"]
+        });
+        $("#tree_4").jstree({
+            "core": {
+                "themes": {
+                    "responsive": false
+                },
+                // so that create works
+                "check_callback": true,
+                'data': {
+                    'url': function (node) {
+                        return '../demo/jstree_ajax_data.php';
+                    },
+                    'data': function (node) {
+                        return { 'parent': node.id };
+                    }
+                }
+            },
+            "types": {
+                "default": {
+                    "icon": "fa fa-folder icon-state-warning icon-lg"
+                },
+                "file": {
+                    "icon": "fa fa-file icon-state-warning icon-lg"
+                }
+            },
+            "state": { "key": "demo3" },
+            "plugins": ["dnd", "state", "types"]
+        });
+    });
+</script>
+</html>
