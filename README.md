@@ -1,5 +1,6 @@
-﻿### superui
+### superui
 1. superui官方网站：http://www.supermgr.cn
+2. github地址:https://github.com/tzhsweet/superui
 3. superui官方一群:559696533
 
 ### superui是什么？
@@ -58,9 +59,7 @@ superui完全免费，采用apache2.0协议！
  1. 主题风格大改造（参考adminlte风格）。
  2. 整体UI调整。
  3. 修复部分兼容性和布局bug.
-
-
-
+ 
 - SuperUI v1.3.2 版本功能清单：
  1. 主题风格微调。
  2. 登录页以及welcome页面改造。
@@ -69,11 +68,9 @@ superui完全免费，采用apache2.0协议！
  5. SuperMgr后台demo完善。
  
 - SuperUI v1.4 预览版:
-
- 1.以adminlte为基础，大幅度改造底层ui。
+ 1. 以adminlte为基础，大幅度改造底层ui。
  2. 优化各种ui组件，过渡、loading细节特效等。
  3. 新增supermgr后台部分页面demo。
  4. 完善浏览器兼容性。加强对IE9+各个版本支持。
  5. 按钮、基础样式库等，大幅度更新变更。
  6. 更新内容过多，不完全兼容1.3版本。
- 
