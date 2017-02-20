@@ -37,13 +37,13 @@
                  content += '</div>';
                
             }
-            //添加访问记录
-            $.ajax({
-                url: "/Home/VisitModule",
-                data: { moduleId: options.id, moduleName: options.title, moduleUrl: options.url },
-                type: "post",
-                dataType: "text"
-            });
+            ////添加访问记录
+            //$.ajax({
+            //    url: "/Home/VisitModule",
+            //    data: { moduleId: options.id, moduleName: options.title, moduleUrl: options.url },
+            //    type: "post",
+            //    dataType: "text"
+            //});
             Cookies.set('currentmoduleName', options.title, { path: '/' });
             Cookies.set('currentmoduleId', options.id, { path: '/' });
             //加入TABS

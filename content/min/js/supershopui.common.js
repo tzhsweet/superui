@@ -1166,13 +1166,25 @@ var App = function() {
             de.mozRequestFullScreen();
         } else if (de.webkitRequestFullScreen) {
             de.webkitRequestFullScreen();
+        } else if (de.msRequestFullscreen) {
+            de.msRequestFullscreen();
         }
         else {
             // App.alert({ message: "该浏览器不支持全屏！", type: "danger" });
-          
+            alert("当前浏览器不支持全屏！");
         }
 
     };
+    // 判断浏览器种类
+    var exitFullscreen=function() {
+        if(document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if(document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        } else if(document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        }
+    }
     // Handles custom checkboxes & radios using jQuery iCheck plugin
     var handleiCheck = function () {
         if (!$().iCheck) {
@@ -1381,6 +1393,18 @@ var App = function() {
     var handleScrollers = function () {
         App.initSlimScroll('.scroller');
     };
+
+    var handleInitFullScreen = function() {
+        fullScreenClickCount = 0;
+        $(".fullscreen").bind("click", function() {
+            if (fullScreenClickCount % 2 === 0) {
+                handleFullScreen();
+            } else {
+                exitFullscreen();
+            }
+            fullScreenClickCount++;
+        });
+    };
     return {
         init: function () {
             //IMPORTANT!!!: Do not modify the core handlers call order.
@@ -1402,8 +1426,11 @@ var App = function() {
             handleBootstrapConfirmation(); // handle bootstrap confirmations
 
             handleFixInputPlaceholderForIE(); //IE8 & IE9 input placeholder issue fix
-        },
 
+            handleInitFullScreen();
+
+        },
+      
         initSlimScroll: function (el) {
             $(el).each(function () {
                 if ($(this).attr("data-initialized")) {
@@ -1844,13 +1871,13 @@ var addTabs = function(options) {
                  content += '</div>';
                
             }
-            //添加访问记录
-            $.ajax({
-                url: "/Home/VisitModule",
-                data: { moduleId: options.id, moduleName: options.title, moduleUrl: options.url },
-                type: "post",
-                dataType: "text"
-            });
+            ////添加访问记录
+            //$.ajax({
+            //    url: "/Home/VisitModule",
+            //    data: { moduleId: options.id, moduleName: options.title, moduleUrl: options.url },
+            //    type: "post",
+            //    dataType: "text"
+            //});
             Cookies.set('currentmoduleName', options.title, { path: '/' });
             Cookies.set('currentmoduleId', options.id, { path: '/' });
             //加入TABS

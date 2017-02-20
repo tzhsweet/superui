@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SuperUI echarts图表</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="../../content/ui/global/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link href="../../content/ui/global/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../content/adminlte/dist/css/AdminLTE.css">
+    <link rel="stylesheet" href="../../content/adminlte/dist/css/skins/_all-skins.min.css">
+    <link href="../../content/min/css/supershopui.common.min.css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <section class="content-header">
+        <h1>
+            echarts 雷达图
+            <small>echarts sample</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">Charts</a></li>
+            <li class="active">雷达图</li>
+        </ol>
+    </section>
+    <!-- Main content -->
+<section class="content">
+    <div class="callout callout-info">
+        <h4>提示!</h4>
+
+        <p>
+            特别声明：ECharts，一个纯 Javascript 的图表库，可以流畅的运行在 PC 和移动设备上，兼容当前绝大部分浏览器（IE8/9/10/11，Chrome，Firefox，Safari等），底层依赖轻量级的 Canvas 类库 ZRender，提供直观，生动，可交互，可高度个性化定制的数据可视化图表。如需使用或者详细更多案例可以访问官网 <a href="http://echarts.baidu.com/" style="color:red">ECharts</a>。
+        </p>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+
+            <!-- AREA CHART -->
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">雷达图</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <div class="chart">
+                        <div id="main" style="width: 100%; height: 400px;"></div>
+                    </div>
+                   
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+
+        </div>
+
+    </div>
+    <!-- /.row -->
+</section>
+    <!-- jQuery 2.2.3 -->
+    <script src="../../content/ui/global/jQuery/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.6 -->
+    <script src="../../content/ui/global/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../content/min/js/supershopui.common.js"></script>
+
+<script src="//cdn.bootcss.com/echarts/3.3.2/echarts.min.js" charset="utf-8"></script>
+
+
+     <!-- page script -->
+    <script>
+        $(function () {
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('main'));
+
+            // 指定图表的配置项和数据
+            var option = {
+                title: {
+                    text: '基础雷达图'
+                },
+                tooltip: {},
+                legend: {
+                    data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）']
+                },
+                radar: {
+                    // shape: 'circle',
+                    indicator: [
+                       { name: '销售（sales）', max: 6500 },
+                       { name: '管理（Administration）', max: 16000 },
+                       { name: '信息技术（Information Techology）', max: 30000 },
+                       { name: '客服（Customer Support）', max: 38000 },
+                       { name: '研发（Development）', max: 52000 },
+                       { name: '市场（Marketing）', max: 25000 }
+                    ]
+                },
+                series: [{
+                    name: '预算 vs 开销（Budget vs spending）',
+                    type: 'radar',
+                    // areaStyle: {normal: {}},
+                    data: [
+                        {
+                            value: [4300, 10000, 28000, 35000, 50000, 19000],
+                            name: '预算分配（Allocated Budget）'
+                        },
+                         {
+                             value: [5000, 14000, 28000, 31000, 42000, 21000],
+                             name: '实际开销（Actual Spending）'
+                         }
+                    ]
+                }]
+            };
+
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+        });
+    </script>
+</body>
+</html>

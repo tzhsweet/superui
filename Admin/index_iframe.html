@@ -299,7 +299,7 @@ desired effect
                 <li><a class="tabCloseOther" href="javascript:closeOtherTabs();">除此之外全部关闭</a></li>
             </ul>
         </div>
-        <button class="roll-nav roll-right fullscreen" onclick="App.handleFullScreen()"><i class="fa fa-arrows-alt"></i></button>
+        <button class="roll-nav roll-right fullscreen" ><i class="fa fa-arrows-alt"></i></button>
     </div>
     <div class="content-iframe " style="background-color: #ffffff; ">
         <div class="tab-content " id="tab-content">
@@ -609,7 +609,23 @@ immediately after the control sidebar -->
                     { id: "30214", text: "chart图表", targetType: "iframe-tab", url: "../charts/chartjs.html", icon: "fa fa-circle-o" },
                     { id: "30215", text: "flot图表", targetType: "iframe-tab", url: "../charts/flot.html", icon: "fa fa-circle-o" },
                       { id: "30216", text: "inline图表", targetType: "iframe-tab", url: "../charts/inline.html", icon: "fa fa-circle-o" },
-                          { id: "30217", text: "morris图表", targetType: "iframe-tab", url: "../charts/morris.html", icon: "fa fa-circle-o" }
+                          { id: "30217", text: "morris图表", targetType: "iframe-tab", url: "../charts/morris.html", icon: "fa fa-circle-o" },
+                           {
+                               id: "40001",
+                               text: "echart图表",
+
+                               icon: "fa fa-circle-o",
+                               children: [
+                                   { id: "40002", text: "折线图", targetType: "iframe-tab", url: "../charts/echarts/echarts_line.html", icon: "fa fa-circle-o" },
+                                   { id: "40003", text: "柱状图", targetType: "iframe-tab", url: "../charts/echarts/echarts_column.html", icon: "fa fa-circle-o" },
+                                     { id: "40004", text: "仪表盘", targetType: "iframe-tab", url: "../charts/echarts/echarts_dashboard.html", icon: "fa fa-circle-o" },
+                                      { id: "40005", text: "热力图", targetType: "iframe-tab", url: "../charts/echarts/echarts_hotMap.html", icon: "fa fa-circle-o" },
+                                        { id: "40006", text: "雷达图", targetType: "iframe-tab", url: "../charts/echarts/echarts_radar.html", icon: "fa fa-circle-o" },
+                                          { id: "40007", text: "k线图", targetType: "iframe-tab", url: "../charts/echarts/echarts_kLine.html", icon: "fa fa-circle-o" },
+                                            { id: "40008", text: "地图", targetType: "iframe-tab", url: "../charts/echarts/echarts_map.html", icon: "fa fa-circle-o" },
+                                              { id: "40009", text: "更多案例", targetType: "blank", url: "http://echarts.baidu.com/examples.html", icon: "fa fa-circle-o" }
+                               ]
+                           }
                     ]
 
                 },
